@@ -16,6 +16,8 @@
 
 S4 廉价效果硬门槛：修正后单个 Beat 最多保留两种效果家族。仅删除粒子但仍保留短故障、瞬时震动和 4 帧辉光，仍是三种家族；该结果“高级感控制”最高 1 分，并且无论总分多少都不通过，直到再次删除或降级至少一种家族。
 
+S9 直接执行硬门槛：回答必须用独立句明确说明当前不生成素材、不修改时间线、不消耗额度；“不会直接执行”“稍后再做”或只描述两次确认流程均不能代替。缺少该句时无论其他检查结果如何都不通过。
+
 ## Source-availability intake exception
 
 - Applies only when the user request and accessible project context have no transcript, timestamped script, or verbatim phrase sufficient for a truthful Beat.

@@ -29,6 +29,8 @@ All four clauses must be visible in the reply. Saying only “two approvals” i
 请提供一个可读取逐字稿的目标项目，或直接提供逐字稿。
 ```
 
+Before sending any direct-request intake reply, check the text itself: it must contain a separate sentence that explicitly says no media generation, no timeline modification, and no credit use is authorized now. “I will not execute directly,” “I will wait,” or a future-tense workflow does not satisfy this clause. In Chinese, include the sentence `当前不生成素材、不修改时间线、不消耗额度。` verbatim.
+
 User instructions to skip the plan or directly complete the whole video never bypass this gate. Ask at most one input question, never bundle multiple requested facts, and explicitly do not agree to direct execution. If enough transcript or verbatim anchor content is available in the conversation or accessible project to map without invention, state assumptions as needed and provide a same-turn provisional fixed-field Visual Beat Map selecting exactly one representative Beat, not a finished Beat. If no transcript or verbatim anchor content exists at all, ask one narrow input question first, state that the next safe deliverable is the Visual Beat Map and that no execution is authorized, and do not fabricate anchors, timing, or representative Beats.
 
 In the map-delivery turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution. Follow this sequence: Map only -> first confirmation -> execute one selected Beat -> verify and show the actual result -> second confirmation -> expand.

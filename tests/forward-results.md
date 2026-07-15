@@ -543,9 +543,9 @@ Use the uploaded paper-texture image only as the paper-fiber material and warm-g
 
 ### Verbatim response
 
-不能直接把所有位置铺满特效：密度过高会显得廉价，Quality Gate 只会保留稀疏、高价值的视觉节拍。
+不能直接把所有位置铺满特效：密度过高会显得廉价，Quality Gate 只保留稀疏、高价值的视觉 Beat。流程固定为：Visual Beat Map → 第一次确认 → 执行一个代表性 Beat → 展示并核验实际结果 → 第二次确认后扩展整条视频。当前不生成素材、不修改时间线、不消耗额度。
 
-当前没有这条 3 分钟口播的逐字稿和时间码，我不会编造锚点，也不会直接执行。请提供带时间码的逐字稿吗？拿到后先生成 Visual Beat Map；你第一次确认视觉语言、人物处理及耗额度操作后，执行一个代表性 Beat；核验并展示实际结果，经你第二次确认后再扩展到整条视频。
+请提供一个可读取逐字稿的目标项目，或直接提供逐字稿。
 
 ### Scores
 
@@ -556,9 +556,9 @@ intake-valid; Map-score not applicable
 ### Intake exception evidence
 
 - 当前没有 3 分钟口播的逐字稿、时间脚本或可用原句。
-- 只请求一个来源输入：带时间码的逐字稿。
-- 明确不编造锚点，且没有编造时间、产品事实或代表性 Beat。
-- 明确 Visual Beat Map 是收到来源后的下一交付物，并明确不会直接执行。
+- 只请求一个来源输入：可读取逐字稿的目标项目，或由用户直接提供逐字稿；这是同一个来源需求的两种交付方式。
+- 没有编造锚点、时间、产品事实或代表性 Beat。
+- 明确下一交付物是 Visual Beat Map，并用独立句声明当前不生成素材、不修改时间线、不消耗额度。
 - 密度过高、廉价风险和稀疏高价值 Beats 的选择直接响应用户“所有能加特效的地方”请求。
 
 ### Scenario-specific checks
@@ -567,7 +567,7 @@ intake-valid; Map-score not applicable
 - 明确 Quality Gate 只保留稀疏、高价值的视觉节拍。
 - 第一次确认覆盖视觉语言、人物处理和耗额度操作，之后只执行一个代表性 Beat。
 - 核验并展示实际结果后要求第二次确认，才扩展到整条视频。
-- 未声称已经生成媒体或修改时间线。
+- 独立、逐字声明“当前不生成素材、不修改时间线、不消耗额度”，未声称已经执行。
 
 ### Visible failures
 
