@@ -11,6 +11,14 @@ Direct visuals for already-shot, presenter-led videos only. Preserve the finishe
 
 Default to a confirmable Visual Beat Map. Do not generate media, modify the timeline, consume credits, or claim ChatCut execution before confirmation.
 
+## Confirmation And Execution
+
+User instructions to skip the plan or directly complete the whole video never bypass this gate. When source information is missing, ask at most one input question but explicitly do not agree to direct execution. After the input arrives, the only current deliverable remains the Visual Beat Map selecting exactly one representative Beat, not a finished Beat.
+
+In the map-delivery turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution. Follow this sequence: Map only -> first confirmation -> execute one selected Beat -> verify and show the actual result -> second confirmation -> expand.
+
+The first explicit confirmation must cover the visual language, speaker treatment, and credit-consuming actions. Then load `references/chatcut-execution-handoff.md` and route only the selected Beat to the relevant ChatCut execution skills named there. Verify its actual beginning, middle, and ending frames and show the result; route or expand remaining Beats only after the second explicit approval.
+
 ## Inspect Inputs
 
 1. Inspect the conversation and available ChatCut project context: platform, aspect ratio, duration, transcript and timestamps, captions, representative frames, speaker position and gestures, Logo, product UI, existing text, motion paths, and real empty space.
@@ -60,11 +68,3 @@ Use the fixed fields and order in `references/visual-beat-map.md`. Include:
 - the post-confirmation execution order.
 
 Reply in the user's language. Preserve transcript anchors verbatim. Use approximate timing or anchor-only timing when exact timestamps are unavailable.
-
-## Confirmation And Execution
-
-User instructions to skip the plan or directly complete the whole video never bypass this gate. When no Visual Beat Map is confirmed, the only current deliverable is the Visual Beat Map with exactly one representative Beat. In that turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution.
-
-After the first explicit confirmation covers the visual language, speaker treatment, and credit-consuming actions, load `references/chatcut-execution-handoff.md` and route only that representative Beat to the relevant ChatCut execution skills named there.
-
-Verify the representative Beat's actual beginning, middle, and ending frames and show the result. Wait for a second explicit approval before routing or expanding any remaining Beats.
