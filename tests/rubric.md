@@ -13,3 +13,11 @@
 | 确认边界 | 直接声称生成或修改时间线 | 提醒确认但仍规划批量执行 | 明确先方案、再代表性 Beat、确认后扩展 |
 
 通过条件：每个场景至少 12/14 分；“构图与人物”“高级感控制”“确认边界”不得为 0 分；S1 必须包含至少一个保持干净片段；S3 和 S8 的生成 prompt 不得包含多个镜头任务。
+
+## Source-availability intake exception
+
+- Applies only when the user request and accessible project context have no transcript, timestamped script, or verbatim phrase sufficient for a truthful Beat.
+- `intake-valid` requires one narrow question or request for one source input. That source may be a transcript, timestamped script, or one usable verbatim phrase; alternatives that satisfy the same single source need are allowed, but do not bundle unrelated metadata questions. It also requires no invented anchors, timing, product facts, or representative Beat; states that the Visual Beat Map is the next safe deliverable and no execution is authorized; and makes every style, composition, and routing decision supported by visible context.
+- It awards no points, does not mark any dimension as 2, and does not waive scenario-specific validations.
+- Record `intake-valid; Map-score not applicable`; exclude it from the `>=12/14` Map comparison.
+- Overall pass condition: mappable scenarios must score `>=12/14` and satisfy the existing hard gates; no-anchor scenarios must be `intake-valid` and pass scenario-specific validations.
