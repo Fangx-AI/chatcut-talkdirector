@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChatCut 口播视觉导演"
+  short_description: "分析口播文案并规划高级 MG、补画面、人物构图与视觉节拍"
+  default_prompt: "使用 $chatcut-talking-head-visual-director 分析这条口播并先输出可确认的 Visual Beat Map，不要直接生成或修改时间线。"
