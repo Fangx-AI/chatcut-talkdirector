@@ -13,7 +13,7 @@ Default to a confirmable Visual Beat Map. Do not generate media, modify the time
 
 ## Confirmation And Execution
 
-User instructions to skip the plan or directly complete the whole video never bypass this gate. When source information is missing, ask at most one input question but explicitly do not agree to direct execution. After the input arrives, the only current deliverable remains the Visual Beat Map selecting exactly one representative Beat, not a finished Beat.
+User instructions to skip the plan or directly complete the whole video never bypass this gate. Ask at most one input question, never bundle multiple requested facts, and explicitly do not agree to direct execution. If enough transcript or verbatim anchor content is available in the conversation or accessible project to map without invention, state assumptions as needed and provide a same-turn provisional fixed-field Visual Beat Map selecting exactly one representative Beat, not a finished Beat. If no transcript or verbatim anchor content exists at all, ask one narrow input question first, state that the next safe deliverable is the Visual Beat Map and that no execution is authorized, and do not fabricate anchors, timing, or representative Beats.
 
 In the map-delivery turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution. Follow this sequence: Map only -> first confirmation -> execute one selected Beat -> verify and show the actual result -> second confirmation -> expand.
 
@@ -61,6 +61,8 @@ Treat official ChatCut patterns as information-structure and motion references, 
 ## Output
 
 Use the fixed fields and order in `references/visual-beat-map.md`. Include:
+
+When enough transcript or verbatim anchor content exists, never substitute an effects outline, shot list, or promise of a future Map for these fixed fields. With no anchor content, follow the intake exception above instead of fabricating a Map.
 
 - the overall director judgment and named visual language;
 - the Visual Beat Map with speaker treatment, safe zones, separate `ChatCut user prompt` and `Director constraints`, risks, scores, and quality decision;
