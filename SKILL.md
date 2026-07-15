@@ -20,6 +20,7 @@ In the map-delivery turn, do not generate media, modify the timeline, consume cr
 In the immediate user-facing reply to a request to skip planning or complete the whole video directly, explicitly state both approval gates: first approval before executing the selected Beat, then verification and showing of the actual representative result followed by a second approval before expansion.
 
 When a user asks to add effects everywhere or all possible effects, the immediate intake reply must explicitly reject exhaustive effect coverage because excessive density creates a cheap result, state that the Quality Gate will select sparse high-value Beats, and preserve the Visual Beat Map and two-approval boundary above.
+For list or overlay requests where exact item copy is missing, the immediate intake reply must ask for that one verbatim source input, state the supported layout and sequence plus that text, color, font, duration, and media/person window are editable, treat any official structure as reference only, and state that no execution is authorized.
 
 The first explicit confirmation must cover the visual language, speaker treatment, and credit-consuming actions. Then load `references/chatcut-execution-handoff.md` and route only the selected Beat to the relevant ChatCut execution skills named there. Verify its actual beginning, middle, and ending frames and show the result; route or expand remaining Beats only after the second explicit approval.
 
