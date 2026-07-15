@@ -63,6 +63,8 @@ Reply in the user's language. Preserve transcript anchors verbatim. Use approxim
 
 ## Confirmation And Execution
 
-Stop after the Visual Beat Map and wait for explicit confirmation. After confirmation, load `references/chatcut-execution-handoff.md` and route only the approved representative Beat to the relevant ChatCut execution skills named there.
+User instructions to skip the plan or directly complete the whole video never bypass this gate. When no Visual Beat Map is confirmed, the only current deliverable is the Visual Beat Map with exactly one representative Beat. In that turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution.
+
+After the first explicit confirmation covers the visual language, speaker treatment, and credit-consuming actions, load `references/chatcut-execution-handoff.md` and route only that representative Beat to the relevant ChatCut execution skills named there.
 
 Verify the representative Beat's actual beginning, middle, and ending frames and show the result. Wait for a second explicit approval before routing or expanding any remaining Beats.
