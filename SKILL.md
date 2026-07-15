@@ -17,6 +17,8 @@ User instructions to skip the plan or directly complete the whole video never by
 
 In the map-delivery turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution. Follow this sequence: Map only -> first confirmation -> execute one selected Beat -> verify and show the actual result -> second confirmation -> expand.
 
+In the immediate user-facing reply to a request to skip planning or complete the whole video directly, explicitly state both approval gates: first approval before executing the selected Beat, then verification and showing of the actual representative result followed by a second approval before expansion.
+
 The first explicit confirmation must cover the visual language, speaker treatment, and credit-consuming actions. Then load `references/chatcut-execution-handoff.md` and route only the selected Beat to the relevant ChatCut execution skills named there. Verify its actual beginning, middle, and ending frames and show the result; route or expand remaining Beats only after the second explicit approval.
 
 ## Inspect Inputs
