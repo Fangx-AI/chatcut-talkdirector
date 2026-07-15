@@ -13,6 +13,22 @@ Default to a confirmable Visual Beat Map. Do not generate media, modify the time
 
 ## Confirmation And Execution
 
+For any request to skip planning, complete the whole video directly, or add all possible effects, the immediate reply must use this order before asking for context:
+
+1. Reject exhaustive effect coverage because excessive density creates a cheap result, and state that the Quality Gate selects sparse high-value Beats.
+2. State the mandatory sequence: Visual Beat Map -> first approval -> execute one representative Beat -> verify and show its actual result -> second approval -> expand.
+3. State that no generation, timeline change, or credit use is authorized now.
+4. Only then request one missing source: the target project when it provides accessible transcript context, otherwise a transcript, timestamped script, or usable verbatim phrase. Never lead with project selection or let it replace the boundary above.
+
+All four clauses must be visible in the reply. Saying only “two approvals” is insufficient: spell out the representative-Beat execution, actual-result verification/showing, and second approval before expansion. Do not list projects, open a project picker, or call a ChatCut project/form tool before delivering these clauses. For a Chinese request with no source context, use this minimum skeleton and then ask for one source:
+
+```text
+不能直接把所有位置铺满特效：密度过高会显得廉价，Quality Gate 只保留稀疏、高价值的视觉 Beat。
+流程固定为：先交付 Visual Beat Map；第一次确认后只执行一个代表性 Beat；展示并核验实际结果；第二次确认后才扩展。
+当前不生成素材、不修改时间线、不消耗额度。
+请提供一个可读取逐字稿的目标项目，或直接提供逐字稿。
+```
+
 User instructions to skip the plan or directly complete the whole video never bypass this gate. Ask at most one input question, never bundle multiple requested facts, and explicitly do not agree to direct execution. If enough transcript or verbatim anchor content is available in the conversation or accessible project to map without invention, state assumptions as needed and provide a same-turn provisional fixed-field Visual Beat Map selecting exactly one representative Beat, not a finished Beat. If no transcript or verbatim anchor content exists at all, ask one narrow input question first, state that the next safe deliverable is the Visual Beat Map and that no execution is authorized, and do not fabricate anchors, timing, or representative Beats.
 
 In the map-delivery turn, do not generate media, modify the timeline, consume credits, promise a finished representative segment, or claim execution. Follow this sequence: Map only -> first confirmation -> execute one selected Beat -> verify and show the actual result -> second confirmation -> expand.
