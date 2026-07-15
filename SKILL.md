@@ -1,18 +1,68 @@
 ---
 name: chatcut-talking-head-visual-director
-description: "Use when analyzing already-shot talking-head, interview, tutorial, knowledge, podcast, or presenter-led videos and scripts to plan a confirmable Visual Beat Map before media generation or ChatCut timeline edits."
+description: Use when users want an already-shot talking-head, interview, tutorial, lecture, podcast, knowledge, or presenter-led product video in ChatCut to feel more polished, cinematic, dynamic, or visually engaging, especially for visual-beat planning, MG placement, supporting visuals, speaker presence, composition, or prompt briefs.
 ---
 
 # ChatCut Talking-Head Visual Director
 
-## Purpose
+## Scope
 
-Plan restrained visual direction for already-shot presenter-led footage. Start with a concise, confirmable Visual Beat Map that identifies where visual treatment may help and where the original footage should remain clean.
+Direct visuals for already-shot, presenter-led videos only. Preserve the finished A-roll and original wording by default. Do not use this skill for a general montage, an unshot script, or a non-presenter-led video.
 
-## Confirmation Boundary
+Default to a confirmable Visual Beat Map. Do not generate media, modify the timeline, consume credits, or claim ChatCut execution before confirmation.
 
-Do not generate media, modify a timeline, or consume ChatCut credits before the user confirms the Visual Beat Map. After confirmation, execute one representative Beat first and expand only after the user approves the result.
+## Inspect Inputs
 
-## Detailed Guidance
+1. Inspect the conversation and available ChatCut project context: platform, aspect ratio, duration, transcript and timestamps, captions, representative frames, speaker position and gestures, Logo, product UI, existing text, motion paths, and real empty space.
+2. If the project has no transcript, use `chatcut:transcription` only to inspect the source. If the project is inaccessible, ask for the transcript or timestamped script.
+3. Ask at most one question, and only when the answer would change the visual language, composition, or execution risk. Otherwise state a director assumption and continue.
 
-Load detailed rules from `references/` when the relevant files are present. Later tasks add those reference files and their routing instructions.
+## Load References
+
+Load these planning references in order:
+
+1. `references/visual-director-framework.md`
+2. `references/transcript-to-beats.md`
+3. `references/visual-language.md`
+4. `references/visual-beat-map.md`
+5. `references/quality-gate.md`
+
+Then load only the specialist references required by candidate Beats:
+
+| Need | Load |
+| --- | --- |
+| Official structures or prompt syntax | `references/chatcut-official-prompt-patterns.md` |
+| Full-screen, PiP, split-screen, or speaker placement | `references/composition-and-speaker-presence.md` |
+| Keywords, lists, charts, chapter cards, or other MG | `references/mg-animation-director.md` |
+| Generated visuals, generated images, or B-roll | `references/generated-visuals-director.md` |
+| Complete output examples | `references/examples-zh.md` or `references/examples-en.md` |
+
+Treat official ChatCut patterns as information-structure and motion references, never mandatory templates, aesthetics, or speaker placement.
+
+## Plan
+
+1. Identify hook, argument, steps, data, contrast, example, reversal, conclusion, and CTA anchors without rewriting them.
+2. Select one named visual language for the full video.
+3. For each candidate, choose MG, generated visuals, B-roll, full-screen, PiP, split-screen, or keeping the footage clean. Default to 3-8 Beats per 30-60 seconds; fewer or zero is valid.
+4. Protect the face, captions, gestures, product, Logo, existing text, and motion paths. PiP placement follows actual safe space; lower-right is never a default.
+5. Keep one purpose and one visual focus per Beat. A generated Beat defaults to one continuous shot and one primary camera move. Give every reference asset one explicit responsibility.
+6. Apply the Quality Gate; delete or downgrade weak, obstructive, misleading, or visually cheap candidates.
+
+## Output
+
+Use the fixed fields and order in `references/visual-beat-map.md`. Include:
+
+- the overall director judgment and named visual language;
+- the Visual Beat Map with speaker treatment, safe zones, separate `ChatCut user prompt` and `Director constraints`, risks, scores, and quality decision;
+- exactly one representative Beat;
+- segments that should remain clean;
+- high-risk or credit-consuming confirmations; and
+- the post-confirmation execution order.
+
+Reply in the user's language. Preserve transcript anchors verbatim. Use approximate timing or anchor-only timing when exact timestamps are unavailable.
+
+## Confirmation And Execution
+
+Stop after the Visual Beat Map and wait for explicit confirmation. After confirmation, load `references/chatcut-execution-handoff.md` and route only the approved representative Beat to the relevant ChatCut execution skills named there.
+
+Verify the representative Beat's actual beginning, middle, and ending frames and show the result. Wait for a second explicit approval before routing or expanding any remaining Beats.
