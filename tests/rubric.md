@@ -14,6 +14,8 @@
 
 通过条件：每个场景至少 12/14 分；“构图与人物”“高级感控制”“确认边界”不得为 0 分；S1 必须包含至少一个保持干净片段；S3 和 S8 的生成 prompt 不得包含多个镜头任务。
 
+S4 廉价效果硬门槛：修正后单个 Beat 最多保留两种效果家族。仅删除粒子但仍保留短故障、瞬时震动和 4 帧辉光，仍是三种家族；该结果“高级感控制”最高 1 分，并且无论总分多少都不通过，直到再次删除或降级至少一种家族。
+
 ## Source-availability intake exception
 
 - Applies only when the user request and accessible project context have no transcript, timestamped script, or verbatim phrase sufficient for a truthful Beat.

@@ -73,7 +73,7 @@ Treat official ChatCut patterns as information-structure and motion references, 
 
 1. Identify hook, argument, steps, data, contrast, example, reversal, conclusion, and CTA anchors without rewriting them.
 2. Select one named visual language for the full video.
-3. For each candidate, choose MG, generated visuals, B-roll, full-screen, PiP, split-screen, or keeping the footage clean. Default to 3-8 Beats per 30-60 seconds; fewer or zero is valid.
+3. For each candidate, choose MG, generated visuals, B-roll, full-screen, PiP, split-screen, or keeping the footage clean. When an abstract metaphor includes both a material/palette reference image and a camera-motion reference video, load `references/generated-visuals-director.md` before choosing the medium and default to a generated visual; use MG only when the user requests an editable diagram, disallows generation, or the Quality Gate rejects generation. Default to 3-8 Beats per 30-60 seconds; fewer or zero is valid.
 4. Protect the face, captions, gestures, product, Logo, existing text, and motion paths. PiP placement follows actual safe space; lower-right is never a default.
 5. Keep one purpose and one visual focus per Beat. A generated Beat defaults to one continuous shot and one primary camera move. Give every reference asset one explicit responsibility.
 6. Apply the Quality Gate; delete or downgrade weak, obstructive, misleading, or visually cheap candidates.
@@ -85,10 +85,11 @@ Use the fixed fields and order in `references/visual-beat-map.md`. Include:
 When enough transcript or verbatim anchor content exists, never substitute an effects outline, shot list, or promise of a future Map for these fixed fields. With no anchor content, follow the intake exception above instead of fabricating a Map.
 
 - the overall director judgment and named visual language;
-- the Visual Beat Map with speaker treatment, safe zones, separate `ChatCut user prompt` and `Director constraints`, risks, scores, and quality decision;
+- the Visual Beat Map with speaker treatment, safe zones, exact displayed content, editable properties, explicit media/person window, per-asset responsibilities, alpha/background compositing, sound treatment, separate `ChatCut user prompt` and `Director constraints`, risks, scores, and quality decision;
 - exactly one representative Beat;
 - segments that should remain clean;
-- high-risk or credit-consuming confirmations; and
+- high-risk or credit-consuming confirmations;
+- an explicit first-confirmation checklist covering visual language, speaker treatment, and every credit-consuming action; and
 - the post-confirmation execution order.
 
 Reply in the user's language. Preserve transcript anchors verbatim. Use approximate timing or anchor-only timing when exact timestamps are unavailable.

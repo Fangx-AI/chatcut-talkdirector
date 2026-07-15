@@ -29,6 +29,12 @@ A 45-second 16:9 product explainer. The presenter stands on the left. The key li
 - Speaker treatment: full-screen visual for 4 seconds with the original voice; no PiP because the process needs an uncluttered path
 - Position and size: full frame; return to the presenter before the next sentence
 - Animation rhythm: one continuous left-to-right move, then a clean return to the presenter
+- Exact displayed content: not applicable; generated text is prohibited
+- Editable properties: duration, frame size, lime accent intensity, insert timing, and return timing
+- Media/person window: not applicable (full-screen insert); no PiP
+- Reference asset responsibilities: none
+- Compositing and background: opaque full-frame insert; return to the original presenter frame at the end
+- Sound treatment: preserve original narration; generated audio is silent; create no new dialogue
 - ChatCut user prompt: Generate one abstract continuous shot showing payment, confirmation, and delivery connecting through a single workflow, 16:9.
 - Director constraints: one shot, one slow lateral move, paper-and-ink material, no fake interface, no brand claims, no readable generated text, original voice continues
 - Generated visual prompt: One continuous side-on shot of three paper-like process tokens entering a precise mechanical routing path and converging at one delivery marker. Slow left-to-right camera move only. White paper fibers, charcoal ink, one lime signal light, soft overhead studio light. No cuts, no people, no fake software UI, no readable text, no extra camera motion. 4 seconds, 16:9, silent; preserve the original narration in the edit.
@@ -50,6 +56,12 @@ A 45-second 16:9 product explainer. The presenter stands on the left. The key li
 - The insert is deliberately abstract because no product recording is available; it must not be presented as the real product UI.
 - Video generation may require a ChatCut confirmation and consume credits.
 
+## First-Approval Scope
+
+- Visual language: white, charcoal, one lime accent, paper-and-ink geometry, and short mask reveals.
+- Speaker treatment: Beat 02 becomes a four-second full-screen insert with no PiP, then returns to the presenter.
+- Credit-consuming action: authorize generation and placement of Beat 02 only; no other Beat or timeline change is authorized.
+
 ## Execution Order After Confirmation
 
-Wait for approval of the Visual Beat Map before generating or editing the timeline. After approval, execute only Beat 02, inspect its beginning, middle, and ending frames, and show the actual result. Expand the other Beats only after a second explicit approval.
+Wait until the user explicitly approves all three items above before generating or editing the timeline. Then execute only Beat 02, inspect its beginning, middle, and ending frames, and show the actual result. Expand the other Beats only after a second explicit approval.
