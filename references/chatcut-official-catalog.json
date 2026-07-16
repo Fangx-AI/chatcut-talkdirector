@@ -1,0 +1,1242 @@
+{
+  "source_url": "https://chatcut.io/prompt-library",
+  "synced_on": "2026-07-16",
+  "count": 123,
+  "category_counts": {
+    "App Promo": 5,
+    "Video Generation / Seedance 2": 14,
+    "Motion Graphics": 104
+  },
+  "entries": [
+    {
+      "name": "AI Documentary Ad Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=app-promo&preset=d3e92255-157b-4bfd-8b5f-d70c6008592b",
+      "target": "app-promo",
+      "category": "App Promo",
+      "description": "Create a short documentary-style promo video for a product page.",
+      "reference_id": "d3e92255-157b-4bfd-8b5f-d70c6008592b",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/d3e92255-157b-4bfd-8b5f-d70c6008592b/preview/960e5405-1055-4699-87d7-9ff40abb5730-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/d3e92255-157b-4bfd-8b5f-d70c6008592b/cover/e7378c9a-ce50-4dc4-bce9-6244d0d1e5f6-cover.png"
+    },
+    {
+      "name": "AI Pop-Style Ad Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=app-promo&preset=57d50d37-087c-4a59-833b-472a59fbf355",
+      "target": "app-promo",
+      "category": "App Promo",
+      "description": "Create a short pop-style promo video for a product page with a simple narrative arc.",
+      "reference_id": "57d50d37-087c-4a59-833b-472a59fbf355",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/57d50d37-087c-4a59-833b-472a59fbf355/preview/503c25fb-2ab8-4628-883e-0b8df65f8ed1-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/57d50d37-087c-4a59-833b-472a59fbf355/cover/30c572a5-debf-4bf1-b882-6e6da450df83-cover.png"
+    },
+    {
+      "name": "AI Stop-Motion Ad Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=app-promo&preset=24306932-df20-4302-a755-ac4239141be6",
+      "target": "app-promo",
+      "category": "App Promo",
+      "description": "Create a short felt-style promo video for a product page.",
+      "reference_id": "24306932-df20-4302-a755-ac4239141be6",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/24306932-df20-4302-a755-ac4239141be6/preview/5460c268-83be-4cab-9c22-87df771a559c-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/24306932-df20-4302-a755-ac4239141be6/cover/7e227012-e6ce-47b8-a90a-7f305e59de1b-cover.png"
+    },
+    {
+      "name": "AI Claymation Ad Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=app-promo&preset=fb53a08c-0072-470b-bc0f-e799e8aa8888",
+      "target": "app-promo",
+      "category": "App Promo",
+      "description": "Create a short claymation-style promo video for a product page.",
+      "reference_id": "fb53a08c-0072-470b-bc0f-e799e8aa8888",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/fb53a08c-0072-470b-bc0f-e799e8aa8888/preview/d14a3615-ed2b-42ca-988c-25db2dfd5c09-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/fb53a08c-0072-470b-bc0f-e799e8aa8888/cover/9d788a53-ff6b-4f39-8e89-f1cac3664f16-cover.png"
+    },
+    {
+      "name": "AI Frosted-Glass Ad Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=app-promo&preset=fbfe5887-8d67-4102-8312-b06151aebabb",
+      "target": "app-promo",
+      "category": "App Promo",
+      "description": "Create a short frosted-glass promo video for a product page.",
+      "reference_id": "fbfe5887-8d67-4102-8312-b06151aebabb",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/fbfe5887-8d67-4102-8312-b06151aebabb/preview/fa164f60-28ee-43fd-905f-823cd4bc0369-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/fbfe5887-8d67-4102-8312-b06151aebabb/cover/15189063-4aae-4f1f-b5cb-be888bbdc4ad-cover.png"
+    },
+    {
+      "name": "AI Product Launch Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=d4404826-a3cd-4f72-ac0c-9875c26ba07d",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Create a 15-second studio product launch ad from a product reference in 16:9.",
+      "reference_id": "d4404826-a3cd-4f72-ac0c-9875c26ba07d",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/d4404826-a3cd-4f72-ac0c-9875c26ba07d/preview/8e97d6af-927b-459e-ba2d-da455cfc85c9-Cinematic_multi-shot_product_film_for_a_....mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/d4404826-a3cd-4f72-ac0c-9875c26ba07d/cover/d773ed07-e31e-47e6-b9ae-eaadd6f2f9bf-jimeng-2026-04-02-8603-__________________________________logo__....png"
+    },
+    {
+      "name": "AI Storyboard-to-Film",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=4d157b2c-9261-4a32-bfd2-0a7c0d04a2fe",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Turn a 9-panel storyboard into a continuous 10-15 second cinematic short in 16:9.",
+      "reference_id": "4d157b2c-9261-4a32-bfd2-0a7c0d04a2fe",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/4d157b2c-9261-4a32-bfd2-0a7c0d04a2fe/preview/c5d7031c-5ef3-401d-a03e-2fce6c14257e-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/4d157b2c-9261-4a32-bfd2-0a7c0d04a2fe/cover/bcdb0603-6e99-4fdd-9c80-3cf3353bc8b9-cover.png"
+    },
+    {
+      "name": "AI Vehicle Transformation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=abae28f1-c55d-4dd8-af7b-aebd330c53fb",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Transform a vehicle reference into a mechanical creature reveal in 16:9.",
+      "reference_id": "abae28f1-c55d-4dd8-af7b-aebd330c53fb",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/abae28f1-c55d-4dd8-af7b-aebd330c53fb/preview/f8798cfb-7319-46b9-857c-ed0b96f0c21a-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/abae28f1-c55d-4dd8-af7b-aebd330c53fb/cover/e45db7b8-bea2-4d44-b7b4-82a8b14a8c3d-cover.png"
+    },
+    {
+      "name": "AI Hero Scene Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=44ce7ebb-4b37-435f-acb1-9fba31e9fb3d",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Create a 15-second cinematic hero scene around a stylized character with clear visual traits.",
+      "reference_id": "44ce7ebb-4b37-435f-acb1-9fba31e9fb3d",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/44ce7ebb-4b37-435f-acb1-9fba31e9fb3d/preview/9a05510b-3892-46d2-bceb-da8870f5f51f-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/44ce7ebb-4b37-435f-acb1-9fba31e9fb3d/cover/ef16090f-3e5e-4867-9342-97ed68e0de76-cover.png"
+    },
+    {
+      "name": "AI Cinematic Logo Reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=a4acd454-d87e-4d7a-9eb1-9a71084d38dd",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Turn a logo reference into a 6-second cinematic 3D reveal in 16:9.",
+      "reference_id": "a4acd454-d87e-4d7a-9eb1-9a71084d38dd",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/a4acd454-d87e-4d7a-9eb1-9a71084d38dd/preview/559a4448-36b1-4b21-ab9e-71d758cdfe04-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/a4acd454-d87e-4d7a-9eb1-9a71084d38dd/cover/d9e3313d-c8e5-4b80-95ab-0abda858f2e4-cover.PNG"
+    },
+    {
+      "name": "AI Comic-to-Film Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=5641a5c8-a8c3-4a7b-821f-8a47f8a56165",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Turn a comic reference into a short live-action cinematic sequence in 16:9.",
+      "reference_id": "5641a5c8-a8c3-4a7b-821f-8a47f8a56165",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/5641a5c8-a8c3-4a7b-821f-8a47f8a56165/preview/f299696c-f3d8-4ed6-8039-0999e6be8696-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/5641a5c8-a8c3-4a7b-821f-8a47f8a56165/cover/9585f216-8713-40ca-9e5f-8bce82051691-cover.png"
+    },
+    {
+      "name": "AI Billboard Product Ad",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=ba023432-3975-4787-beb0-cdcfc3542fba",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Place a product reference on a Times Square billboard in a short cinematic time-lapse, framed for 16:9.",
+      "reference_id": "ba023432-3975-4787-beb0-cdcfc3542fba",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/ba023432-3975-4787-beb0-cdcfc3542fba/preview/4096f4b7-92bb-4343-aace-4cf9151e7add-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/ba023432-3975-4787-beb0-cdcfc3542fba/cover/15b89d7c-ad75-4679-a431-fd3f23ccea0a-cover.png"
+    },
+    {
+      "name": "AI Glitch Logo Reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=fc4e6c02-072d-4958-a3d3-9f90fe7ebee7",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Animate a logo reference with a 4-second RGB glitch reveal in 16:9.",
+      "reference_id": "fc4e6c02-072d-4958-a3d3-9f90fe7ebee7",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/fc4e6c02-072d-4958-a3d3-9f90fe7ebee7/preview/cc8f89ec-6f8c-410d-8f83-f3cf652383e5-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/fc4e6c02-072d-4958-a3d3-9f90fe7ebee7/cover/b80ccbe2-b291-4e36-9d81-37ada09925a9-cover.png"
+    },
+    {
+      "name": "AI Liquid Logo Reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=714c8bca-1b8c-4116-bb57-ada20890de94",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Animate a logo reference into a 6-second liquid-particle reveal in 16:9.",
+      "reference_id": "714c8bca-1b8c-4116-bb57-ada20890de94",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/714c8bca-1b8c-4116-bb57-ada20890de94/preview/53ac40c4-a07a-4a28-a5bb-fd5f0a000fa4-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/714c8bca-1b8c-4116-bb57-ada20890de94/cover/24527f12-a9bd-4041-a658-92bcaee9de01-cover.png"
+    },
+    {
+      "name": "AI ASMR Product Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=158a512d-db53-44d4-b7bc-8717df6a49fe",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Create a short ASMR-style product video from a product reference in 9:16.",
+      "reference_id": "158a512d-db53-44d4-b7bc-8717df6a49fe",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/158a512d-db53-44d4-b7bc-8717df6a49fe/preview/07f36495-223b-4142-90a8-d23f56435ce9-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/158a512d-db53-44d4-b7bc-8717df6a49fe/cover/2b4c3620-32fe-4c69-af56-0123fec7e3d7-cover.png"
+    },
+    {
+      "name": "AI Hair Care Commercial",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=b132219a-03c4-417a-a9a1-a6b06a796411",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Create a short premium hair-care commercial from a beauty reference in 16:9.",
+      "reference_id": "b132219a-03c4-417a-a9a1-a6b06a796411",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/b132219a-03c4-417a-a9a1-a6b06a796411/preview/c562ebc9-b1ad-4b84-a7ae-47b1e0ed1e47-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/b132219a-03c4-417a-a9a1-a6b06a796411/cover/7607aad5-6c9e-4800-8479-00c7514adaea-cover.png"
+    },
+    {
+      "name": "AI Pet Podcast Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=68323c16-db0e-42e6-b528-46329affb510",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Turn two pet references into a playful 15-second podcast skit in 16:9.",
+      "reference_id": "68323c16-db0e-42e6-b528-46329affb510",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/68323c16-db0e-42e6-b528-46329affb510/preview/e1e357b7-1954-4067-9469-121198f033aa-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/68323c16-db0e-42e6-b528-46329affb510/cover/4cf50a8a-654e-461b-adc6-96c54b4bc744-cover.png"
+    },
+    {
+      "name": "AI Multi-Frame Cinematic Shot",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=8f627e2f-2e06-493b-b41e-1d2389dbb44f",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Blend three reference frames into one seamless 15-second cinematic shot in 16:9.",
+      "reference_id": "8f627e2f-2e06-493b-b41e-1d2389dbb44f",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/8f627e2f-2e06-493b-b41e-1d2389dbb44f/preview/0dade1fa-e647-4681-94b8-dcfbc84e0840-preview.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/8f627e2f-2e06-493b-b41e-1d2389dbb44f/cover/74f02d4f-5d98-4228-8bc2-333cd84d4018-cover.png"
+    },
+    {
+      "name": "AI Time Freeze Video",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=video-gen&preset=cc05c29b-f0b8-4858-95cd-aa5f1ef71e93",
+      "target": "video-gen",
+      "category": "Video Generation / Seedance 2",
+      "description": "Create a 15-second cinematic time-freeze scene in 16:9.",
+      "reference_id": "cc05c29b-f0b8-4858-95cd-aa5f1ef71e93",
+      "preview_video_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/35936d63-3aee-4cf4-818d-b978db3af198/preview/a47b7406-7675-4f81-85d4-3c6a1f7a3dbf-Diamond_Heist_Time_Freeze_15s.mp4",
+      "poster_url": "https://chatcut-production-mainbucketbucket-oxvbnfsx.s3.us-east-1.amazonaws.com/scenario-presets/35936d63-3aee-4cf4-818d-b978db3af198/cover/cf72fb59-3bb7-4d9e-a96f-57771dca3f52-screenshot-20260421-134221.png"
+    },
+    {
+      "name": "AI Stack Chart Animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=1a4cd0c3-ba36-4457-8428-49e57c61292f",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();",
+      "reference_id": "1a4cd0c3-ba36-4457-8428-49e57c61292f",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Line Chart Animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=38bd86e5-2f30-46f7-ade8-1a9711220f0d",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a 5-year trend line chart featuring an organic, hand-drawn aesthetic with paper texture and cleanly animated drawing strokes.",
+      "reference_id": "38bd86e5-2f30-46f7-ade8-1a9711220f0d",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Radar Chart Animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6cdf1268-c279-4c5d-a540-3f59501fbe0d",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a animated spider chart featuring a hand-drawn paper aesthetic, complete with sketchy grid lines, spring-animated semi-transparent polygons, and an editorial layout.",
+      "reference_id": "6cdf1268-c279-4c5d-a540-3f59501fbe0d",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Pie Chart Animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=0273f371-8c99-4d7f-b51e-096edd9d2188",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create 4-ring concentric chart with sweeping animation and connecting value labels styled like an infographic.",
+      "reference_id": "0273f371-8c99-4d7f-b51e-096edd9d2188",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Vertical Bar Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=847102e7-ec7f-4c4c-ad8a-f015f5b31fc7",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, minimal vertical bar chart with staggered entrance animations, custom background gradient, and semi-transparent bar tracks.",
+      "reference_id": "847102e7-ec7f-4c4c-ad8a-f015f5b31fc7",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Horizontal Bar Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=9e4ffbcc-ec05-4a3b-b54f-0ffe7f571efd",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a minimal, clean horizontal bar chart with staggered entrance animations, custom gradients, and percentage counters matching an infographic style.",
+      "reference_id": "9e4ffbcc-ec05-4a3b-b54f-0ffe7f571efd",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Monthly Growth Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=d03ead86-a81b-4638-98d3-2fae21c1715b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sleek, dark-themed infographic bar chart with a staggered upward spring animation for bars, accompanied by fading grid lines and data labels. Perfectly tuned for premium...",
+      "reference_id": "d03ead86-a81b-4638-98d3-2fae21c1715b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI MAU Dashboard Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=798fa1a8-771d-4c97-b900-8a9004266304",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create pure Color Infographics style dashboard card featuring a large KPI and an animated horizontal bar chart for days of the week, complete with a stylized virus/molecule...",
+      "reference_id": "798fa1a8-771d-4c97-b900-8a9004266304",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Sales Trend Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=c430c730-8ff2-4a4b-86af-230563431c49",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, modern line chart with two data series, animated drawing effects, pop-in data points, and a subtle DNA helix watermark. Ideal for financial or medical data...",
+      "reference_id": "c430c730-8ff2-4a4b-86af-230563431c49",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Donut Chart Animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=5e015143-44fa-4cc4-bb04-f692e011a1ee",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, vibrant donut chart infographic with animated segments, a legend, and a stylized DNA helix watermark.",
+      "reference_id": "5e015143-44fa-4cc4-bb04-f692e011a1ee",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Revenue Comparison Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=c63df7ef-fc63-491b-ae4b-30a34d88d8ae",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a crisp and vibrant grouped bar chart showing quarterly performance of two products with count-up data labels, animated growth bars, and large summary KPIs.",
+      "reference_id": "c63df7ef-fc63-491b-ae4b-30a34d88d8ae",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Benchmark Comparison Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=d82c1bd4-4654-4f92-809d-32eba00a88f0",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dynamic benchmark chart recreating a Geekbench CPU score comparison between three devices, featuring smooth bar stretches and slot-machine style number rolls.",
+      "reference_id": "d82c1bd4-4654-4f92-809d-32eba00a88f0",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Speaker Intro Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=a2abdfc4-c794-4224-b89a-07c0f4009129",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a premium, magazine-style full screen introduction with large serif typography and a blended ghost portrait.",
+      "reference_id": "a2abdfc4-c794-4224-b89a-07c0f4009129",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Paper Chapter Title",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=2063446e-f68f-4284-ae99-aefd13bd4824",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create paper Chapter Title title card template with editable text, layout, and visual styling.",
+      "reference_id": "2063446e-f68f-4284-ae99-aefd13bd4824",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Story Quote Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=893c85e4-940f-4cbc-b0fc-2db3a2f48392",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a full-screen quote card that animates lines of text individually sliding up and fading in with an accented final line.",
+      "reference_id": "893c85e4-940f-4cbc-b0fc-2db3a2f48392",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Chapter Label",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=62cceb8b-a33f-45b0-a5ff-2a2be3fe2107",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create skewed chapter label with bold headline, subtitle, and optional badge number for fast transitions.",
+      "reference_id": "62cceb8b-a33f-45b0-a5ff-2a2be3fe2107",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Paper Lower Third",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=63ea06e3-3c00-4a22-920d-5b7e8df2b21b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create hand-drawn paper lower third with editable name, title, and intro copy.",
+      "reference_id": "63ea06e3-3c00-4a22-920d-5b7e8df2b21b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Editorial Lower Third",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=a8881761-23dc-4cb7-ac6e-11aa29aa6df7",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create elegant magazine-style lower third with staggered text reveal, animated line separator, and subtle ghost portrait background.",
+      "reference_id": "a8881761-23dc-4cb7-ac6e-11aa29aa6df7",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Numbered Talking-Head Overlay",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=8303fddb-dba0-474b-a1cc-58f40728482b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create full-screen overlay that frames a talking head video on the right with a transparent cutout, while numbered bullet points snap into place on the left.",
+      "reference_id": "8303fddb-dba0-474b-a1cc-58f40728482b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Bullet Points Overlay",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=83a77388-8670-4df0-bd5e-b4e3b59c92ce",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a split-screen layout overlay featuring a talking-head video placeholder and four staggered bullet points that instantly pop onto the screen in sequence.",
+      "reference_id": "83a77388-8670-4df0-bd5e-b4e3b59c92ce",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Shopping Tips Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6f06cbe0-4bd3-4382-91cd-e8d6c01a155a",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create shopping Tips Animation infographic template with editable text, metrics, and accent colors.",
+      "reference_id": "6f06cbe0-4bd3-4382-91cd-e8d6c01a155a",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Talking-Head Keyword Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=e816057d-bd49-4a82-880c-d4555a9c1dce",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a full-screen layout featuring sequential bold typography on the left and a rounded transparent cutout window for video on the right.",
+      "reference_id": "e816057d-bd49-4a82-880c-d4555a9c1dce",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Vibe Effects Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=f11ec59a-6c28-4b03-8dae-e9e98516547d",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a bold full-screen title opener with a staggered column wipe-in, italic layered text, and a fast split-exit animation — perfect for high-energy intros and channel branding.",
+      "reference_id": "f11ec59a-6c28-4b03-8dae-e9e98516547d",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Hand-Drawn List Overlay",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=3554d937-05c5-4ffb-835d-aa8db1a48ace",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a playful overlay frame with a transparent video cutout window, bouncy tag badges, and a staggered list reveal animation — perfect for showcasing product features or...",
+      "reference_id": "3554d937-05c5-4ffb-835d-aa8db1a48ace",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Tweet Quote Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=bf565cad-9797-470c-909a-e91e5f5ba0a8",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create pixel-accurate X/Twitter screenshot-style quote card with real avatar, spring animation, light/dark theme. All fields editable.",
+      "reference_id": "bf565cad-9797-470c-909a-e91e5f5ba0a8",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Checklist Animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=0d6f793e-8501-479e-bd78-f75dc32fb0aa",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create checklist Tick Animation infographic template with editable text, metrics, and accent colors.",
+      "reference_id": "0d6f793e-8501-479e-bd78-f75dc32fb0aa",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Dial Chapter Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=c8675840-2115-4060-be44-0d6be2fc8827",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a refined chapter card featuring a rotating dial animation on the left and elegant serif typography on the right. Perfect for segment transitions or product highlights.",
+      "reference_id": "c8675840-2115-4060-be44-0d6be2fc8827",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "AI Video Script Builder",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=442ab610-d550-44e7-901a-aa5d23fef8a9",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a tool that creates short video scripts with hooks, scenes, and timing automatically.",
+      "reference_id": "442ab610-d550-44e7-901a-aa5d23fef8a9",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Chapter page number icon animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=d9970c80-3703-4aa6-a4b1-882d7ce0e906",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, modern chapter title sequence featuring an animated numbered badge and two cascading lines of bold text.",
+      "reference_id": "d9970c80-3703-4aa6-a4b1-882d7ce0e906",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Bar chart growth animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=7d205758-dac2-4df5-9735-7ad781d792af",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a full-screen dual-axis grouped bar chart with staggered growth animations, grid background, and a formula header.",
+      "reference_id": "7d205758-dac2-4df5-9735-7ad781d792af",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Vertical timeline animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=58b32a8f-8d9e-4521-85d6-277dfb37fd68",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a vertical timeline featuring three nodes that appear sequentially with a slow, elegant ease-out cubic animation.",
+      "reference_id": "58b32a8f-8d9e-4521-85d6-277dfb37fd68",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Keyword typing animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=aa69b6e7-ef97-4baf-8594-c614d4d12117",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a two-line text overlay where words slide up individually. A specific set of words receives an expanding colored background highlight block. Contains an organic torn paper...",
+      "reference_id": "aa69b6e7-ef97-4baf-8594-c614d4d12117",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Type emphasis animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=17a91a44-4a0d-42c3-a0fa-f9a7d0613fe5",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dynamic multi-line title card where words slide up and fade in sequentially before sliding out to the left.",
+      "reference_id": "17a91a44-4a0d-42c3-a0fa-f9a7d0613fe5",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Topic Menu",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=924f80bf-9391-405e-8307-7a9bd628e208",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a 3-item animated menu that reveals sequentially top-to-bottom. For each row, the triangle icon pops in first, followed immediately by the text sliding in.",
+      "reference_id": "924f80bf-9391-405e-8307-7a9bd628e208",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Self-Check Questions",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=0d0b9a79-bcc9-4c55-82f3-5a12a2a2a6ce",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a list of questions revealing one by one via soft springs, ending with a final typewriter-effect question and a blinking cursor, set over a deep purple bokeh background.",
+      "reference_id": "0d0b9a79-bcc9-4c55-82f3-5a12a2a2a6ce",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Quote Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=61b838f2-a46c-4118-91e4-1c2d61e5b184",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a vibrant blue-purple gradient quote card that pops in smoothly without bouncing, featuring large stylish oversized quote marks on the corners.",
+      "reference_id": "61b838f2-a46c-4118-91e4-1c2d61e5b184",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Chapter One: Awareness",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=408fe497-5d7c-4301-b0dc-008fa2a0fcf2",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "408fe497-5d7c-4301-b0dc-008fa2a0fcf2",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Chapter Two: Acceptance",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=366dffd3-b6f4-4e47-a05c-37921e5b2852",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "366dffd3-b6f4-4e47-a05c-37921e5b2852",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Chapter Three: Boundaries",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=323a20f6-e2d2-4efb-8053-ec3e315fc6ec",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "323a20f6-e2d2-4efb-8053-ec3e315fc6ec",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Chapter Four: Healing",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=ce7beafd-29bf-45cd-aa55-4e51346bfef6",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "ce7beafd-29bf-45cd-aa55-4e51346bfef6",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Chapter Five: Growth",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=9c22e1ef-0735-46a9-9e63-c4f276aa6592",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a WebGL-powered chapter title card featuring animated glowing fluid backgrounds, large glass-styled numerals, and smooth spring-revealing typographic elements.",
+      "reference_id": "9c22e1ef-0735-46a9-9e63-c4f276aa6592",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Ribbon Statement",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=630caca9-93c5-459c-bae6-6c0bd0338124",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dynamic fluid ribbon draws an S-curve across the screen in 3 phases with a word-by-word staggered text spring reveal.",
+      "reference_id": "630caca9-93c5-459c-bae6-6c0bd0338124",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Number Counter",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=64a9ecbd-cf02-434f-8a36-f2567d061b18",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create two 3D gradient spheres pop in and float smoothly in the background while a large bold central number increments via a staggered slot-machine roll animation.",
+      "reference_id": "64a9ecbd-cf02-434f-8a36-f2567d061b18",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Numbered list card — 4 items with circle stroke animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=fc1c2614-8907-4dd4-b0ea-0ef7f272a3e0",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, dark editorial overlay displaying a sequenced numbered list with animated glowing circle badges and cascading text items.",
+      "reference_id": "fc1c2614-8907-4dd4-b0ea-0ef7f272a3e0",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Revenue counter stat reveal overlay",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=2b8c54b0-3429-481b-8dcd-dbbe3acd8f03",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a cinematic overlay featuring a glowing white title and a vibrant, vivid purple rolling number counter that increments with an ease-out deceleration. Both elements enter...",
+      "reference_id": "2b8c54b0-3429-481b-8dcd-dbbe3acd8f03",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "MindSpace — Weekly Progress Bar Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=d2154a1c-35fa-4685-bbe6-e577adab14bb",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sleek, deep navy and rich purple animated bar chart featuring perfectly timed solid white bars that spring upward sequentially with counting value labels.",
+      "reference_id": "d2154a1c-35fa-4685-bbe6-e577adab14bb",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Retention Graph",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=924424d1-3f6d-4693-819c-c0cfae1aaf11",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "924424d1-3f6d-4693-819c-c0cfae1aaf11",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Chapter overview page — 4-part grid",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=c77f1306-07a0-400c-aa05-303538c87ea0",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a 2x2 grid layout displaying chapter parts with icons, titles, and retro pixel-style subtitles, animating in sequentially.",
+      "reference_id": "c77f1306-07a0-400c-aa05-303538c87ea0",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Quote card slide-in with word-by-word reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=614fbd3c-90b1-4e2b-b52d-e78876757b4b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a semi-transparent quote card drops in smoothly from the top, followed by a word-by-word fade and slide-in effect for the typography.",
+      "reference_id": "614fbd3c-90b1-4e2b-b52d-e78876757b4b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Chapter title card — icon + letter-by-letter reveal with motion blur exit",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=49e0b581-862b-42fc-bb6b-a17d0c3d1668",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a full-screen chapter title with soft organic background waves, an animated popping icon, and beautifully staggered serif typography. Exits with a cinematic slide and...",
+      "reference_id": "49e0b581-862b-42fc-bb6b-a17d0c3d1668",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Principle card — dot background, text left-slide",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=7e9f53fa-3036-47a6-a27f-48acf2e49e48",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a cream panel with a dotted background that slides up from the bottom, followed by text elements sliding in from the left using a fast-to-slow cubic bezier easing.",
+      "reference_id": "7e9f53fa-3036-47a6-a27f-48acf2e49e48",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Numbered pebble-badge list with word reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=847b9656-7989-42c6-ab6a-87a8efe0a20a",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a refined list card with organic pebble-shaped numbered badges and staggered, animated serif text, set over a soft sweeping background.",
+      "reference_id": "847b9656-7989-42c6-ab6a-87a8efe0a20a",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "News info card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=34151422-9674-4a31-a2a7-ade3932e0aef",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "34151422-9674-4a31-a2a7-ade3932e0aef",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Finance Explainer — Bar Chart Diverging Animated",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=b18138db-db81-4e97-8eec-30e69ca071b3",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a editorial grouped bar chart animating Florida vs US popular vote margins from the zero-line with staggered reveals, matching FT visual style.",
+      "reference_id": "b18138db-db81-4e97-8eec-30e69ca071b3",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Finance Explainer — Chapter Marker Notebook",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=a75ac7ba-db04-4266-93b9-9ebd0614dc06",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a notebook-style chapter card that shows three agenda items over a lined paper background photo. Each line gets a yellow highlight that sweeps across the text and then...",
+      "reference_id": "a75ac7ba-db04-4266-93b9-9ebd0614dc06",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Bar chart growth animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=82876903-b57c-44dd-95cf-e5482749b399",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a stylish, infographic-style animated bar chart with dashed outlines, custom colors, and sequential growth animations.",
+      "reference_id": "82876903-b57c-44dd-95cf-e5482749b399",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Finance Explainer — Poll Card Progress Bars",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=4de08f53-df3a-47ed-bd45-e541386b27fa",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a poll card that animates on screen with a question, vote count, and four answer options. Each bar grows from left to right showing the percentage, with the numbers rolling...",
+      "reference_id": "4de08f53-df3a-47ed-bd45-e541386b27fa",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Stock Market lower-third banner animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=e7d1fceb-4526-42bc-b8a7-fec4407e5a51",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a broadcast-style lower third where bold text slides up, followed by a solid color block sliding in from the left to highlight it, finishing with a smooth downward exit.",
+      "reference_id": "e7d1fceb-4526-42bc-b8a7-fec4407e5a51",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "White bold serif text slide-in reveal animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=988db173-b9f1-484e-bbed-9e33c238ff4a",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create two lines of bold serif text sliding in from the left one after another, governed by a dramatic slow-fast-slow Bezier easing curve.",
+      "reference_id": "988db173-b9f1-484e-bbed-9e33c238ff4a",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Lower Third - Ball Swipe Typewriter Reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=b30d07d4-30ba-4db6-8970-093b1cfcecf7",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dynamic lower third sequence where a suspended ball sweeps right, triggering an expanding background and character-by-character typewriter text reveals, finished with a...",
+      "reference_id": "b30d07d4-30ba-4db6-8970-093b1cfcecf7",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Name card animation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=476fed54-d5de-4a5d-85ce-b9c12dc15abb",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a stylish lower-third with a 3-layer sequential drop bar, shoot-on-threes typewriter text, and a rigid mask reveal for the subtitle.",
+      "reference_id": "476fed54-d5de-4a5d-85ce-b9c12dc15abb",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Manychat-style card slide-up with text mask reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=9be0ad20-a161-485b-854f-2695a8710123",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dynamic lower-third card that slides up from the bottom, followed by a leftward sweeping gradient mask reveal of the right-side text details, matching the provided...",
+      "reference_id": "9be0ad20-a161-485b-854f-2695a8710123",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Letter drop title — HOW DO YOU DIFFERENTIATE",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=751adbfe-0a1d-4d9d-97d5-21d050c75442",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create letter-by-letter kinetic title drop with motion blur, glow bloom, and staggered entry.",
+      "reference_id": "751adbfe-0a1d-4d9d-97d5-21d050c75442",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Takeaway lower-third overlay",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=dde936b2-bdc0-411d-800e-9fbfc34e3827",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a broadcast-style lower third featuring a bold title, an animated accent underline, and typewriter-style staggered word reveals for body text.",
+      "reference_id": "dde936b2-bdc0-411d-800e-9fbfc34e3827",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark cinematic chapter title card — \"Number 3 / TONE\"",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=a73aa354-9e8c-459a-a94a-78b0547d9a67",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dark, premium chapter title card featuring a subtle background dot pattern and an intense, blooming text glow effect. Perfect for cinematic transitions and high-end tech...",
+      "reference_id": "a73aa354-9e8c-459a-a94a-78b0547d9a67",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Glowing Ring MG — bullet list reveal",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=a9f9348f-eb15-4064-b5d8-f164dd82cb9b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a cinematic overlay featuring a central expanding glowing ring with sequentially fading text elements and a subtle noise grain background.",
+      "reference_id": "a9f9348f-eb15-4064-b5d8-f164dd82cb9b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Feature Showcase",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=8aedc1d6-c5c8-44f0-9f3d-9ed78fd55f69",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a 6-second animated slide with a pulsing dot-grid background and a clean white card that fades in to display your product screenshot.",
+      "reference_id": "8aedc1d6-c5c8-44f0-9f3d-9ed78fd55f69",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Chapter Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=200c97a4-3958-4074-ba27-1080eb91a5ce",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sleek, tech-inspired startup phase title with animated glowing line and grid canvas grain.",
+      "reference_id": "200c97a4-3958-4074-ba27-1080eb91a5ce",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Spec Sheet",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=99e8292a-f939-469e-82c8-3ff5334ae41b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dark tech layout featuring a neon-flickering title and a staggering list of specs with a typewriter fade-in effect over a subtle animated dot-wave background.",
+      "reference_id": "99e8292a-f939-469e-82c8-3ff5334ae41b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Price Tier Panel",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=ec40c650-4d7d-476f-a891-fe4d722fdcca",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a dynamic half-screen overlay sliding in from the left, featuring a subtle floating dot background and bold broadcast-style condensed text. The right half remains perfectly...",
+      "reference_id": "ec40c650-4d7d-476f-a891-fe4d722fdcca",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Price Badge Popup",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=f4ed16bb-209c-4f61-89ea-4eb6a6909163",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a bold, rounded single-layer price card that bounces in from below with a dynamic skewed price typography.",
+      "reference_id": "f4ed16bb-209c-4f61-89ea-4eb6a6909163",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Generation Two — chapter title card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=82cf935e-d02a-496b-bad3-12a3876328a9",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create motion graphics with this template. Describe your data, message, brand style, or visual changes.",
+      "reference_id": "82cf935e-d02a-496b-bad3-12a3876328a9",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Callout Tag",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=8744f05e-4976-4430-a14e-85a167301c14",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sharp, skewed parallelogram callout that reveals from the vertical center outward, acting as a clean mask for the text inside.",
+      "reference_id": "8744f05e-4976-4430-a14e-85a167301c14",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Dark Tech — Comparison Table",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=9f4d7811-0ee5-4b92-b8cb-35e980edf8ac",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a high-end comparison table featuring a diagonal wipe reveal, sequential staggered row entries (slide in left, line grow right), and an animated sine-wave dot grid...",
+      "reference_id": "9f4d7811-0ee5-4b92-b8cb-35e980edf8ac",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Creative Watercolor — Chapter Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6cb35207-77ab-4538-8b60-9fe32f493460",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant, feminine presentation title featuring soft abstract watercolor washes, organic floral shapes, and refined serif typography.",
+      "reference_id": "6cb35207-77ab-4538-8b60-9fe32f493460",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Creative Watercolor — Company Introduction",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=29c9bddc-0e29-4665-bc2a-bf966aeaac6b",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a warm, organic presentation layout featuring subtle watercolor washes, elegant typography, and a delicate expanding separator line.",
+      "reference_id": "29c9bddc-0e29-4665-bc2a-bf966aeaac6b",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Creative Watercolor — Data Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=d8ed2e4b-8b7e-4b4d-8942-7ac0c4b7800a",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant, warm watercolor-themed pie chart with sequential segment reveals and thin serif typography.",
+      "reference_id": "d8ed2e4b-8b7e-4b4d-8942-7ac0c4b7800a",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Creative Watercolor — Team Members",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6439d0c9-4297-4d3c-9b07-3132668de166",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a soft, elegant presentation of three members with organic watercolor splash backgrounds and painted borders, grouped perfectly under one component.",
+      "reference_id": "6439d0c9-4297-4d3c-9b07-3132668de166",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Creative Watercolor — Timeline",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=3cc81aaa-2429-4be0-acc1-5e39dd946836",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant, organic vertical timeline with watercolor accents and painted markers drawing in sequentially.",
+      "reference_id": "3cc81aaa-2429-4be0-acc1-5e39dd946836",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Group Project — Chapter Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=2c38ab81-0d44-485f-9981-a3e36ef785b6",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a immersive presentation opening slide featuring a dynamic, liquid-silk metallic background with elegant typography animations.",
+      "reference_id": "2c38ab81-0d44-485f-9981-a3e36ef785b6",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Group Project — Company Introduction",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=77c25412-0768-4c6f-a56d-3d78b5481ff0",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a full-screen typographic composition over an animated, fluid liquid metal texture background.",
+      "reference_id": "77c25412-0768-4c6f-a56d-3d78b5481ff0",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Group Project — Data Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=1b401c0b-0bd3-47e0-a64f-93f470e2fb6c",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create four circular progress indicators revealing metrics sequentially over an immersive, animated liquid metal background.",
+      "reference_id": "1b401c0b-0bd3-47e0-a64f-93f470e2fb6c",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Group Project — Team Members",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=4a1c2bc0-9798-4ef4-bbf9-0517cc5ca787",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a full-screen presentation slide featuring a dynamic liquid metal background and three team member portrait areas that sequentially animate into view.",
+      "reference_id": "4a1c2bc0-9798-4ef4-bbf9-0517cc5ca787",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Group Project — Timeline",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=4444d0ce-ac02-4831-ad25-dd90b6aea350",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a immersive 4-phase timeline layered over a rich animated liquid silk background.",
+      "reference_id": "4444d0ce-ac02-4831-ad25-dd90b6aea350",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Minimal Gradient — Chapter Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=5a3d3074-e947-454c-be17-61763d195186",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a editorial title card featuring extreme whitespace, a soft organically drifting gradient blob, and high-contrast mixed-weight serif typography.",
+      "reference_id": "5a3d3074-e947-454c-be17-61763d195186",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Minimal Gradient — Company Introduction",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=7e255237-89e4-40c7-b7f2-bc9c6acfb934",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant minimal layout with oversized typography, extreme whitespace, and a soft drifting gradient orb in the corner.",
+      "reference_id": "7e255237-89e4-40c7-b7f2-bc9c6acfb934",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Minimal Gradient — Data Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=f3fb5e13-4727-45d2-8c1d-fb963b354a1e",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a refined minimal presentation slide featuring a sequential animated donut chart, an organic soft gradient background, and large elegant typography.",
+      "reference_id": "f3fb5e13-4727-45d2-8c1d-fb963b354a1e",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Minimal Gradient — Team Members",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=b5cb1e75-4e94-4f37-b5c6-4c309320b2bd",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a minimal, elegant team presentation slide featuring soft organic background orbs, extremely generous spacing, and sophisticated typography.",
+      "reference_id": "b5cb1e75-4e94-4f37-b5c6-4c309320b2bd",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Minimal Gradient — Timeline",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=75dae426-6c04-4ffd-9de5-9a4c5959d87c",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant, horizontal timeline that reveals 4 milestones over a delicate connecting line with a soft atmospheric gradient background.",
+      "reference_id": "75dae426-6c04-4ffd-9de5-9a4c5959d87c",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Tech Trends 2026 — Chapter Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=1afea496-4002-4a6e-9a22-2e8da948f086",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a stylish title card blending retro pixel display numbers with modern typography and a soft floating gradient background.",
+      "reference_id": "1afea496-4002-4a6e-9a22-2e8da948f086",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Tech Trends 2026 — Company Introduction",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=588b4fb1-6178-4e49-a8f9-42e947c0e4fc",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, modern title slide featuring oversized wide-spaced typography, soft ambient corner gradients, and a generous use of whitespace.",
+      "reference_id": "588b4fb1-6178-4e49-a8f9-42e947c0e4fc",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Tech Trends 2026 — Data Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=c1d4287a-a6b4-4710-a1dd-bc6420554923",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a modern, spacious bar chart animation with a soft gradient blob background and subtle pixel grid styling.",
+      "reference_id": "c1d4287a-a6b4-4710-a1dd-bc6420554923",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Tech Trends 2026 — Team Members",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=5957f338-1913-4571-8f5d-07304f691bec",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a retro-modern grid layout introducing three contributors with pixel-framed portrait placeholders and soft animated gradient blobs in the background.",
+      "reference_id": "5957f338-1913-4571-8f5d-07304f691bec",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Tech Trends 2026 — Timeline",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6ce4db2a-66d0-4c28-b869-6227800d8fa9",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean horizontal timeline animation featuring retro pixel nodes, a modern soft gradient background, and sequential milestone reveals.",
+      "reference_id": "6ce4db2a-66d0-4c28-b869-6227800d8fa9",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Chapter Title Card — Business Overview",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=243aa8dd-9cd9-41ac-8972-05d2e505f036",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a high-contrast, monochrome editorial-style chapter intro featuring an oversized italic number, white serif title, and minimalist geometric bracket frames.",
+      "reference_id": "243aa8dd-9cd9-41ac-8972-05d2e505f036",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Company Introduction — Split Layout",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6d784a29-b0d8-4228-8489-b0f75bf34c0e",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sophisticated split-layout animation featuring a dark architectural photo with geometric lines on the left, and elegant typography fading in on the right.",
+      "reference_id": "6d784a29-b0d8-4228-8489-b0f75bf34c0e",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Data Chart — Investment Portfolio Allocation",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=dd96bb2f-ec3c-466b-84b6-23c5735339b7",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sophisticated monochrome data visualization featuring an animated donut chart with elegantly staggered segments and a precise editorial layout.",
+      "reference_id": "dd96bb2f-ec3c-466b-84b6-23c5735339b7",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Timeline — Company Milestones",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=32da30ba-83e3-43df-94f6-0f62e996a815",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a clean, high-end editorial timeline layout featuring oversized serif typography and a thin geometric spine, perfect for financial documents and corporate milestones.",
+      "reference_id": "32da30ba-83e3-43df-94f6-0f62e996a815",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Team Members — Leadership Grid",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=76002b44-e277-4db9-80ca-a5c9e0cb15f3",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a sophisticated, monochrome 3-column team introduction grid with staggered staggered animation and geometric line frames.",
+      "reference_id": "76002b44-e277-4db9-80ca-a5c9e0cb15f3",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Reconstruction Era — Highlight Quote",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=9c9d88f8-9123-4a5a-8236-cbeca6925318",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant classical slide featuring a Victorian-style drawn border with corner flourishes, a large dash-decorated quote, and a descriptive subtitle. Ideal for introducing...",
+      "reference_id": "9c9d88f8-9123-4a5a-8236-cbeca6925318",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Reconstruction Era — Bullet Points List",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=0f42b597-2b83-4e6c-9a7b-19f9b0b0ef98",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a classical parchment-style layout comparing two historical subjects with animated bullet points.",
+      "reference_id": "0f42b597-2b83-4e6c-9a7b-19f9b0b0ef98",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Reconstruction Era — Data Chart",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=264faf42-2010-4812-94c6-b3c389204815",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant Victorian-style horizontal bar chart on parchment background with drawing border flourishes.",
+      "reference_id": "264faf42-2010-4812-94c6-b3c389204815",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Reconstruction Era — Lower Third Name Tag",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=dbbdb754-7b3f-49c9-afd6-c4fea2afeec3",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a elegant Victorian-style lower-third with an aged parchment texture, ornate corner flourishes, and classic serif typography.",
+      "reference_id": "dbbdb754-7b3f-49c9-afd6-c4fea2afeec3",
+      "preview_video_url": "",
+      "poster_url": ""
+    },
+    {
+      "name": "Reconstruction Era — Chapter Title Card",
+      "entry_url": "https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=7e87da3a-f175-4c83-bf8b-e59e4ba24269",
+      "target": "motion-graphics",
+      "category": "Motion Graphics",
+      "description": "Create a ornate Victorian-era presentation title card with parchment background, elegant scrollwork borders, and classic serif typography.",
+      "reference_id": "7e87da3a-f175-4c83-bf8b-e59e4ba24269",
+      "preview_video_url": "",
+      "poster_url": ""
+    }
+  ]
+}

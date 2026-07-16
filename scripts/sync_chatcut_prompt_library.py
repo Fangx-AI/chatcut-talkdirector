@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 from collections import Counter
 from datetime import date
 from html.parser import HTMLParser
@@ -33,12 +34,19 @@ class PromptCardParser(HTMLParser):
         if tag == "a" and "data-prompt-library-card" in attributes:
             self.current = {
                 "name": attributes.get("aria-label") or "",
-                "url": attributes.get("href") or "",
+                "entry_url": attributes.get("href") or "",
                 "depth": 1,
                 "texts": [],
+                "preview_video_url": "",
+                "poster_url": "",
             }
         elif self.current is not None:
             self.current["depth"] = int(self.current["depth"]) + 1
+            if tag == "video":
+                self.current["preview_video_url"] = attributes.get("src") or ""
+                self.current["poster_url"] = attributes.get("poster") or ""
+            elif tag == "source" and not self.current["preview_video_url"]:
+                self.current["preview_video_url"] = attributes.get("src") or ""
 
     def handle_endtag(self, _tag: str) -> None:
         if self.current is None:
@@ -58,11 +66,7 @@ class PromptCardParser(HTMLParser):
             texts.append(text)
 
 
-def fetch_cards() -> list[dict[str, str]]:
-    request = Request(SOURCE_URL, headers={"User-Agent": "TalkDirector catalog sync"})
-    with urlopen(request, timeout=30) as response:
-        page = response.read().decode("utf-8")
-
+def parse_cards(page: str, enforce_minimum: bool = False) -> list[dict[str, str]]:
     parser = PromptCardParser()
     parser.feed(page)
     cards: list[dict[str, str]] = []
@@ -70,13 +74,13 @@ def fetch_cards() -> list[dict[str, str]]:
 
     for raw in parser.cards:
         name = html.unescape(str(raw["name"])).strip()
-        url = html.unescape(str(raw["url"])).strip()
-        key = (name, url)
-        if not name or not url or key in seen:
+        entry_url = html.unescape(str(raw["entry_url"])).strip()
+        key = (name, entry_url)
+        if not name or not entry_url or key in seen:
             continue
         seen.add(key)
 
-        query = parse_qs(urlparse(url).query)
+        query = parse_qs(urlparse(entry_url).query)
         target = query.get("target", ["uncategorized"])[0]
         texts = [html.unescape(str(value)).strip() for value in raw["texts"]]
         description = next(
@@ -95,15 +99,19 @@ def fetch_cards() -> list[dict[str, str]]:
         cards.append(
             {
                 "name": name,
-                "url": url,
+                "entry_url": entry_url,
                 "target": target,
                 "category": CATEGORY_LABELS.get(target, target),
                 "description": description,
                 "reference_id": reference_id,
+                "preview_video_url": html.unescape(
+                    str(raw["preview_video_url"])
+                ).strip(),
+                "poster_url": html.unescape(str(raw["poster_url"])).strip(),
             }
         )
 
-    if len(cards) < MIN_EXPECTED_CARDS:
+    if enforce_minimum and len(cards) < MIN_EXPECTED_CARDS:
         raise RuntimeError(
             f"Only found {len(cards)} cards; expected at least {MIN_EXPECTED_CARDS}. "
             "The official page structure may have changed."
@@ -111,16 +119,24 @@ def fetch_cards() -> list[dict[str, str]]:
     return cards
 
 
+def fetch_cards() -> list[dict[str, str]]:
+    request = Request(SOURCE_URL, headers={"User-Agent": "TalkDirector catalog sync"})
+    with urlopen(request, timeout=30) as response:
+        page = response.read().decode("utf-8")
+    return parse_cards(page, enforce_minimum=True)
+
+
 def escape_cell(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ").strip()
 
 
-def render_catalog(cards: list[dict[str, str]]) -> str:
+def render_catalog(cards: list[dict[str, str]], synced_on: str | None = None) -> str:
+    synced_on = synced_on or date.today().isoformat()
     counts = Counter(card["category"] for card in cards)
     lines = [
         "# ChatCut 官方 Prompt Library 完整目录",
         "",
-        f"最后同步：{date.today().isoformat()}",
+        f"最后同步：{synced_on}",
         f"官方来源：{SOURCE_URL}",
         f"收录条目：{len(cards)}",
         "",
@@ -163,10 +179,21 @@ def render_catalog(cards: list[dict[str, str]]) -> str:
                     name=escape_cell(card["name"]),
                     description=escape_cell(card["description"]),
                     reference_id=escape_cell(reference_id),
-                    url=card["url"],
+                    url=card["entry_url"],
                 )
             )
     return "\n".join(lines) + "\n"
+
+
+def render_catalog_json(cards: list[dict[str, str]], synced_on: str) -> str:
+    payload = {
+        "source_url": SOURCE_URL,
+        "synced_on": synced_on,
+        "count": len(cards),
+        "category_counts": dict(Counter(card["category"] for card in cards)),
+        "entries": cards,
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
 
 
 def main() -> None:
@@ -176,12 +203,25 @@ def main() -> None:
         default="references/chatcut-official-catalog.md",
         help="Catalog output path relative to the current working directory.",
     )
+    parser.add_argument(
+        "--json-output",
+        default="references/chatcut-official-catalog.json",
+        help="Machine-readable catalog output path.",
+    )
     args = parser.parse_args()
     output = Path(args.output)
+    json_output = Path(args.json_output)
     output.parent.mkdir(parents=True, exist_ok=True)
+    json_output.parent.mkdir(parents=True, exist_ok=True)
     cards = fetch_cards()
-    output.write_text(render_catalog(cards), encoding="utf-8", newline="\n")
-    print(f"Wrote {len(cards)} official entries to {output}")
+    synced_on = date.today().isoformat()
+    output.write_text(
+        render_catalog(cards, synced_on), encoding="utf-8", newline="\n"
+    )
+    json_output.write_text(
+        render_catalog_json(cards, synced_on), encoding="utf-8", newline="\n"
+    )
+    print(f"Wrote {len(cards)} official entries to {output} and {json_output}")
 
 
 if __name__ == "__main__":
