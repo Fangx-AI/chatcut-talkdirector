@@ -49,6 +49,8 @@ The first explicit confirmation must cover the visual language, speaker treatmen
 2. If the project has no transcript, use `chatcut:transcription` only to inspect the source. If the project is inaccessible, ask for the transcript or timestamped script.
 3. Ask at most one question, and only when the answer would change the visual language, composition, or execution risk. Otherwise state a director assumption and continue.
 
+For gesture-triggered effects, require an exact user-confirmed time range before acquiring assets, creating MG, generating media, or modifying the timeline. If the range is missing or contains several plausible gestures, inspect candidate frames and ask only for the exact range. Do not infer the target gesture merely because hands are moving. After confirmation, inspect the beginning, each gesture trigger, the settled pose, and the withdrawal frames.
+
 ## Load References
 
 Load these planning references in order:
@@ -66,6 +68,7 @@ Then load only the specialist references required by candidate Beats:
 | Official structures or prompt syntax | `references/chatcut-official-prompt-patterns.md` |
 | Full-screen, PiP, split-screen, or speaker placement | `references/composition-and-speaker-presence.md` |
 | Keywords, lists, charts, chapter cards, or other MG | `references/mg-animation-director.md` |
+| Gesture-anchored official brand Logo pop | `references/prompt-001-gesture-logo-pop.md` |
 | Generated visuals, generated images, or B-roll | `references/generated-visuals-director.md` |
 | Complete output examples | `references/examples-zh.md` or `references/examples-en.md` |
 
@@ -79,6 +82,8 @@ Treat official ChatCut patterns as information-structure and motion references, 
 4. Protect the face, captions, gestures, product, Logo, existing text, and motion paths. PiP placement follows actual safe space; lower-right is never a default.
 5. Keep one purpose and one visual focus per Beat. A generated Beat defaults to one continuous shot and one primary camera move. Give every reference asset one explicit responsibility.
 6. Apply the Quality Gate; delete or downgrade weak, obstructive, misleading, or visually cheap candidates.
+
+For real brands, acquire verifiable official assets in this order: existing project asset -> official Brand/Press/Media Kit -> official website SVG/PNG -> official app-store icon -> official favicon. If no source can be verified, ask the user. Never use image or video generation to imitate a real Logo. Cropping a single mark from an official composite asset is allowed; redrawing or stylistically altering it is not.
 
 ## Output
 
