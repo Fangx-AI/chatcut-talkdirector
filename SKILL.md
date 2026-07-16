@@ -83,7 +83,7 @@ Treat official ChatCut patterns as information-structure and motion references, 
 5. Keep one purpose and one visual focus per Beat. A generated Beat defaults to one continuous shot and one primary camera move. Give every reference asset one explicit responsibility.
 6. Apply the Quality Gate; delete or downgrade weak, obstructive, misleading, or visually cheap candidates.
 
-For real brands, acquire verifiable official assets in this order: existing project asset -> official Brand/Press/Media Kit -> official website SVG/PNG -> official app-store icon -> official favicon. If no source can be verified, ask the user. Never use image or video generation to imitate a real Logo. Cropping a single mark from an official composite asset is allowed; redrawing or stylistically altering it is not.
+For real brands, acquire verifiable official assets in this order: existing project asset -> official Brand/Press/Media Kit -> official website SVG/PNG -> official app-store icon -> official favicon. If no source can be verified, ask the user. Never use image or video generation to imitate a real Logo. Cropping a single mark from an official composite asset is allowed; redrawing or stylistically altering it is not. Treat every requested brand as an independent dynamic input: verify the exact product identity, inspect the actual image/SVG canvas, and assign per-asset fit mode, scale, crop, offsets, and contrast-safe background. Never reuse brand-specific normalization as a left/right slot default or assume a filename contains a single mark. Preview every normalized Logo before timeline placement.
 
 ## Output
 
