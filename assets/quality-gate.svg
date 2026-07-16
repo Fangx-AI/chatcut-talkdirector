@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TalkDirector 质量门</title>
+  <desc id="desc">左侧否决堆叠过载的视觉效果，右侧接受少量高价值视觉节拍。</desc>
+  <style>
+    .bg{fill:#0B0C0D}.panel{fill:#151718;stroke:#3B3E3B;stroke-width:2}.ink{fill:#F2EBDD}.muted{fill:#A9AAA3}.green{fill:#B7F34A}.red{fill:#E6503C}.line{fill:none;stroke:#777B75;stroke-width:3}.redline{fill:none;stroke:#E6503C;stroke-width:12}.greenline{fill:none;stroke:#B7F34A;stroke-width:5}.label{font:700 22px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:2px}.h1{font:600 58px Georgia,"Times New Roman","Microsoft YaHei",serif}.h2{font:650 36px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.body{font:500 25px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.small{font:650 19px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:1px}
+  </style>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="green label" x="76" y="78">QUALITY GATE / 03</text>
+  <text class="ink h1" x="76" y="148">不是更多，而是更值得</text>
+
+  <rect class="panel" x="76" y="220" width="678" height="566" rx="4"/>
+  <text class="red label" x="118" y="274">REJECT / 过载</text>
+  <text class="ink h2" x="118" y="330">每句话都加效果</text>
+  <g transform="translate(118 382)">
+    <rect class="panel" width="234" height="92" rx="3"/>
+    <text class="ink body" x="28" y="56">弹字</text>
+    <rect class="green" x="176" y="24" width="30" height="44"/>
+    <rect class="panel" x="258" width="248" height="92" rx="3"/>
+    <text class="ink body" x="286" y="56">贴纸 + 音效</text>
+    <circle class="red" cx="474" cy="46" r="13"/>
+    <rect class="panel" y="116" width="196" height="92" rx="3"/>
+    <text class="ink body" x="28" y="172">推拉</text>
+    <path class="greenline" d="M140 162h28m-14-14 14 14-14 14"/>
+    <rect class="panel" x="220" y="116" width="286" height="92" rx="3"/>
+    <text class="ink body" x="248" y="172">转场 + 粒子</text>
+    <circle class="muted" cx="458" cy="147" r="6"/>
+    <circle class="muted" cx="474" cy="164" r="5"/>
+    <circle class="muted" cx="445" cy="176" r="4"/>
+    <rect class="panel" y="232" width="276" height="92" rx="3"/>
+    <text class="ink body" x="28" y="288">无关 B-roll</text>
+    <rect class="red" x="218" y="259" width="30" height="36"/>
+    <rect class="panel" x="300" y="232" width="206" height="92" rx="3"/>
+    <text class="ink body" x="328" y="288">满屏标签</text>
+  </g>
+  <path class="redline" d="M142 358L688 730M688 358L142 730"/>
+  <text class="muted small" x="118" y="752">密度遮住论点，也削弱人物。</text>
+
+  <rect class="panel" x="846" y="220" width="678" height="566" rx="4"/>
+  <text class="green label" x="888" y="274">ACCEPT / 高价值</text>
+  <text class="ink h2" x="888" y="330">只在关键判断介入</text>
+  <line class="line" x1="900" y1="534" x2="1462" y2="534"/>
+  <g>
+    <line class="line" x1="932" y1="510" x2="932" y2="558"/>
+    <line class="line" x1="1112" y1="510" x2="1112" y2="558"/>
+    <line class="line" x1="1292" y1="510" x2="1292" y2="558"/>
+    <line class="line" x1="1462" y1="510" x2="1462" y2="558"/>
+    <rect class="green" x="1000" y="474" width="24" height="120"/>
+    <rect class="green" x="1192" y="474" width="24" height="120"/>
+    <rect class="green" x="1384" y="474" width="24" height="120"/>
+    <text class="green small" x="984" y="448">BEAT 01</text>
+    <text class="green small" x="1176" y="448">BEAT 02</text>
+    <text class="green small" x="1368" y="448">BEAT 03</text>
+  </g>
+  <text class="muted small" x="900" y="614">人物主导</text>
+  <text class="muted small" x="1166" y="614">信息聚焦</text>
+  <text class="muted small" x="1370" y="614">回到人物</text>
+  <circle class="green" cx="914" cy="686" r="18"/>
+  <path class="bg" d="M905 686l7 8 14-18 6 5-20 25-13-15z"/>
+  <text class="ink body" x="950" y="696">清晰 · 真实 · 不遮挡</text>
+  <text class="muted small" x="888" y="752">稀疏 Beats 让每次介入都有意义。</text>
+</svg>

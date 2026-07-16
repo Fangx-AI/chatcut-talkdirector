@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TalkDirector 导演流程</title>
+  <desc id="desc">从逐字稿进入导演判断，再路由到保留人物、MG、生成画面、分屏或全屏的流程图。</desc>
+  <style>
+    .bg{fill:#0B0C0D}.panel{fill:#151718;stroke:#3B3E3B;stroke-width:2}.panel-hot{fill:#151718;stroke:#B7F34A;stroke-width:4}.ink{fill:#F2EBDD}.muted{fill:#A9AAA3}.green{fill:#B7F34A}.red{fill:#E6503C}.line{fill:none;stroke:#777B75;stroke-width:3}.route{fill:none;stroke:#B7F34A;stroke-width:4}.label{font:700 22px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:2px}.h1{font:600 58px Georgia,"Times New Roman","Microsoft YaHei",serif}.h2{font:650 38px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.body{font:500 26px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.small{font:600 20px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:1px}
+  </style>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="green label" x="76" y="78">DIRECTING FLOW / 01</text>
+  <text class="ink h1" x="76" y="148">逐字稿不是效果清单</text>
+  <text class="muted body" x="76" y="194">先读意图，再选择画面介入方式。</text>
+
+  <rect class="panel" x="76" y="280" width="300" height="330" rx="4"/>
+  <rect class="green" x="76" y="280" width="9" height="330"/>
+  <text class="green label" x="116" y="328">INPUT</text>
+  <text class="ink h2" x="116" y="390">逐字稿</text>
+  <line class="line" x1="116" y1="438" x2="326" y2="438"/>
+  <line class="line" x1="116" y1="478" x2="286" y2="478"/>
+  <line class="line" x1="116" y1="518" x2="314" y2="518"/>
+  <text class="muted small" x="116" y="568">锚点 · 语义 · 节奏</text>
+
+  <path class="route" d="M376 445H492"/>
+  <path class="green" d="M492 445l-18-12v24z"/>
+
+  <rect class="panel-hot" x="510" y="280" width="380" height="330" rx="4"/>
+  <text class="green label" x="550" y="328">QUALITY GATE</text>
+  <text class="ink h2" x="550" y="390">导演判断</text>
+  <text class="muted body" x="550" y="448">这句话需要视觉吗？</text>
+  <text class="muted body" x="550" y="494">保护人物与字幕吗？</text>
+  <text class="muted body" x="550" y="540">是否真实、清晰、值得？</text>
+  <circle class="green" cx="846" cy="326" r="10"/>
+
+  <path class="route" d="M890 445H975V300"/>
+  <path class="route" d="M975 300V700"/>
+  <path class="route" d="M975 300H1034M975 400H1034M975 500H1034M975 600H1034M975 700H1034"/>
+
+  <g>
+    <rect class="panel" x="1034" y="250" width="490" height="82" rx="4"/>
+    <rect class="green" x="1034" y="250" width="8" height="82"/>
+    <text class="ink h2" x="1074" y="303">保留人物</text>
+    <text class="muted small" x="1350" y="300">KEEP CLEAN</text>
+  </g>
+  <g>
+    <rect class="panel" x="1034" y="350" width="490" height="82" rx="4"/>
+    <rect class="green" x="1034" y="350" width="8" height="82"/>
+    <text class="ink h2" x="1074" y="403">MG</text>
+    <text class="muted small" x="1235" y="400">EDITABLE GRAPHICS</text>
+  </g>
+  <g>
+    <rect class="panel" x="1034" y="450" width="490" height="82" rx="4"/>
+    <rect class="green" x="1034" y="450" width="8" height="82"/>
+    <text class="ink h2" x="1074" y="503">生成画面</text>
+    <text class="muted small" x="1350" y="500">GENERATED</text>
+  </g>
+  <g>
+    <rect class="panel" x="1034" y="550" width="490" height="82" rx="4"/>
+    <rect class="green" x="1034" y="550" width="8" height="82"/>
+    <text class="ink h2" x="1074" y="603">分屏</text>
+    <text class="muted small" x="1344" y="600">SPLIT SCREEN</text>
+  </g>
+  <g>
+    <rect class="panel" x="1034" y="650" width="490" height="82" rx="4"/>
+    <rect class="red" x="1034" y="650" width="8" height="82"/>
+    <text class="ink h2" x="1074" y="703">全屏</text>
+    <text class="muted small" x="1386" y="700">FULL FRAME</text>
+  </g>
+
+  <text class="muted small" x="76" y="824">READ</text>
+  <line class="line" x1="154" y1="817" x2="384" y2="817"/>
+  <text class="muted small" x="415" y="824">ROUTE</text>
+  <line class="line" x1="516" y1="817" x2="746" y2="817"/>
+  <text class="muted small" x="777" y="824">DIRECT</text>
+  <line class="line" x1="890" y1="817" x2="1120" y2="817"/>
+  <text class="muted small" x="1150" y="824">VERIFY</text>
+</svg>

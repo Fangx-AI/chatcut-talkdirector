@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TalkDirector 构图图谱</title>
+  <desc id="desc">原画面、分屏、自适应画中画和短暂全屏四种构图，并示意人物窗口在不同安全区域的位置。</desc>
+  <style>
+    .bg{fill:#0B0C0D}.frame{fill:#151718;stroke:#4A4D49;stroke-width:3}.safe{fill:none;stroke:#777B75;stroke-width:2;stroke-dasharray:10 10}.pip{fill:#252827;stroke:#B7F34A;stroke-width:4}.media{fill:#252827}.ink{fill:#F2EBDD}.muted{fill:#A9AAA3}.green{fill:#B7F34A}.red{fill:#E6503C}.line{stroke:#777B75;stroke-width:3}.label{font:700 22px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:2px}.h1{font:600 58px Georgia,"Times New Roman","Microsoft YaHei",serif}.h2{font:650 34px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.small{font:600 18px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:1px}.num{font:700 20px Inter,"Segoe UI",sans-serif}
+  </style>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="green label" x="76" y="78">COMPOSITION ATLAS / 02</text>
+  <text class="ink h1" x="76" y="148">人物位置跟着信息焦点走</text>
+  <text class="muted small" x="1268" y="82">16:9 SAFE AREAS</text>
+
+  <!-- 原画面 -->
+  <g transform="translate(76 190)">
+    <rect class="frame" width="690" height="255" rx="4"/>
+    <rect class="safe" x="28" y="25" width="634" height="205" rx="2"/>
+    <line class="line" x1="345" y1="25" x2="345" y2="230"/>
+    <circle class="ink" cx="477" cy="93" r="34"/>
+    <path class="ink" d="M407 198c4-57 31-83 70-83s66 26 70 83z"/>
+    <rect class="pip" x="42" y="151" width="148" height="60" rx="2"/>
+    <text class="green small" x="58" y="188">SAFE 01</text>
+    <rect class="green" x="0" y="278" width="42" height="4"/>
+    <text class="ink h2" x="0" y="327">原画面</text>
+    <text class="muted small" x="540" y="323">01 / CLEAN</text>
+  </g>
+
+  <!-- 分屏 -->
+  <g transform="translate(834 190)">
+    <rect class="frame" width="690" height="255" rx="4"/>
+    <rect class="safe" x="28" y="25" width="634" height="205" rx="2"/>
+    <rect class="media" x="345" y="0" width="345" height="255"/>
+    <line class="line" x1="345" y1="0" x2="345" y2="255"/>
+    <circle class="ink" cx="178" cy="91" r="32"/>
+    <path class="ink" d="M113 198c5-54 29-78 65-78s60 24 65 78z"/>
+    <rect class="pip" x="500" y="42" width="148" height="60" rx="2"/>
+    <text class="green small" x="516" y="79">SAFE 02</text>
+    <rect class="green" x="0" y="278" width="42" height="4"/>
+    <text class="ink h2" x="0" y="327">分屏</text>
+    <text class="muted small" x="538" y="323">02 / SPLIT</text>
+  </g>
+
+  <!-- 自适应 PiP -->
+  <g transform="translate(76 535)">
+    <rect class="frame" width="690" height="255" rx="4"/>
+    <rect class="safe" x="28" y="25" width="634" height="205" rx="2"/>
+    <rect class="media" x="28" y="25" width="634" height="205"/>
+    <rect class="pip" x="472" y="124" width="166" height="88" rx="2"/>
+    <circle class="ink" cx="555" cy="153" r="18"/>
+    <path class="ink" d="M518 199c3-29 17-42 37-42s34 13 37 42z"/>
+    <text class="green small" x="44" y="58">SAFE 03</text>
+    <rect class="green" x="0" y="278" width="42" height="4"/>
+    <text class="ink h2" x="0" y="327">自适应 PiP</text>
+    <text class="muted small" x="508" y="323">03 / ADAPT</text>
+  </g>
+
+  <!-- 短暂全屏 -->
+  <g transform="translate(834 535)">
+    <rect class="frame" width="690" height="255" rx="4"/>
+    <rect class="media" width="690" height="255" rx="4"/>
+    <rect class="safe" x="28" y="25" width="634" height="205" rx="2"/>
+    <path class="green" d="M319 82h52v11h-52zM302 108h86v11h-86zM282 134h126v11H282z"/>
+    <rect class="pip" x="42" y="42" width="148" height="60" rx="2"/>
+    <text class="green small" x="58" y="79">SAFE 04</text>
+    <circle class="red" cx="642" cy="48" r="8"/>
+    <rect class="green" x="0" y="278" width="42" height="4"/>
+    <text class="ink h2" x="0" y="327">短暂全屏</text>
+    <text class="muted small" x="517" y="323">04 / FOCUS</text>
+  </g>
+</svg>

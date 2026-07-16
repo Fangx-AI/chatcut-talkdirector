@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TalkDirector Visual Beat Map 示例</title>
+  <desc id="desc">一个尚未获批、不会触发生成或时间线修改的视觉节拍规划示例，包含锚点、目的、媒介、人物处理、提示词、风险和审批状态。</desc>
+  <style>
+    .bg{fill:#0B0C0D}.panel{fill:#151718;stroke:#3B3E3B;stroke-width:2}.panel-hot{fill:#151718;stroke:#B7F34A;stroke-width:3}.ink{fill:#F2EBDD}.muted{fill:#A9AAA3}.green{fill:#B7F34A}.red{fill:#E6503C}.line{stroke:#3B3E3B;stroke-width:2}.label{font:700 20px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:2px}.h1{font:600 56px Georgia,"Times New Roman","Microsoft YaHei",serif}.h2{font:650 33px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.body{font:500 24px Inter,"Segoe UI","Microsoft YaHei",sans-serif}.small{font:600 18px Inter,"Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:1px}.mono{font:600 21px Consolas,"Microsoft YaHei",monospace}
+  </style>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="green label" x="76" y="74">VISUAL BEAT MAP / 04</text>
+  <text class="ink h1" x="76" y="140">先确认一个 Beat，再扩展</text>
+  <rect class="red" x="1328" y="60" width="196" height="46" rx="3"/>
+  <text class="bg label" x="1354" y="91">PENDING</text>
+
+  <rect class="panel-hot" x="76" y="200" width="1448" height="606" rx="4"/>
+  <rect class="green" x="76" y="200" width="12" height="606"/>
+
+  <text class="muted label" x="124" y="252">REPRESENTATIVE BEAT / 01</text>
+  <text class="ink h2" x="124" y="307">示例锚点：“接下来只看三个关键判断。”</text>
+  <text class="red small" x="1196" y="300">需与逐字稿逐字核对</text>
+  <line class="line" x1="124" y1="340" x2="1476" y2="340"/>
+
+  <g>
+    <text class="green label" x="124" y="392">PURPOSE / 目的</text>
+    <text class="ink body" x="124" y="435">把口头枚举变成可扫描的三项结构。</text>
+
+    <text class="green label" x="124" y="501">MEDIUM / 媒介</text>
+    <text class="ink body" x="124" y="544">MG · 三项编号卡片 · 无生成素材</text>
+
+    <text class="green label" x="124" y="610">SPEAKER / 人物</text>
+    <text class="ink body" x="124" y="653">人物保留右侧 38%，面部与手势不遮挡。</text>
+
+    <text class="green label" x="124" y="719">RISK / 风险</text>
+    <text class="ink body" x="124" y="762">原文不足时不得补写三项内容。</text>
+  </g>
+
+  <line class="line" x1="790" y1="376" x2="790" y2="762"/>
+
+  <g>
+    <text class="green label" x="844" y="392">CHATCUT USER PROMPT / 提示词</text>
+    <rect class="panel" x="844" y="420" width="582" height="138" rx="3"/>
+    <text class="ink mono" x="876" y="462">在逐字稿锚点处加入三项编号 MG，</text>
+    <text class="ink mono" x="876" y="500">沿用原文，人物保留右侧，字幕安全。</text>
+    <text class="muted mono" x="876" y="538">文字、颜色、时长、人物窗口可编辑。</text>
+
+    <text class="green label" x="844" y="610">APPROVAL / 审批状态</text>
+    <rect class="red" x="844" y="638" width="218" height="58" rx="3"/>
+    <text class="bg label" x="878" y="675">未确认 · 不执行</text>
+    <text class="muted body" x="844" y="744">当前不生成素材、不修改时间线、不消耗额度。</text>
+  </g>
+
+  <text class="muted small" x="76" y="858">MAP → FIRST APPROVAL → ONE BEAT → VERIFY ACTUAL RESULT → SECOND APPROVAL → EXPAND</text>
+</svg>
