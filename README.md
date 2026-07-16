@@ -1,87 +1,117 @@
 <div align="center">
 
-![ChatCut TalkDirector — 读懂口播，导演画面](assets/hero.png)
+![ChatCut TalkDirector - 读懂口播，导演画面](assets/hero.png)
 
 # ChatCut TalkDirector
 
-**Read the words. Direct the visuals.**<br>
-**读懂口播，导演画面。**
+**专为口播视频打造的 ChatCut 视觉导演 Skill**
 
-专门为已经拍好的口播视频做视觉导演：读懂文案，再判断何时保留人物、加入 MG、补充生成画面、改变构图，或让画面保持干净。
+读懂文案与人物动作，在真正值得强化的时刻加入动态图标、关键词、数据图表、补充画面与高级转场。
 
-[![Scenarios](https://img.shields.io/badge/scenarios-9%2F9-B7F34A?style=flat-square&labelColor=0B0C0D)](#验证)
-[![Official Prompts](https://img.shields.io/badge/official_prompts-123-B7F34A?style=flat-square&labelColor=0B0C0D)](references/chatcut-official-catalog.md)
-[![References](https://img.shields.io/badge/references-15-F2EBDD?style=flat-square&labelColor=0B0C0D)](references)
-[![Skill](https://img.shields.io/badge/skill-ChatCut-E6503C?style=flat-square&labelColor=0B0C0D)](SKILL.md)
+[![Verified Prompt](https://img.shields.io/badge/Verified_Prompt-001-E6503C?style=flat-square&labelColor=0B0C0D)](#verified-prompt-series)
+[![Official Effects](https://img.shields.io/badge/Official_Effects-123-B7F34A?style=flat-square&labelColor=0B0C0D)](VISUAL-GALLERY.md)
+[![Made for ChatCut](https://img.shields.io/badge/Made_for-ChatCut-F2EBDD?style=flat-square&labelColor=0B0C0D)](https://chatcut.io/)
 
-[为什么](#为什么需要它) · [怎么工作](#怎么工作) · [视觉判断](#视觉判断) · [示例](#visual-beat-map-示例) · [安装](#安装)
+[看真实效果](#先看效果) · [复制 Prompt](#直接使用) · [浏览 123 个官方效果](VISUAL-GALLERY.md) · [安装](#安装)
 
 </div>
 
-## 为什么需要它
+## 先看效果
 
-已经拍好的口播，往往内容足够强，画面却长时间停留在同一种人物构图里。
+<div align="center">
 
-给每句话都加特效并不会解决问题。过高的视觉密度会让成片更廉价，也让观众更难抓住真正重要的信息。
+[![Prompt 001 - 手势触发双侧官方 Logo 弹出](assets/verified-prompts/prompt-001-gesture-logo-pop.gif)](assets/verified-prompts/prompt-001-gesture-logo-pop.mp4)
 
-## 怎么工作
+**Prompt 001 · 手势锚定通用 Logo 弹出**<br>
+人物保持全屏，两个官方 Logo 跟随真实手势依次弹出，并在手势结束时退场。
 
-TalkDirector 读取逐字稿中的原文锚点，找到高价值时刻，再把它们分流到保留人物、MG、生成画面、B-roll 或保持干净。
+</div>
 
-![从逐字稿到视觉分流的导演流程](assets/directing-flow.png)
-
-视觉跟随语义：需要信任时保留人物，需要解释时建立关系，需要证据时使用真实素材，不增加理解时就不加效果。
-
-扩展整条视频之前，只执行一个有代表性的 Beat，核验实际开始、中段和结束画面，再等待第二次确认。
-
-规划本身从不授权生成素材、修改时间线或消耗额度。任何执行都必须经过明确确认。
-
-## 视觉判断
-
-| Route | Use when | Speaker |
-| --- | --- | --- |
-| 保持人物 | 表情、信任和语气更重要 | 全幅保留 |
-| MG | 关键词、步骤、关系或数字需要解释 | 原画面、分屏或透明叠加 |
-| 生成画面 | 抽象隐喻或缺少可用画面 | 短暂全屏或分屏 |
-| B-roll | 有真实素材可以补充事实 | 人物让位 |
-| 保持干净 | 视觉不会增加理解 | 不加效果 |
-
-![人物构图与画面让位方式](assets/composition-atlas.png)
-
-人物位置由真实安全区决定。右下角 PiP 只是候选构图，永远不是默认值。
-
-## Quality Gate
-
-![从效果堆叠到稀疏高价值 Beat 的质量门禁](assets/quality-gate.png)
-
-- 每个 Beat 只有一个目的和一个视觉焦点。
-- 单个 Beat 最多保留两种廉价效果家族。
-- 保护脸、字幕、手势、产品、Logo 和运动路径。
-- 生成 Beat 默认使用一个连续镜头和一个主运镜。
-
-完整规则见 [视觉质量门禁](references/quality-gate.md)。
-
-## Visual Beat Map 示例
-
-![可确认的 Visual Beat Map 示例](assets/visual-beat-map.png)
-
-Visual Beat Map 先把原文锚点、视觉目的、手段、人物处理、提示词、风险和确认状态写清楚，再进入执行。查看[中文完整示例](references/examples-zh.md)或[英文完整示例](references/examples-en.md)。
-
-## 官方 Prompt 优先
-
-TalkDirector 收录 ChatCut 官方 Prompt Library 的完整可检索目录。用户需求与官方方案完全匹配时，优先使用官方入口或模板 ID；部分匹配时复用经过验证的信息结构和动效逻辑；没有匹配时才创建定制方案。
-
-匹配依据是观看任务、信息结构、媒介和主要动效，不是颜色或材质相似。官方模板仍需根据真实人物、字幕、手势、产品、品牌和安全区调整，并通过同一套 Quality Gate。查看 [123 个官方 Prompt 目录](references/chatcut-official-catalog.md)和[路由规则](references/chatcut-prompt-routing.md)。
-
-## 已验证 Prompt
-
-### Prompt 001 · 手势锚定通用 Logo 弹出
+### 直接使用
 
 ```text
 在 [时间段]，给人物两侧的指向手势添加 [品牌 A] 和 [品牌 B] 的官方 Logo 弹出特效：[品牌 A] 在画面左侧，[品牌 B] 在画面右侧，分别跟随对应手指抬起时弹出，手势结束时退场。请自动获取可验证的官方 Logo，保持人物全屏，不遮挡脸、字幕、手和产品，并先展示关键帧让我确认。
 ```
 
-品牌名称是动态输入。ChatCut、Claude Code、Cursor、Hyperframes 或其他产品都使用同一条 Prompt；TalkDirector 会确认准确产品，按官方来源顺序获取 Logo，为每个素材独立处理留白、裁切、缩放、颜色版本和触发时刻。完整导演规则、动画参数和验证帧要求见 [Prompt 001](references/prompt-001-gesture-logo-pop.md)。
+只需替换时间段和品牌名。ChatCut、Claude Code、Cursor、Hyperframes 或其他产品都可以动态识别；TalkDirector 会查找可验证的官方 Logo，并根据每个素材单独处理比例、留白与触发时刻。
+
+[查看 Prompt 001 的完整说明](references/prompt-001-gesture-logo-pop.md)
+
+## Verified Prompt Series
+
+每个 Prompt 都从一个具体的口播剪辑需求出发，先在真实时间线上完成，再公开可直接使用的用户 Prompt。
+
+| Prompt | 效果 | 状态 |
+| --- | --- | --- |
+| **001** | 手势触发一个或多个官方品牌 Logo 弹出 | **已验证上线** |
+
+后续案例会继续加入这个系列，形成专门面向口播视频的可复用特效库。
+
+## 它能为口播加什么
+
+| 观看任务 | TalkDirector 的处理 |
+| --- | --- |
+| 强调产品或品牌 | 图标、Logo、产品卡跟随手势或语义出现 |
+| 解释关键词和步骤 | 关键词卡、编号列表、流程与对比动画 |
+| 呈现数据和证据 | 柱状图、折线图、雷达图、数字计数器 |
+| 切换章节和身份 | 章节标题、人物介绍、字幕条、引用卡 |
+| 原画面不够 | 生成补充画面、B-roll、分屏或全屏视觉 |
+| 画面已经足够强 | 保持人物与原画面干净，不为特效而特效 |
+
+## 官方 Prompt 精选
+
+TalkDirector 已接入 ChatCut 官方 Prompt Library。需求吻合时直接复用经过验证的官方结构，再根据人物、字幕和真实安全区调整。
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=8303fddb-dba0-474b-a1cc-58f40728482b"><img src="assets/official-gallery/8303fddb-dba0-474b-a1cc-58f40728482b.jpg" alt="AI Numbered Talking-Head Overlay" width="100%"></a><br>
+<strong>编号要点 + 口播人物</strong><br>
+人物保留在右侧，左侧依次弹出重点列表。
+</td>
+<td width="50%" valign="top">
+<a href="https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=e816057d-bd49-4a82-880c-d4555a9c1dce"><img src="assets/official-gallery/e816057d-bd49-4a82-880c-d4555a9c1dce.jpg" alt="AI Talking-Head Keyword Card" width="100%"></a><br>
+<strong>关键词卡 + 口播人物</strong><br>
+用大字强化核心观点，同时保留人物表达。
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=1a4cd0c3-ba36-4457-8428-49e57c61292f"><img src="assets/official-gallery/1a4cd0c3-ba36-4457-8428-49e57c61292f.jpg" alt="AI Stack Chart Animation" width="100%"></a><br>
+<strong>堆叠柱状图动画</strong><br>
+把比例变化和构成关系变成可读的动态证据。
+</td>
+<td width="50%" valign="top">
+<a href="https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=38bd86e5-2f30-46f7-ade8-1a9711220f0d"><img src="assets/official-gallery/38bd86e5-2f30-46f7-ade8-1a9711220f0d.jpg" alt="AI Line Chart Animation" width="100%"></a><br>
+<strong>折线图动画</strong><br>
+用趋势交叉和增长变化解释口播中的数据。
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=6cdf1268-c279-4c5d-a540-3f59501fbe0d"><img src="assets/official-gallery/6cdf1268-c279-4c5d-a540-3f59501fbe0d.jpg" alt="AI Radar Chart Animation" width="100%"></a><br>
+<strong>雷达图动画</strong><br>
+直观比较多个维度的优势、短板与差异。
+</td>
+<td width="50%" valign="top">
+<a href="https://app.chatcut.io/?source=prompt-library&target=motion-graphics&template=a2abdfc4-c794-4224-b89a-07c0f4009129"><img src="assets/official-gallery/a2abdfc4-c794-4224-b89a-07c0f4009129.jpg" alt="AI Speaker Intro Card" width="100%"></a><br>
+<strong>人物介绍卡</strong><br>
+用杂志感排版快速建立讲述者身份与专业感。
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+### [浏览全部 123 个官方效果 →](VISUAL-GALLERY.md)
+
+</div>
+
+## 3 步完成一条口播
+
+1. **给出口播视频和目标**：例如“让这段产品讲解更有节奏”，或直接粘贴一个具体 Prompt。
+2. **确认视觉方案**：TalkDirector 识别文案、时间点、人物动作和安全区，匹配官方效果或设计定制画面。
+3. **先验证一个效果再扩展**：展示真实开始、中段与结束画面，确认满意后再应用到其他高价值时刻。
 
 ## 安装
 
@@ -92,33 +122,12 @@ New-Item -ItemType Junction `
   -Target "$(Resolve-Path .\chatcut-talkdirector)"
 ```
 
-## 调用
+在 Codex 中这样调用：
 
 ```text
-使用 $chatcut-talking-head-visual-director 分析这条口播，
-先输出可确认的 Visual Beat Map，不要直接生成或修改时间线。
+使用 $chatcut-talking-head-visual-director 分析这条口播，先给我一个最值得做的视觉效果。
 ```
 
-默认交付物和完整确认边界定义在根目录 [SKILL.md](SKILL.md) 中。
+## 技术细节
 
-## 仓库结构
-
-```text
-SKILL.md                 根 Skill 与确认边界
-references/              15 份聚焦参考文档
-references/examples-zh.md  中文完整示例
-references/examples-en.md  英文完整示例
-scripts/                 官方 Prompt Library 同步脚本
-tests/                   9 个行为场景及评分证据
-assets/                  README 视觉资产
-```
-
-仓库包含 1 个根 Skill、15 份聚焦参考文档、123 个官方 Prompt 索引、中英文完整示例，以及 9 个行为场景。
-
-## 验证
-
-[前向测试结果](tests/forward-results.md)记录了 9/9 个行为场景的可见响应、评分与门禁证据。它验证的是离线规划行为，不是成片展示。
-
-## 当前边界
-
-仓库的离线行为证据不覆盖 ChatCut 实时时间线执行，也不覆盖实际的额度门禁流程。README 不展示或暗示虚构的生成结果、时间线修改或额度消耗。
+[Skill 定义](SKILL.md) · [完整视觉画廊](VISUAL-GALLERY.md) · [官方 Prompt 目录](references/chatcut-official-catalog.md) · [导演框架](references/visual-director-framework.md) · [质量门禁](references/quality-gate.md) · [测试证据](tests/forward-results.md)
