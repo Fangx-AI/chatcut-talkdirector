@@ -65,7 +65,7 @@ Then load only the specialist references required by candidate Beats:
 
 | Need | Load |
 | --- | --- |
-| Official structures or prompt syntax | `references/chatcut-official-prompt-patterns.md` |
+| Official Prompt lookup or reuse | `references/chatcut-official-catalog.md`, then `references/chatcut-prompt-routing.md`, then `references/chatcut-official-prompt-patterns.md` |
 | Full-screen, PiP, split-screen, or speaker placement | `references/composition-and-speaker-presence.md` |
 | Keywords, lists, charts, chapter cards, or other MG | `references/mg-animation-director.md` |
 | Gesture-anchored official brand Logo pop | `references/prompt-001-gesture-logo-pop.md` |
@@ -78,10 +78,11 @@ Treat official ChatCut patterns as information-structure and motion references, 
 
 1. Identify hook, argument, steps, data, contrast, example, reversal, conclusion, and CTA anchors without rewriting them.
 2. Select one named visual language for the full video.
-3. For each candidate, choose MG, generated visuals, B-roll, full-screen, PiP, split-screen, or keeping the footage clean. When an abstract metaphor includes both a material/palette reference image and a camera-motion reference video, load `references/generated-visuals-director.md` before choosing the medium and default to a generated visual; use MG only when the user requests an editable diagram, disallows generation, or the Quality Gate rejects generation. Default to 3-8 Beats per 30-60 seconds; fewer or zero is valid.
-4. Protect the face, captions, gestures, product, Logo, existing text, and motion paths. PiP placement follows actual safe space; lower-right is never a default.
-5. Keep one purpose and one visual focus per Beat. A generated Beat defaults to one continuous shot and one primary camera move. Give every reference asset one explicit responsibility.
-6. Apply the Quality Gate; delete or downgrade weak, obstructive, misleading, or visually cheap candidates.
+3. Search the official catalog for each candidate before designing a custom solution. When the viewing task, information structure, medium, and main motion mechanism match, prefer the official Prompt/template and customize only user content and necessary editable properties. For a partial match, reuse the official structure and motion logic but label it as a reference. Do not force a visually similar template onto a different viewing task. Record the official name, template/preset ID, entry URL, match level, reused parts, and customized parts.
+4. For each candidate, choose MG, generated visuals, B-roll, full-screen, PiP, split-screen, or keeping the footage clean. When an abstract metaphor includes both a material/palette reference image and a camera-motion reference video, load `references/generated-visuals-director.md` before choosing the medium and default to a generated visual; use MG only when the user requests an editable diagram, disallows generation, or the Quality Gate rejects generation. Default to 3-8 Beats per 30-60 seconds; fewer or zero is valid.
+5. Protect the face, captions, gestures, product, Logo, existing text, and motion paths. PiP placement follows actual safe space; lower-right is never a default.
+6. Keep one purpose and one visual focus per Beat. A generated Beat defaults to one continuous shot and one primary camera move. Give every reference asset one explicit responsibility.
+7. Apply the Quality Gate; delete or downgrade weak, obstructive, misleading, or visually cheap candidates.
 
 For real brands, acquire verifiable official assets in this order: existing project asset -> official Brand/Press/Media Kit -> official website SVG/PNG -> official app-store icon -> official favicon. If no source can be verified, ask the user. Never use image or video generation to imitate a real Logo. Cropping a single mark from an official composite asset is allowed; redrawing or stylistically altering it is not. Treat every requested brand as an independent dynamic input: verify the exact product identity, inspect the actual image/SVG canvas, and assign per-asset fit mode, scale, crop, offsets, and contrast-safe background. Never reuse brand-specific normalization as a left/right slot default or assume a filename contains a single mark. Preview every normalized Logo before timeline placement.
 

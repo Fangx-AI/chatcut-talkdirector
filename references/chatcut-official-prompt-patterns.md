@@ -10,7 +10,9 @@
 - Seedance 2.0 Prompt Guide: https://chatcut.io/blog/seedance-2-prompt-guide
 - Production Seedance examples: https://chatcut.io/blog/seedance-2-0-prompts-examples
 
-正常使用读取本文件，不要求每次联网。用户要求最新模板、模板名称无法确认或官方页面明显更新时，重新检查官方来源并报告核对日期。只提炼模板名称、任务、布局、动画逻辑和可编辑字段，不复制整段模板实现代码。
+完整条目见 `chatcut-official-catalog.md`，匹配与调用规则见 `chatcut-prompt-routing.md`。正常使用先检索本地目录，不要求每次联网。用户要求最新模板、模板名称无法确认或官方页面明显更新时，运行 `scripts/sync_chatcut_prompt_library.py` 并报告核对日期。只提炼模板名称、任务、布局、动画逻辑和可编辑字段，不复制整段模板实现代码。
+
+官方 Prompt 与用户需求完全匹配时优先复用官方入口或模板 ID；部分匹配时只复用结构和动效逻辑；无匹配时定制。官方来源不绕过人物构图、字幕、安全区、品牌和 Quality Gate。
 
 ## 按信息任务匹配结构
 
