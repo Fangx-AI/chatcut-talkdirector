@@ -12,7 +12,7 @@
 [![Official Effects](https://img.shields.io/badge/Official_Effects-123-B7F34A?style=flat-square&labelColor=0B0C0D)](VISUAL-GALLERY.md)
 [![Made for ChatCut](https://img.shields.io/badge/Made_for-ChatCut-F2EBDD?style=flat-square&labelColor=0B0C0D)](https://chatcut.io/)
 
-[看真实效果](#先看效果) · [复制 Prompt](#直接使用) · [浏览 123 个官方效果](VISUAL-GALLERY.md) · [安装](#安装)
+[看真实效果](#先看效果) · [复制 Prompt](#直接使用) · [工作方式](#工作方式) · [浏览 123 个官方效果](VISUAL-GALLERY.md) · [安装](#安装)
 
 </div>
 
@@ -27,7 +27,13 @@
 
 </div>
 
-### 直接使用
+## 不堆效果，只强化理解
+
+![效果堆叠与高价值 Beat 对比](assets/quality-gate.jpg)
+
+TalkDirector 不追求“特效更多”，只保留能够增加理解、强化焦点并保护人物表达的高价值 Beat。
+
+## 直接使用
 
 ```text
 在 [时间段]，给人物两侧的指向手势添加 [品牌 A] 和 [品牌 B] 的官方 Logo 弹出特效：[品牌 A] 在画面左侧，[品牌 B] 在画面右侧，分别跟随对应手指抬起时弹出，手势结束时退场。请自动获取可验证的官方 Logo，保持人物全屏，不遮挡脸、字幕、手和产品，并先展示关键帧让我确认。
@@ -46,6 +52,24 @@
 | **001** | 手势触发一个或多个官方品牌 Logo 弹出 | **已验证上线** |
 
 后续案例会继续加入这个系列，形成专门面向口播视频的可复用特效库。
+
+## 工作方式
+
+![逐字稿、语义锚点与导演判断流程](assets/directing-flow.jpg)
+
+先读逐字稿和语义锚点，再决定保持人物、加入 MG、生成画面、使用 B-roll，或者让画面保持干净。
+
+## 构图图谱
+
+![口播视频构图图谱与安全区](assets/composition-atlas.jpg)
+
+人物全幅、人物让位、分屏解释和画面接管不是固定模板，而是根据内容、手势、字幕与安全区做出的导演选择。
+
+## 视觉节奏地图
+
+![口播视频视觉节奏地图](assets/visual-beat-map.jpg)
+
+每个视觉 Beat 都绑定原文锚点、视觉目的、画面手段、人物处理、风险与确认状态，让整条视频有节奏而不是随机加效果。
 
 ## 它能为口播加什么
 
