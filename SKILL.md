@@ -69,6 +69,7 @@ Then load only the specialist references required by candidate Beats:
 | Full-screen, PiP, split-screen, or speaker placement | `references/composition-and-speaker-presence.md` |
 | Keywords, lists, charts, chapter cards, or other MG | `references/mg-animation-director.md` |
 | Gesture-anchored official brand Logo pop | `references/prompt-001-gesture-logo-pop.md` |
+| Split-screen explainer with sequential points and scrolling long text | `references/prompt-002-split-screen-explainer.md` |
 | Generated visuals, generated images, or B-roll | `references/generated-visuals-director.md` |
 | Complete output examples | `references/examples-zh.md` or `references/examples-en.md` |
 
