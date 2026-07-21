@@ -2,6 +2,8 @@
 
 左侧讲结论，右侧展示长文本证据流。适用于 Prompt、代码、报告、合同、论文或产品需求等内容的横屏讲解。
 
+[观看通用演示视频](../assets/verified-prompts/prompt-002-split-screen-explainer.mp4)
+
 ## 用户直接使用的 Prompt
 
 ```text
