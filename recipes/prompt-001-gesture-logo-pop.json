@@ -104,6 +104,13 @@
     "logo_unverifiable": "stop_that_brand_and_request_verified_asset",
     "safe_zone_conflict": "apply layout conflict fallbacks in order; never cover protected regions"
   },
+  "execution_gates": [
+    "time",
+    "gesture",
+    "assets",
+    "safe_zones",
+    "first_approval"
+  ],
   "fallback_chain": [
     {
       "id": "exact_gesture_logo_pop",

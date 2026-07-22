@@ -1,0 +1,50 @@
+{
+  "source": {
+    "aspect_ratio": "16:9",
+    "duration_seconds": 42.0,
+    "protected_regions": [
+      {"kind": "face", "rect": [0.4, 0.12, 0.2, 0.25]},
+      {"kind": "captions", "rect": [0.1, 0.82, 0.8, 0.12]},
+      {"kind": "gesture", "rect": [0.16, 0.35, 0.68, 0.35]}
+    ]
+  },
+  "transcript": {
+    "status": "available",
+    "segments": [
+      {"segment_id": "s1", "start_seconds": 10.0, "end_seconds": 17.0, "text": "ChatCut and Codex help turn an idea into an editable video."}
+    ]
+  },
+  "visual_beats": [
+    {
+      "beat_id": "beat-logo",
+      "recipe_id": "prompt-001-gesture-logo-pop",
+      "transcript_segment_ids": ["s1"],
+      "anchor_text": "ChatCut and Codex",
+      "purpose": "remember",
+      "medium": "mg",
+      "director_decision": "Map each verified official Logo to a confirmed pointing gesture.",
+      "time_range": {"start_seconds": 10.0, "end_seconds": 17.0, "confirmed_by_user": false},
+      "parameters": {
+        "brands": [
+          {"name": "ChatCut", "asset_id": "logo-chatcut"},
+          {"name": "Codex", "asset_id": "logo-codex"}
+        ]
+      },
+      "asset_ids": ["logo-chatcut", "logo-codex"]
+    }
+  ],
+  "edit_plan": {
+    "representative_beat_id": "beat-logo",
+    "gates": {
+      "time": {"status": "blocked", "evidence": ["User supplied only an approximate moment."]},
+      "gesture": {"status": "blocked", "evidence": ["Candidate hand motion is ambiguous."]},
+      "assets": {"status": "blocked", "evidence": ["Official sources not yet inspected."]},
+      "safe_zones": {"status": "pass", "evidence": ["Representative frame regions measured."]},
+      "first_approval": {"status": "pending", "evidence": []}
+    }
+  },
+  "assets": [
+    {"asset_id": "logo-chatcut", "kind": "logo", "source_type": "official-site", "verification_status": "pending", "responsibility": "Left gesture brand identity"},
+    {"asset_id": "logo-codex", "kind": "logo", "source_type": "official-site", "verification_status": "pending", "responsibility": "Right gesture brand identity"}
+  ]
+}

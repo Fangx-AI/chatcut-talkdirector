@@ -79,8 +79,18 @@
         "kind": {
           "enum": ["chatcut-project", "media-file", "external-context"]
         },
-        "aspect_ratio": { "type": "string", "pattern": "^[1-9][0-9]*:[1-9][0-9]*$" },
-        "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
+        "aspect_ratio": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[1-9][0-9]*:[1-9][0-9]*$" },
+            { "type": "null" }
+          ]
+        },
+        "duration_seconds": {
+          "oneOf": [
+            { "type": "number", "exclusiveMinimum": 0 },
+            { "type": "null" }
+          ]
+        },
         "protected_regions": {
           "type": "array",
           "items": {
@@ -129,6 +139,7 @@
         "medium",
         "director_decision",
         "time_range",
+        "parameters",
         "asset_ids"
       ],
       "properties": {
@@ -136,18 +147,25 @@
         "recipe_id": { "type": ["string", "null"] },
         "transcript_segment_ids": {
           "type": "array",
-          "minItems": 1,
           "items": { "type": "string", "minLength": 1 }
         },
-        "anchor_text": { "type": "string", "minLength": 1 },
+        "anchor_text": { "type": ["string", "null"] },
         "purpose": {
-          "enum": ["explain", "remember", "rhythm", "emotion", "transition"]
+          "enum": ["explain", "remember", "rhythm", "emotion", "transition", null]
         },
         "medium": {
-          "enum": ["mg", "generated-video", "generated-image", "b-roll", "full-screen", "pip", "split-screen", "keep-clean"]
+          "enum": ["mg", "generated-video", "generated-image", "b-roll", "full-screen", "pip", "split-screen", "keep-clean", null]
         },
-        "director_decision": { "type": "string", "minLength": 1 },
-        "time_range": { "$ref": "#/$defs/timeRange" },
+        "director_decision": { "type": ["string", "null"] },
+        "time_range": {
+          "oneOf": [
+            { "$ref": "#/$defs/timeRange" },
+            { "type": "null" }
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        },
         "asset_ids": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 }
@@ -159,18 +177,35 @@
       "additionalProperties": false,
       "required": [
         "state",
+        "recipe_id",
         "representative_beat_id",
         "approved_beat_ids",
-        "approval_evidence"
+        "gates",
+        "blockers",
+        "approval_evidence",
+        "write_intent"
       ],
       "properties": {
         "state": {
-          "enum": ["intake", "draft", "first-approved", "representative-executed", "second-approved", "expanded"]
+          "enum": ["planned", "blocked", "ready", "executing", "verified"]
         },
+        "recipe_id": { "type": "string", "minLength": 1 },
         "representative_beat_id": { "type": ["string", "null"] },
         "approved_beat_ids": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 }
+        },
+        "gates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/gate"
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/blocker"
+          }
         },
         "approval_evidence": {
           "type": "object",
@@ -180,7 +215,44 @@
             "first": { "type": ["string", "null"] },
             "second": { "type": ["string", "null"] }
           }
+        },
+        "write_intent": {
+          "oneOf": [
+            { "$ref": "#/$defs/writeIntent" },
+            { "type": "null" }
+          ]
         }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["pending", "blocked", "pass"] },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "message", "resolution"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 },
+        "resolution": { "type": "string", "minLength": 1 }
+      }
+    },
+    "writeIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation_id", "scope"],
+      "properties": {
+        "operation_id": { "type": "string", "minLength": 1 },
+        "scope": { "enum": ["representative", "expanded"] }
       }
     },
     "asset": {

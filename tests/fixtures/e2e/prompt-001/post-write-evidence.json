@@ -1,0 +1,10 @@
+{
+  "verification": {
+    "checks": [
+      {"check_id": "p1-asset", "beat_id": "beat-logo", "stage": "asset", "status": "pass", "evidence": ["official-source-and-preview.json"]},
+      {"check_id": "p1-begin", "beat_id": "beat-logo", "stage": "beginning", "status": "pass", "evidence": ["frame-before.png"]},
+      {"check_id": "p1-middle", "beat_id": "beat-logo", "stage": "middle", "status": "pass", "evidence": ["frame-settled.png"]},
+      {"check_id": "p1-end", "beat_id": "beat-logo", "stage": "ending", "status": "pass", "evidence": ["frame-clean-return.png"]}
+    ]
+  }
+}

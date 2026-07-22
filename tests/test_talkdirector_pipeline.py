@@ -1,18 +1,32 @@
 import copy
 import json
+import subprocess
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
+from scripts.talkdirector_manifest import (
+    build,
+    create_recipe_draft,
+    initialize,
+    manifest_path,
+    transition,
+)
 from scripts.validate_talkdirector import (
     ValidationError,
     load_and_validate_recipes,
     validate_pipeline_manifest,
     validate_recipe,
-    validate_repository,
 )
 
 
 ROOT = Path(__file__).resolve().parents[1]
+FIXTURES = ROOT / "tests" / "fixtures" / "e2e"
+
+
+def load(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 class RecipeValidationTest(unittest.TestCase):
@@ -20,116 +34,156 @@ class RecipeValidationTest(unittest.TestCase):
     def setUpClass(cls):
         cls.recipes = load_and_validate_recipes(ROOT)
 
-    def test_repository_contains_both_compatible_verified_recipes(self):
+    def test_both_public_prompts_remain_compatible(self):
         self.assertEqual(
             set(self.recipes),
-            {
-                "prompt-001-gesture-logo-pop",
-                "prompt-002-split-screen-explainer",
-            },
+            {"prompt-001-gesture-logo-pop", "prompt-002-split-screen-explainer"},
         )
         self.assertTrue(all(recipe["status"] == "verified" for recipe in self.recipes.values()))
 
-    def test_recipes_cover_required_execution_sections(self):
-        required = {
-            "triggers",
-            "required_inputs",
-            "asset_strategy",
-            "layout_safe_zones",
-            "timing_animation",
-            "fallback_chain",
-            "verification",
-        }
-        for recipe in self.recipes.values():
-            self.assertLessEqual(required, recipe.keys())
-
-    def test_prompt_001_has_explicit_missing_material_and_gesture_policies(self):
-        policies = self.recipes["prompt-001-gesture-logo-pop"]["blocking_policies"]
-        self.assertIn("no_obvious_gesture", policies)
-        self.assertIn("logo_unverifiable", policies)
-        self.assertIn("safe_zone_conflict", policies)
-
-    def test_prompt_002_has_copy_overflow_and_conflict_policies(self):
-        policies = self.recipes["prompt-002-split-screen-explainer"]["blocking_policies"]
-        self.assertIn("missing_verbatim_copy", policies)
-        self.assertIn("long_text_overflow", policies)
-        self.assertIn("safe_zone_conflict", policies)
+    def test_recipes_define_deterministic_execution_gates(self):
+        self.assertEqual(
+            self.recipes["prompt-001-gesture-logo-pop"]["execution_gates"],
+            ["time", "gesture", "assets", "safe_zones", "first_approval"],
+        )
+        self.assertEqual(
+            self.recipes["prompt-002-split-screen-explainer"]["execution_gates"],
+            ["time", "copy", "safe_zones", "first_approval"],
+        )
 
     def test_missing_recipe_field_fails(self):
         path = ROOT / "recipes" / "prompt-001-gesture-logo-pop.json"
         recipe = copy.deepcopy(self.recipes[path.stem])
-        del recipe["verification"]
+        del recipe["execution_gates"]
         with self.assertRaisesRegex(ValidationError, "missing recipe fields"):
             validate_recipe(recipe, path, ROOT)
 
-    def test_non_terminal_fallback_chain_fails(self):
+    def test_fallback_chain_and_verification_coverage_are_enforced(self):
         path = ROOT / "recipes" / "prompt-002-split-screen-explainer.json"
         recipe = copy.deepcopy(self.recipes[path.stem])
         recipe["fallback_chain"][-1]["terminal"] = False
         with self.assertRaisesRegex(ValidationError, "final fallback"):
             validate_recipe(recipe, path, ROOT)
-
-    def test_missing_verification_stage_fails(self):
-        path = ROOT / "recipes" / "prompt-001-gesture-logo-pop.json"
         recipe = copy.deepcopy(self.recipes[path.stem])
-        recipe["verification"]["checks"] = [
-            check
-            for check in recipe["verification"]["checks"]
-            if check["stage"] != "ending"
-        ]
+        recipe["verification"]["checks"] = [item for item in recipe["verification"]["checks"] if item["stage"] != "ending"]
         with self.assertRaisesRegex(ValidationError, "stage has no check"):
             validate_recipe(recipe, path, ROOT)
 
 
-class PipelineManifestValidationTest(unittest.TestCase):
+class ManifestLifecycleTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.recipes = load_and_validate_recipes(ROOT)
-        cls.valid = json.loads(
-            (ROOT / "tests" / "fixtures" / "pipeline-manifest-valid.json").read_text(
-                encoding="utf-8"
-            )
-        )
 
-    def test_valid_representative_execution_passes(self):
-        validate_pipeline_manifest(copy.deepcopy(self.valid), self.recipes)
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.cache = Path(self.temporary.name) / ".talkdirector"
 
-    def test_reversed_time_range_fails(self):
-        manifest = copy.deepcopy(self.valid)
-        manifest["visual_beats"][0]["time_range"]["start_seconds"] = 3.5
-        manifest["visual_beats"][0]["time_range"]["end_seconds"] = 2.0
-        with self.assertRaisesRegex(ValidationError, "invalid or out-of-source"):
-            validate_pipeline_manifest(manifest, self.recipes)
+    def tearDown(self):
+        self.temporary.cleanup()
 
-    def test_unconfirmed_time_cannot_execute(self):
-        manifest = copy.deepcopy(self.valid)
-        manifest["visual_beats"][0]["time_range"]["confirmed_by_user"] = False
-        with self.assertRaisesRegex(ValidationError, "user-confirmed time range"):
-            validate_pipeline_manifest(manifest, self.recipes)
+    def _initialize(self, source_id: str, recipe_id: str) -> Path:
+        return initialize(self.cache, source_id, "chatcut-project", recipe_id, self.recipes)
 
-    def test_unverified_required_asset_cannot_execute(self):
-        manifest = copy.deepcopy(self.valid)
-        manifest["assets"][0]["verification_status"] = "pending"
-        with self.assertRaisesRegex(ValidationError, "assets must be verified"):
-            validate_pipeline_manifest(manifest, self.recipes)
+    def test_initialization_is_idempotent_and_path_is_project_scoped(self):
+        path = self._initialize("Project A / source.mp4", "prompt-001-gesture-logo-pop")
+        first = path.read_bytes()
+        again = self._initialize("Project A / source.mp4", "prompt-001-gesture-logo-pop")
+        self.assertEqual(path, again)
+        self.assertEqual(first, again.read_bytes())
+        self.assertEqual(path, manifest_path(self.cache, "Project A / source.mp4"))
+        self.assertEqual(load(path)["edit_plan"]["state"], "planned")
 
-    def test_missing_ending_evidence_cannot_mark_executed(self):
-        manifest = copy.deepcopy(self.valid)
-        manifest["verification"]["checks"][-1]["evidence"] = []
-        with self.assertRaisesRegex(ValidationError, "lacks passing verification evidence"):
-            validate_pipeline_manifest(manifest, self.recipes)
+    def test_prompt_001_recovers_from_blocked_to_ready_without_overwriting_old_decisions(self):
+        path = self._initialize("p001", "prompt-001-gesture-logo-pop")
+        initial = load(FIXTURES / "prompt-001" / "initial-facts.json")
+        blocked = build(path, initial, self.recipes)
+        self.assertEqual(blocked["edit_plan"]["state"], "blocked")
+        codes = {item["code"] for item in blocked["edit_plan"]["blockers"]}
+        self.assertTrue({"time-confirmation", "gate-time", "gate-gesture", "gate-assets", "first-approval", "verified-assets"} <= codes)
 
-    def test_non_verbatim_anchor_fails(self):
-        manifest = copy.deepcopy(self.valid)
-        manifest["visual_beats"][0]["anchor_text"] = "模型改写的品牌句"
-        with self.assertRaisesRegex(ValidationError, "not verbatim transcript"):
-            validate_pipeline_manifest(manifest, self.recipes)
+        conflicting = {"visual_beats": [{"beat_id": "beat-logo", "director_decision": "Replace the confirmed direction."}]}
+        recovered = build(path, conflicting, self.recipes)
+        self.assertEqual(recovered["visual_beats"][0]["director_decision"], initial["visual_beats"][0]["director_decision"])
 
-    def test_repository_cli_contract_can_validate_fixture(self):
-        validate_repository(
-            ROOT,
-            ROOT / "tests" / "fixtures" / "pipeline-manifest-valid.json",
-        )
+        ready = build(path, load(FIXTURES / "prompt-001" / "ready-facts.json"), self.recipes)
+        self.assertEqual(ready["edit_plan"]["state"], "ready")
+        self.assertEqual(ready["edit_plan"]["blockers"], [])
+        self.assertEqual(ready["visual_beats"][0]["time_range"]["start_seconds"], 11.2)
+        validate_pipeline_manifest(ready, self.recipes)
+
+    def test_execution_requires_preflight_and_verification_requires_evidence(self):
+        path = self._initialize("p001-gates", "prompt-001-gesture-logo-pop")
+        build(path, load(FIXTURES / "prompt-001" / "initial-facts.json"), self.recipes)
+        with self.assertRaisesRegex(ValidationError, "only a ready"):
+            transition(path, "executing", "dry-run-1", "representative", self.recipes)
+
+        build(path, load(FIXTURES / "prompt-001" / "ready-facts.json"), self.recipes)
+        with self.assertRaisesRegex(ValidationError, "second-approval"):
+            transition(path, "executing", "dry-run-expanded", "expanded", self.recipes)
+        executing = transition(path, "executing", "dry-run-1", "representative", self.recipes)
+        self.assertEqual(executing["edit_plan"]["state"], "executing")
+        with self.assertRaisesRegex(ValidationError, "post-write evidence"):
+            transition(path, "verified", None, "representative", self.recipes)
+
+        updated = build(path, load(FIXTURES / "prompt-001" / "post-write-evidence.json"), self.recipes)
+        self.assertEqual(updated["edit_plan"]["state"], "executing")
+        verified = transition(path, "verified", None, "representative", self.recipes)
+        self.assertEqual(verified["edit_plan"]["state"], "verified")
+        self.assertEqual({item["stage"] for item in verified["verification"]["checks"]}, {"asset", "beginning", "middle", "ending"})
+
+    def test_prompt_002_ready_fixture_enforces_layout_scroll_and_safe_zones(self):
+        path = self._initialize("p002", "prompt-002-split-screen-explainer")
+        ready = build(path, load(FIXTURES / "prompt-002" / "ready-facts.json"), self.recipes)
+        self.assertEqual(ready["edit_plan"]["state"], "ready")
+        params = ready["visual_beats"][0]["parameters"]
+        self.assertEqual(len(params["points"]), 4)
+        self.assertLessEqual(params["right_column_ratio"], 0.45)
+        self.assertFalse(params["scroll_to_end_required"])
+        self.assertEqual(params["scroll_speed_policy"], "constant-comfortable")
+        self.assertEqual({item["kind"] for item in ready["source"]["protected_regions"]}, {"speaker", "captions"})
+
+        transition(path, "executing", "dry-run-2", "representative", self.recipes)
+        build(path, load(FIXTURES / "prompt-002" / "post-write-evidence.json"), self.recipes)
+        verified = transition(path, "verified", None, "representative", self.recipes)
+        self.assertEqual(verified["edit_plan"]["state"], "verified")
+
+    def test_breakpoint_recovery_uses_the_same_cache(self):
+        path = self._initialize("resume-me", "prompt-001-gesture-logo-pop")
+        build(path, load(FIXTURES / "prompt-001" / "initial-facts.json"), self.recipes)
+        reloaded = load(manifest_path(self.cache, "resume-me"))
+        self.assertEqual(reloaded["edit_plan"]["state"], "blocked")
+        build(path, load(FIXTURES / "prompt-001" / "ready-facts.json"), self.recipes)
+        self.assertEqual(load(path)["edit_plan"]["state"], "ready")
+
+    def test_prompt_003_draft_entry_is_empty_idempotent_and_not_a_published_recipe(self):
+        path = create_recipe_draft(self.cache, "prompt-003-future-effect")
+        first = path.read_bytes()
+        again = create_recipe_draft(self.cache, "prompt-003-future-effect")
+        draft = load(again)
+        self.assertEqual(first, again.read_bytes())
+        self.assertEqual(draft["status"], "draft-template")
+        self.assertEqual(draft["public_prompt"], "")
+        self.assertNotIn("prompt-003-future-effect", self.recipes)
+
+    def test_cli_dry_run_uses_external_temporary_cache(self):
+        base = [
+            sys.executable, str(ROOT / "scripts" / "talkdirector_manifest.py"),
+            "--root", str(ROOT), "--cache-root", str(self.cache),
+        ]
+
+        def run(*arguments: str) -> subprocess.CompletedProcess:
+            result = subprocess.run(base + list(arguments), capture_output=True, text=True, check=False)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            return result
+
+        run("init", "--source-id", "cli-source", "--recipe-id", "prompt-002-split-screen-explainer")
+        run("build", "--source-id", "cli-source", "--facts", str(FIXTURES / "prompt-002" / "ready-facts.json"))
+        run("transition", "--source-id", "cli-source", "--to", "executing", "--operation-id", "cli-dry-run")
+        run("build", "--source-id", "cli-source", "--facts", str(FIXTURES / "prompt-002" / "post-write-evidence.json"))
+        run("transition", "--source-id", "cli-source", "--to", "verified")
+        manifest = load(manifest_path(self.cache, "cli-source"))
+        self.assertEqual(manifest["edit_plan"]["state"], "verified")
 
 
 if __name__ == "__main__":

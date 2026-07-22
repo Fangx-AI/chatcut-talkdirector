@@ -17,8 +17,8 @@ Let the user describe the result in natural language. Never ask the user to fill
 2. Load the planning references in the order below. Identify verbatim anchors and select sparse, high-value visual Beats.
 3. Match a verified effect recipe when its viewing task and constraints fit. Otherwise design a custom Beat using the same safety and fallback principles.
 4. Deliver a confirmable Visual Beat Map and select exactly one representative Beat.
-5. After the first approval, materialize the internal pipeline manifest, validate it, and execute only the representative Beat.
-6. Verify and show the actual beginning, middle, and ending result. Expand only after the second explicit approval.
+5. After the first approval, initialize or resume the project manifest and pass every recipe gate before executing only the representative Beat.
+6. Record actual post-write evidence, reach `verified`, and show the result. Expand only after the second explicit approval.
 
 The model owns semantics, director judgment, visual language, and medium choice. Deterministic scripts own required fields, IDs, time ranges, approval state, asset verification state, fallback chains, and evidence completeness. Read `references/pipeline-contract.md` before execution.
 
@@ -110,12 +110,6 @@ Reply in the user's language. Present the result, not the internal recipe or JSO
 
 After the first approval, read `references/chatcut-execution-handoff.md` and route only the representative Beat to the required ChatCut execution Skills.
 
-Before execution, validate the internal manifest:
+Use the internal cache and state flow in `references/pipeline-contract.md`. Before every ChatCut write, merge known facts and require an `executing` transition. After the write, record actual asset, beginning, middle, and ending evidence and require a `verified` transition.
 
-```powershell
-python scripts/validate_talkdirector.py --manifest path/to/pipeline.json
-```
-
-If `python` is only a Windows app alias, use an installed Python launcher such as `py -3`.
-
-Do not override a validation failure. Fix the input, apply a documented fallback, or stop for the one blocking user input. After execution, validate actual asset, beginning, middle, and ending evidence; show the result and wait for the second approval before expansion.
+Never expose the manifest, commands, gates, or recovery mechanics as user work. Do not override a validation failure: fix a known fact, apply a documented fallback, or ask for the single blocking input. Show the verified result and wait for the second approval before expansion.
