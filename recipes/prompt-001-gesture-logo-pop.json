@@ -1,0 +1,172 @@
+{
+  "recipe_schema_version": "0.2",
+  "recipe_id": "prompt-001-gesture-logo-pop",
+  "name": "手势锚定通用 Logo 弹出",
+  "status": "verified",
+  "public_prompt": "在 [时间段]，给人物两侧的指向手势添加 [品牌 A] 和 [品牌 B] 的官方 Logo 弹出特效：[品牌 A] 在画面左侧，[品牌 B] 在画面右侧，分别跟随对应手指抬起时弹出，手势结束时退场。请自动获取可验证的官方 Logo，保持人物全屏，不遮挡脸、字幕、手和产品，并先展示关键帧让我确认。",
+  "triggers": {
+    "intent": "让一个或多个真实品牌 Logo 跟随人物的明确指向手势出现并退场",
+    "signals_any": [
+      "手势触发 Logo",
+      "指向品牌时弹出图标",
+      "Logo 跟手出现",
+      "品牌 Logo 弹出"
+    ],
+    "reject_when": [
+      "用户要生成或仿制真实品牌 Logo",
+      "目标片段没有人物或没有可确认的手势/语义锚点",
+      "用户要的是全屏品牌片头而非口播叠加"
+    ]
+  },
+  "required_inputs": [
+    {
+      "id": "confirmed_time_range",
+      "required_for": "first_approval",
+      "description": "用户明确确认的准确时间段",
+      "on_missing": "只检查候选片段并询问：请确认要添加特效的准确时间段。"
+    },
+    {
+      "id": "gesture_evidence",
+      "required_for": "first_approval",
+      "description": "起始、每次手势抬起、稳定姿势和收回帧",
+      "on_missing": "展示候选帧；不得把普通手部运动当作目标手势。"
+    },
+    {
+      "id": "brand_identities",
+      "required_for": "planning",
+      "description": "公司、产品或应用的准确名称及左右/先后映射",
+      "on_missing": "只询问一个能消除品牌或映射歧义的问题。"
+    },
+    {
+      "id": "protected_regions",
+      "required_for": "first_approval",
+      "description": "脸、字幕、手势、产品、既有 Logo、文字和主要运动路径",
+      "on_missing": "读取代表帧后再确定布局，不使用固定角落。"
+    }
+  ],
+  "asset_strategy": {
+    "required": true,
+    "sources_in_order": [
+      "existing_project_asset",
+      "official_brand_press_media_kit",
+      "official_website_svg_or_png",
+      "official_app_store_icon",
+      "official_favicon"
+    ],
+    "per_asset_inspection": [
+      "verify_product_identity",
+      "inspect_actual_canvas_and_transparency",
+      "choose_fit_crop_offsets_and_contrast_independently",
+      "preview_normalized_asset_before_timeline_placement"
+    ],
+    "forbidden": [
+      "image_generation_for_real_logo",
+      "video_generation_for_real_logo",
+      "redrawing_or_stylizing_official_mark",
+      "reusing_another_brand_crop_or_scale_defaults"
+    ],
+    "on_unverified": "停止该品牌的执行并请求用户提供可验证素材；其他已验证品牌不受影响。"
+  },
+  "layout_safe_zones": {
+    "protect": [
+      "face",
+      "eyes",
+      "captions",
+      "gesture_and_fingertips",
+      "product",
+      "existing_logo",
+      "existing_text",
+      "primary_motion_path"
+    ],
+    "placement_rule": "将每个 Logo 放在对应指尖上方的真实空白区，人物保持全屏；不得固定套用左右角落。",
+    "conflict_fallbacks": [
+      "缩小卡片但保持移动端可读",
+      "错峰出现而非同时堆叠",
+      "改用离指尖更远的真实安全区并保持视觉映射",
+      "若仍冲突则保持原画面并请求用户选择其他片段"
+    ]
+  },
+  "timing_animation": {
+    "requires_confirmed_time_range": true,
+    "trigger_alignment": "手指抬起至稳定前约 2-5 帧；多个手势按真实顺序错峰。",
+    "entry": "淡入、轻微上移、0.82 -> 1.08 -> 1.00 缩放回弹，约 10-14 帧。",
+    "hold": "仅覆盖目标手势的稳定阶段。",
+    "exit": "手势收回时在约 8-12 帧内缩小至约 0.92 并淡出。",
+    "forbidden": [
+      "trigger_before_gesture",
+      "simultaneous_entry_when_gestures_are_sequential",
+      "persistent_glow_particles_or_camera_shake"
+    ]
+  },
+  "blocking_policies": {
+    "missing_time_range": "inspect_only_then_ask_exact_range",
+    "no_obvious_gesture": "show_candidate_frames_then_ask; if no suitable gesture exists, offer a semantic logo callout or keep the footage clean",
+    "logo_unverifiable": "stop_that_brand_and_request_verified_asset",
+    "safe_zone_conflict": "apply layout conflict fallbacks in order; never cover protected regions"
+  },
+  "fallback_chain": [
+    {
+      "id": "exact_gesture_logo_pop",
+      "when": "confirmed gesture, verified official assets, and safe space are available",
+      "action": "execute the verified gesture-anchored logo pop",
+      "terminal": false
+    },
+    {
+      "id": "sequential_safe_zone_pop",
+      "when": "simultaneous logos would conflict with protected regions",
+      "action": "keep gesture mapping but stagger logos into separate safe moments",
+      "terminal": false
+    },
+    {
+      "id": "semantic_logo_callout",
+      "when": "the user confirms there is no usable gesture but still wants a brand cue",
+      "action": "downgrade to a light semantic logo callout anchored to the spoken brand name",
+      "terminal": false
+    },
+    {
+      "id": "keep_clean_and_request_input",
+      "when": "time, identity, official asset, or safe placement remains unresolved",
+      "action": "keep the footage clean and request the one blocking input",
+      "terminal": true
+    }
+  ],
+  "verification": {
+    "required_stages": [
+      "asset",
+      "beginning",
+      "middle",
+      "ending"
+    ],
+    "checks": [
+      {
+        "id": "official_asset_preview",
+        "stage": "asset",
+        "rule": "每个 Logo 单独预览，来源可追溯，比例、留白和对比正确。",
+        "evidence_required": "source_url_and_preview"
+      },
+      {
+        "id": "clean_pre_frame",
+        "stage": "beginning",
+        "rule": "特效前一帧干净且触发没有抢跑。",
+        "evidence_required": "frame"
+      },
+      {
+        "id": "gesture_entry_and_settle",
+        "stage": "middle",
+        "rule": "每个 Logo 的入场、稳定与双 Logo 共存帧不遮挡保护区。",
+        "evidence_required": "frames"
+      },
+      {
+        "id": "withdrawal_and_clean_return",
+        "stage": "ending",
+        "rule": "手势收回后 Logo 完整退场并回到干净人物画面。",
+        "evidence_required": "frames"
+      }
+    ]
+  },
+  "compatibility": {
+    "public_prompt_source": "references/prompt-001-gesture-logo-pop.md",
+    "readme_must_contain_public_prompt": true,
+    "legacy_reference": "references/prompt-001-gesture-logo-pop.md"
+  }
+}

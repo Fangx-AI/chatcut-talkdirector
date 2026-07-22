@@ -1,0 +1,93 @@
+{
+  "contract_version": "0.2",
+  "source": {
+    "source_id": "fixture-project",
+    "kind": "chatcut-project",
+    "aspect_ratio": "16:9",
+    "duration_seconds": 10.0,
+    "protected_regions": [
+      {
+        "kind": "captions",
+        "rect": [0.0, 0.78, 1.0, 0.22]
+      }
+    ]
+  },
+  "transcript": {
+    "status": "available",
+    "segments": [
+      {
+        "segment_id": "s1",
+        "start_seconds": 0.0,
+        "end_seconds": 4.0,
+        "text": "ChatCut 在左边，OpenAI 在右边。"
+      }
+    ]
+  },
+  "visual_beats": [
+    {
+      "beat_id": "beat-001",
+      "recipe_id": "prompt-001-gesture-logo-pop",
+      "transcript_segment_ids": ["s1"],
+      "anchor_text": "ChatCut 在左边",
+      "purpose": "remember",
+      "medium": "mg",
+      "director_decision": "清晰手势与品牌词点重合，适合验证 Logo 跟手出现。",
+      "time_range": {
+        "start_seconds": 0.75,
+        "end_seconds": 3.2,
+        "confirmed_by_user": true
+      },
+      "asset_ids": ["logo-chatcut"]
+    }
+  ],
+  "edit_plan": {
+    "state": "representative-executed",
+    "representative_beat_id": "beat-001",
+    "approved_beat_ids": ["beat-001"],
+    "approval_evidence": {
+      "first": "用户确认了视觉语言、人物全屏和仅执行 beat-001。",
+      "second": null
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "logo-chatcut",
+      "kind": "logo",
+      "source_type": "official-website-svg",
+      "verification_status": "verified",
+      "responsibility": "作为左侧手势触发的官方 ChatCut 标志。"
+    }
+  ],
+  "verification": {
+    "checks": [
+      {
+        "check_id": "asset-preview",
+        "beat_id": "beat-001",
+        "stage": "asset",
+        "status": "pass",
+        "evidence": ["evidence/chatcut-logo-preview.png"]
+      },
+      {
+        "check_id": "clean-start",
+        "beat_id": "beat-001",
+        "stage": "beginning",
+        "status": "pass",
+        "evidence": ["evidence/frame-before.png"]
+      },
+      {
+        "check_id": "gesture-settle",
+        "beat_id": "beat-001",
+        "stage": "middle",
+        "status": "pass",
+        "evidence": ["evidence/frame-settle.png"]
+      },
+      {
+        "check_id": "clean-return",
+        "beat_id": "beat-001",
+        "stage": "ending",
+        "status": "pass",
+        "evidence": ["evidence/frame-after.png"]
+      }
+    ]
+  }
+}
