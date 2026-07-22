@@ -110,6 +110,6 @@ Reply in the user's language. Present the result, not the internal recipe or JSO
 
 After the first approval, read `references/chatcut-execution-handoff.md` and route only the representative Beat to the required ChatCut execution Skills.
 
-Use the internal cache and state flow in `references/pipeline-contract.md`. Before every ChatCut write, merge known facts and require an `executing` transition. After the write, record actual asset, beginning, middle, and ending evidence and require a `verified` transition.
+Use the internal cache and state flow in `references/pipeline-contract.md`. Before every ChatCut write, merge known facts and require an `executing` transition. After the write, record actual asset, beginning, middle, and ending evidence and require a `verified` transition. For any Beat that covers or replaces the speaker frame, beginning and ending evidence must include the clean frame outside the Beat, the transition in progress, and the settled state; a good middle frame does not prove a clean handoff.
 
 Never expose the manifest, commands, gates, or recovery mechanics as user work. Do not override a validation failure: fix a known fact, apply a documented fallback, or ask for the single blocking input. Show the verified result and wait for the second approval before expansion.

@@ -143,6 +143,13 @@ class ManifestLifecycleTest(unittest.TestCase):
         self.assertEqual(params["scroll_speed_policy"], "constant-comfortable")
         self.assertEqual({item["kind"] for item in ready["source"]["protected_regions"]}, {"speaker", "captions"})
 
+        recipe = self.recipes["prompt-002-split-screen-explainer"]
+        checks = {item["id"]: item for item in recipe["verification"]["checks"]}
+        self.assertEqual(checks["opening_composition"]["evidence_required"], "boundary_frames")
+        self.assertEqual(checks["completion_and_exit"]["evidence_required"], "boundary_frames")
+        self.assertIn("接管前", checks["opening_composition"]["rule"])
+        self.assertIn("恢复后", checks["completion_and_exit"]["rule"])
+
         transition(path, "executing", "dry-run-2", "representative", self.recipes)
         build(path, load(FIXTURES / "prompt-002" / "post-write-evidence.json"), self.recipes)
         verified = transition(path, "verified", None, "representative", self.recipes)

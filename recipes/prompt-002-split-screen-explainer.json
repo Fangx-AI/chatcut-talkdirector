@@ -141,8 +141,8 @@
       {
         "id": "opening_composition",
         "stage": "beginning",
-        "rule": "标题、两栏比例和第一项状态清楚，右栏不超过 45%。",
-        "evidence_required": "frame"
+        "rule": "用接管前、淡入中和稳定态三帧确认画面平滑接管；标题、两栏比例和第一项状态清楚，右栏不超过 45%。",
+        "evidence_required": "boundary_frames"
       },
       {
         "id": "point_state_progression",
@@ -153,8 +153,8 @@
       {
         "id": "completion_and_exit",
         "stage": "ending",
-        "rule": "完成态清楚，右栏没有突然加速，退场后回到正确画面。",
-        "evidence_required": "frames"
+        "rule": "用稳定完成态、淡出中和恢复后三帧确认平滑交还；右栏没有突然加速，退场后回到正确画面。",
+        "evidence_required": "boundary_frames"
       }
     ]
   },
