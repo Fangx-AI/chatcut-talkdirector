@@ -120,7 +120,7 @@ def parse_cards(page: str, enforce_minimum: bool = False) -> list[dict[str, str]
 
 
 def fetch_cards() -> list[dict[str, str]]:
-    request = Request(SOURCE_URL, headers={"User-Agent": "TalkDirector catalog sync"})
+    request = Request(SOURCE_URL, headers={"User-Agent": "CutDirector catalog sync"})
     with urlopen(request, timeout=30) as response:
         page = response.read().decode("utf-8")
     return parse_cards(page, enforce_minimum=True)
@@ -147,7 +147,7 @@ def render_catalog(cards: list[dict[str, str]], synced_on: str | None = None) ->
         "1. 先用本目录寻找与用户视觉任务完全匹配或高度相似的官方条目。",
         "2. 完全匹配时优先使用官方入口或模板 ID，并只替换用户内容与必要属性。",
         "3. 部分匹配时借鉴信息结构和动效机制，不冒充官方原模板。",
-        "4. 官方模板仍须通过 TalkDirector 的人物、字幕、手势、品牌和 Quality Gate 检查。",
+        "4. 官方模板仍须通过 CutDirector 的人物、字幕、手势、品牌和 Quality Gate 检查。",
         "5. 用户要求最新目录、条目不存在或入口失效时，重新运行同步脚本。",
         "",
         "## 分类统计",

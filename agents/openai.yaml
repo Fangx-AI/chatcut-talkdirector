@@ -1,4 +1,4 @@
 interface:
-  display_name: "ChatCut 口播视觉导演"
+  display_name: "CutDirector · 口播导演"
   short_description: "用自然语言把口播变成可确认、可降级、可验证的视觉方案"
-  default_prompt: "使用 $chatcut-talking-head-visual-director，按我自然语言描述的效果先给出最值得做的视觉方案；我确认后执行并验证一个代表性 Beat，中断时从已确认进度继续。"
+  default_prompt: "使用 $cut-director 分析这条口播，找出最值得加画面的 3 个时刻，先做最值得的一个给我看。"

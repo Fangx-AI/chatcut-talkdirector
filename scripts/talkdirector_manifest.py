@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Initialize, recover, and gate TalkDirector's internal project manifest."""
+"""Initialize, recover, and gate CutDirector's internal project manifest."""
 
 from __future__ import annotations
 

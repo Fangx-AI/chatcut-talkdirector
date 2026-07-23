@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Fangx-AI/chatcut-talkdirector/schemas/talkdirector-pipeline.schema.json",
-  "title": "TalkDirector pipeline manifest",
+  "title": "CutDirector pipeline manifest",
   "type": "object",
   "additionalProperties": false,
   "required": [

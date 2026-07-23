@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministically validate TalkDirector recipes and pipeline manifests."""
+"""Deterministically validate CutDirector recipes and pipeline manifests."""
 
 from __future__ import annotations
 
@@ -419,7 +419,7 @@ def main() -> None:
     args = parser.parse_args()
     recipes = validate_repository(args.root, args.manifest)
     suffix = f" and {args.manifest}" if args.manifest else ""
-    print(f"Validated {len(recipes)} TalkDirector recipes{suffix}")
+    print(f"Validated {len(recipes)} CutDirector recipes{suffix}")
 
 
 if __name__ == "__main__":
