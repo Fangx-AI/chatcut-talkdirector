@@ -1,0 +1,76 @@
+{
+  "source": {
+    "aspect_ratio": "16:9",
+    "duration_seconds": 60.0,
+    "protected_regions": [
+      {"kind": "captions", "rect": [0.08, 0.84, 0.84, 0.1]},
+      {"kind": "previous_shot_boundary", "rect": [0.0, 0.0, 1.0, 0.02]}
+    ]
+  },
+  "transcript": {
+    "status": "available",
+    "segments": [
+      {
+        "segment_id": "s-mode",
+        "start_seconds": 34.4,
+        "end_seconds": 40.4,
+        "text": "普通模式只有聊天对话，办公模式除了聊天，还有权限、有工具，可以直接工作。"
+      }
+    ]
+  },
+  "visual_beats": [
+    {
+      "beat_id": "beat-mode",
+      "recipe_id": "prompt-003-brand-mode-comparison",
+      "transcript_segment_ids": ["s-mode"],
+      "anchor_text": "普通模式只有聊天对话，办公模式除了聊天，还有权限、有工具，可以直接工作。",
+      "purpose": "explain",
+      "medium": "mg",
+      "director_decision": "Use a pure-black two-stage comparison with one persistent official brand icon and a concise final result contrast.",
+      "time_range": {
+        "start_seconds": 34.4,
+        "end_seconds": 40.4,
+        "confirmed_by_user": true
+      },
+      "parameters": {
+        "brand_name": "豆包",
+        "mode_a_title": "普通模式",
+        "mode_a_capability": "聊天对话",
+        "mode_b_title": "办公模式",
+        "mode_b_capabilities": ["聊天对话", "有权限", "有工具", "直接工作"],
+        "final_left": "聊天对话",
+        "final_right": "直接工作",
+        "summary_line": "普通模式负责聊天，办公模式直接干活",
+        "icon_persists_between_stages": true,
+        "background_color": "#000000",
+        "sound_profile": "light-tight",
+        "export_first_frame_check": true
+      },
+      "asset_ids": ["brand-doubao"]
+    }
+  ],
+  "edit_plan": {
+    "representative_beat_id": "beat-mode",
+    "approved_beat_ids": ["beat-mode"],
+    "gates": {
+      "time": {"status": "pass", "evidence": ["User confirmed 34.4-40.4 seconds."]},
+      "assets": {"status": "pass", "evidence": ["Official Doubao app icon source and normalized preview verified."]},
+      "copy": {"status": "pass", "evidence": ["Both mode names, capability phrases, final contrast, and summary preserve approved copy."]},
+      "safe_zones": {"status": "pass", "evidence": ["Caption region and adjacent-shot boundary were measured."]},
+      "first_approval": {"status": "pass", "evidence": ["User approved the representative visual language, full-screen treatment, and sound direction."]}
+    },
+    "approval_evidence": {
+      "first": "User approved Prompt 003 representative Beat.",
+      "second": null
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "brand-doubao",
+      "kind": "image",
+      "source_type": "official_app_store_icon",
+      "verification_status": "verified",
+      "responsibility": "Persistent brand identity across both information stages."
+    }
+  ]
+}

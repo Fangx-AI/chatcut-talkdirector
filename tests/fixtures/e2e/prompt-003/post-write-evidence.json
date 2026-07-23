@@ -1,0 +1,34 @@
+{
+  "verification": {
+    "checks": [
+      {
+        "check_id": "p3-asset",
+        "beat_id": "beat-mode",
+        "stage": "asset",
+        "status": "pass",
+        "evidence": ["official-brand-source-and-preview.json"]
+      },
+      {
+        "check_id": "p3-begin",
+        "beat_id": "beat-mode",
+        "stage": "beginning",
+        "status": "pass",
+        "evidence": ["exported-frame-0000.jpg", "first-stage-settled.jpg"]
+      },
+      {
+        "check_id": "p3-middle",
+        "beat_id": "beat-mode",
+        "stage": "middle",
+        "status": "pass",
+        "evidence": ["capability-progression-and-icon-continuity.jpg"]
+      },
+      {
+        "check_id": "p3-end",
+        "beat_id": "beat-mode",
+        "stage": "ending",
+        "status": "pass",
+        "evidence": ["final-conclusion.jpg", "light-tight-audio-review.md"]
+      }
+    ]
+  }
+}

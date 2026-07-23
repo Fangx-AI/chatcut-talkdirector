@@ -163,7 +163,11 @@ def load_and_validate_recipes(root: Path) -> dict[str, dict[str, Any]]:
         validate_recipe(recipe, path, root)
         _require(recipe["recipe_id"] not in recipes, f"duplicate recipe_id: {recipe['recipe_id']}")
         recipes[recipe["recipe_id"]] = recipe
-    for legacy_id in ("prompt-001-gesture-logo-pop", "prompt-002-split-screen-explainer"):
+    for legacy_id in (
+        "prompt-001-gesture-logo-pop",
+        "prompt-002-split-screen-explainer",
+        "prompt-003-brand-mode-comparison",
+    ):
         _require(legacy_id in recipes, f"compatibility recipe missing: {legacy_id}")
     return recipes
 
@@ -241,6 +245,33 @@ def execution_blockers(manifest: dict[str, Any], recipes: dict[str, dict[str, An
         protected = {region.get("kind") for region in source.get("protected_regions", [])}
         if "captions" not in protected or not ({"speaker", "person"} & protected):
             blockers.append(_blocker("split-safe-regions", "Caption and speaker safe zones are not both recorded.", "Measure captions and the required speaker/person region."))
+    elif recipe["recipe_id"] == "prompt-003-brand-mode-comparison":
+        for field, code, message in (
+            ("brand_name", "mode-brand", "The exact brand identity is missing."),
+            ("mode_a_title", "mode-a-title", "Mode A title is missing."),
+            ("mode_a_capability", "mode-a-capability", "Mode A needs exactly one core capability."),
+            ("mode_b_title", "mode-b-title", "Mode B title is missing."),
+            ("final_left", "mode-final-left", "The left side of the final comparison is missing."),
+            ("final_right", "mode-final-right", "The right side of the final comparison is missing."),
+            ("summary_line", "mode-summary", "The final summary line is missing."),
+        ):
+            if not isinstance(params.get(field), str) or not params.get(field, "").strip():
+                blockers.append(_blocker(code, message, f"Record a verbatim {field} value."))
+        mode_b_capabilities = params.get("mode_b_capabilities")
+        if (
+            not isinstance(mode_b_capabilities, list)
+            or not 2 <= len(mode_b_capabilities) <= 4
+            or any(not isinstance(item, str) or not item.strip() for item in mode_b_capabilities or [])
+        ):
+            blockers.append(_blocker("mode-b-capabilities", "Mode B requires two to four verbatim capabilities.", "Record 2-4 short capabilities in narration order."))
+        if params.get("icon_persists_between_stages") is not True:
+            blockers.append(_blocker("mode-icon-continuity", "The brand icon is not guaranteed to persist between stages.", "Keep one icon stable across the body-to-conclusion transition."))
+        if params.get("background_color") != "#000000":
+            blockers.append(_blocker("mode-black-background", "The verified recipe requires a pure black background.", "Set background_color to #000000."))
+        if params.get("sound_profile") != "light-tight":
+            blockers.append(_blocker("mode-sound-profile", "The sound design may be heavy or muddy.", "Use the light-tight sound profile."))
+        if params.get("export_first_frame_check") is not True:
+            blockers.append(_blocker("mode-export-boundary", "The exported first-frame check is not enabled.", "Inspect the actual first frame of the partial export."))
 
     unique: dict[str, dict[str, str]] = {}
     for item in blockers:

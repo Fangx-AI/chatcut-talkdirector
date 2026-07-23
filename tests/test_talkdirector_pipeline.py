@@ -34,10 +34,14 @@ class RecipeValidationTest(unittest.TestCase):
     def setUpClass(cls):
         cls.recipes = load_and_validate_recipes(ROOT)
 
-    def test_both_public_prompts_remain_compatible(self):
+    def test_all_public_prompts_remain_compatible(self):
         self.assertEqual(
             set(self.recipes),
-            {"prompt-001-gesture-logo-pop", "prompt-002-split-screen-explainer"},
+            {
+                "prompt-001-gesture-logo-pop",
+                "prompt-002-split-screen-explainer",
+                "prompt-003-brand-mode-comparison",
+            },
         )
         self.assertTrue(all(recipe["status"] == "verified" for recipe in self.recipes.values()))
 
@@ -49,6 +53,10 @@ class RecipeValidationTest(unittest.TestCase):
         self.assertEqual(
             self.recipes["prompt-002-split-screen-explainer"]["execution_gates"],
             ["time", "copy", "safe_zones", "first_approval"],
+        )
+        self.assertEqual(
+            self.recipes["prompt-003-brand-mode-comparison"]["execution_gates"],
+            ["time", "assets", "copy", "safe_zones", "first_approval"],
         )
 
     def test_missing_recipe_field_fails(self):
@@ -154,6 +162,47 @@ class ManifestLifecycleTest(unittest.TestCase):
         build(path, load(FIXTURES / "prompt-002" / "post-write-evidence.json"), self.recipes)
         verified = transition(path, "verified", None, "representative", self.recipes)
         self.assertEqual(verified["edit_plan"]["state"], "verified")
+
+    def test_prompt_003_enforces_icon_background_sound_and_export_boundaries(self):
+        path = self._initialize("p003", "prompt-003-brand-mode-comparison")
+        ready_facts = load(FIXTURES / "prompt-003" / "ready-facts.json")
+        ready = build(path, ready_facts, self.recipes)
+        self.assertEqual(ready["edit_plan"]["state"], "ready")
+        params = ready["visual_beats"][0]["parameters"]
+        self.assertEqual(params["mode_a_capability"], "聊天对话")
+        self.assertEqual(len(params["mode_b_capabilities"]), 4)
+        self.assertTrue(params["icon_persists_between_stages"])
+        self.assertEqual(params["background_color"], "#000000")
+        self.assertEqual(params["sound_profile"], "light-tight")
+        self.assertTrue(params["export_first_frame_check"])
+
+        transition(path, "executing", "dry-run-3", "representative", self.recipes)
+        build(path, load(FIXTURES / "prompt-003" / "post-write-evidence.json"), self.recipes)
+        verified = transition(path, "verified", None, "representative", self.recipes)
+        self.assertEqual(verified["edit_plan"]["state"], "verified")
+        self.assertEqual(
+            {item["stage"] for item in verified["verification"]["checks"]},
+            {"asset", "beginning", "middle", "ending"},
+        )
+
+        invalid_path = self._initialize("p003-invalid", "prompt-003-brand-mode-comparison")
+        invalid_facts = copy.deepcopy(ready_facts)
+        invalid_params = invalid_facts["visual_beats"][0]["parameters"]
+        invalid_params["icon_persists_between_stages"] = False
+        invalid_params["background_color"] = "#090A0C"
+        invalid_params["sound_profile"] = "heavy-low-frequency"
+        invalid_params["export_first_frame_check"] = False
+        blocked = build(invalid_path, invalid_facts, self.recipes)
+        codes = {item["code"] for item in blocked["edit_plan"]["blockers"]}
+        self.assertTrue(
+            {
+                "mode-icon-continuity",
+                "mode-black-background",
+                "mode-sound-profile",
+                "mode-export-boundary",
+            }
+            <= codes
+        )
 
     def test_breakpoint_recovery_uses_the_same_cache(self):
         path = self._initialize("resume-me", "prompt-001-gesture-logo-pop")
