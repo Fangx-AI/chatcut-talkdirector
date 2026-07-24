@@ -10,7 +10,7 @@
 
 你只需要描述想看到的结果。CutDirector 会先做一个可编辑的代表镜头，满意后再扩展到其他位置。
 
-[![Verified Prompts](https://img.shields.io/badge/已验证_Prompt-003-E6503C?style=flat-square&labelColor=0B0C0D)](#已验证效果)
+[![Verified Prompts](https://img.shields.io/badge/已验证_Prompt-004-E6503C?style=flat-square&labelColor=0B0C0D)](#已验证效果)
 [![Official Effects](https://img.shields.io/badge/官方效果参考-123-B7F34A?style=flat-square&labelColor=0B0C0D)](VISUAL-GALLERY.md)
 [![Made for ChatCut](https://img.shields.io/badge/为_ChatCut_打造-F2EBDD?style=flat-square&labelColor=0B0C0D)](https://chatcut.io/)
 [![Code License](https://img.shields.io/badge/代码-AGPL--3.0--or--later-8A63D2?style=flat-square&labelColor=0B0C0D)](LICENSE)
@@ -99,11 +99,39 @@
 
 [观看 Prompt 003 演示视频](assets/verified-prompts/prompt-003-brand-mode-comparison.mp4) · [查看完整说明](references/prompt-003-brand-mode-comparison.md)
 
+### Prompt 004 · 自适应章节导航与全片进度条
+
+[![Prompt 004 - 根据视频结构自适应选择章节导航或全片进度](assets/verified-prompts/prompt-004-top-chapter-progress-rail.gif)](assets/verified-prompts/prompt-004-top-chapter-progress-rail.mp4)
+
+**快速使用**
+
+```text
+分析这条视频的结构、画幅和安全区，自适应选择完整章节导航、当前章节、纯进度或保持干净。只要显示进度，就必须从头到尾连续运行，跨章节和镜头不清零。
+```
+
+它不预设日报、课程、访谈或任何固定题材，也不默认横屏、顶部位置或深色科技风。CutDirector 会根据真实章节、标签密度、横竖画幅、人物与 UI 安全区选择合适形态；没有可靠章节时不虚构章节，没有安全区或观看价值时保持干净。
+
+<details>
+<summary><strong>查看核心精确 Prompt</strong></summary>
+
+```text
+分析 [整条视频或确认时间段] 的实际内容、画幅、节奏和安全区，为它添加一条自适应的“章节或段落导航 + 全片进度”信息条。
+
+先识别视频是否存在真实章节，再选择完整章节导航、当前章节模式、纯进度模式或保持干净。位置顶部优先但不固定，视觉语言继承原片，不套用固定题材、画幅、坐标或科技风。
+
+只要显示进度，就从第一帧 0% 开始，按真实播放时间连续填充，到最后一帧达到 100%；跨章节和镜头绝不清零、回跳、提前跑满或重复入场。先提交结构、形态和安全区依据，再展示代表帧与实时预览让我确认。
+```
+
+</details>
+
+[观看 Prompt 004 演示视频](assets/verified-prompts/prompt-004-top-chapter-progress-rail.mp4) · [查看完整说明](references/prompt-004-top-chapter-progress-rail.md)
+
 | Prompt | 观看任务 | 状态 |
 | --- | --- | --- |
 | **001** | 手势触发一个或多个官方品牌 Logo 弹出 | **已验证上线** |
 | **002** | 左侧要点逐条浮现，右侧长文本缓慢滚动 | **已验证上线** |
 | **003** | 品牌图标贯穿两种模式，能力递进后收束为结果对比 | **已验证上线** |
+| **004** | 根据结构、画幅与安全区选择章节导航、当前章节、纯进度或保持干净 | **已验证上线** |
 
 后续案例只在真实时间线中完成并通过验证后，才会加入这个系列。
 

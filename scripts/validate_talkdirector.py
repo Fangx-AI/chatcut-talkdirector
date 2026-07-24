@@ -167,6 +167,7 @@ def load_and_validate_recipes(root: Path) -> dict[str, dict[str, Any]]:
         "prompt-001-gesture-logo-pop",
         "prompt-002-split-screen-explainer",
         "prompt-003-brand-mode-comparison",
+        "prompt-004-top-chapter-progress-rail",
     ):
         _require(legacy_id in recipes, f"compatibility recipe missing: {legacy_id}")
     return recipes
