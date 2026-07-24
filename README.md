@@ -14,7 +14,7 @@
 [![Official Effects](https://img.shields.io/badge/官方效果参考-123-B7F34A?style=flat-square&labelColor=0B0C0D)](VISUAL-GALLERY.md)
 [![Made for ChatCut](https://img.shields.io/badge/为_ChatCut_打造-F2EBDD?style=flat-square&labelColor=0B0C0D)](https://chatcut.io/)
 
-[查看真实效果与 Prompt](#已验证效果) · [30 秒开始](#30-秒开始) · [复制短 Prompt](#直接开始) · [浏览效果参考库](VISUAL-GALLERY.md)
+[查看真实效果与 Prompt](#已验证效果) · [30 秒开始](#30-秒开始) · [浏览效果参考库](VISUAL-GALLERY.md)
 
 </div>
 
