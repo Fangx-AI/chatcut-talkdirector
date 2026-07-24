@@ -10,7 +10,7 @@
 
 你只需要描述想看到的结果。CutDirector 会先做一个可编辑的代表镜头，满意后再扩展到其他位置。
 
-[![Verified Prompts](https://img.shields.io/badge/已验证_Prompt-003-E6503C?style=flat-square&labelColor=0B0C0D)](#已验证效果)
+[![Verified Prompts](https://img.shields.io/badge/已验证_Prompt-004-E6503C?style=flat-square&labelColor=0B0C0D)](#已验证效果)
 [![Official Effects](https://img.shields.io/badge/官方效果参考-123-B7F34A?style=flat-square&labelColor=0B0C0D)](VISUAL-GALLERY.md)
 [![Made for ChatCut](https://img.shields.io/badge/为_ChatCut_打造-F2EBDD?style=flat-square&labelColor=0B0C0D)](https://chatcut.io/)
 [![Code License](https://img.shields.io/badge/代码-AGPL--3.0--or--later-8A63D2?style=flat-square&labelColor=0B0C0D)](LICENSE)
@@ -99,11 +99,39 @@
 
 [观看 Prompt 003 演示视频](assets/verified-prompts/prompt-003-brand-mode-comparison.mp4) · [查看完整说明](references/prompt-003-brand-mode-comparison.md)
 
+### Prompt 004 · 顶部章节导航进度条
+
+[![Prompt 004 - 当前章节高亮与连续全片进度线](assets/verified-prompts/prompt-004-top-chapter-progress-rail.gif)](assets/verified-prompts/prompt-004-top-chapter-progress-rail.mp4)
+
+**快速使用**
+
+```text
+给整条视频顶部添加章节导航进度条：章节宽度按真实时长分配，当前章节随内容切换，底边细进度线从片头到片尾连续跑满，跨章节不清零。
+```
+
+适合日报、周报、课程、访谈和产品发布。章节标签回答“现在讲到哪”，底边细线回答“整条视频还剩多少”；两者共享真实时间线，但进度线永远不会在章节切换时重新开始。
+
+<details>
+<summary><strong>查看核心精确 Prompt</strong></summary>
+
+```text
+给 [整条视频或确认时间段] 的顶部添加一条常驻“章节导航 + 全片进度”信息条。
+
+根据逐字稿、时间线和已经确认的内容结构建立章节列表，每个章节格按照真实时长比例分配宽度。当前章节使用单一强调色高亮，章节切换对齐真实内容边界。
+
+在章节条底边增加一条 3-5 像素的全片进度线，从第一帧 0% 开始，按全片播放时间连续填充，到最后一帧达到 100%；跨章节时绝不清零、回跳或重复入场。先展示第一帧、章节切换前后、中段和最后一帧让我确认。
+```
+
+</details>
+
+[观看 Prompt 004 演示视频](assets/verified-prompts/prompt-004-top-chapter-progress-rail.mp4) · [查看完整说明](references/prompt-004-top-chapter-progress-rail.md)
+
 | Prompt | 观看任务 | 状态 |
 | --- | --- | --- |
 | **001** | 手势触发一个或多个官方品牌 Logo 弹出 | **已验证上线** |
 | **002** | 左侧要点逐条浮现，右侧长文本缓慢滚动 | **已验证上线** |
 | **003** | 品牌图标贯穿两种模式，能力递进后收束为结果对比 | **已验证上线** |
+| **004** | 顶部章节随内容高亮，底边全片进度线连续跑满 | **已验证上线** |
 
 后续案例只在真实时间线中完成并通过验证后，才会加入这个系列。
 

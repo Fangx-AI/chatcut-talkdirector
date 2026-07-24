@@ -41,6 +41,7 @@ class RecipeValidationTest(unittest.TestCase):
                 "prompt-001-gesture-logo-pop",
                 "prompt-002-split-screen-explainer",
                 "prompt-003-brand-mode-comparison",
+                "prompt-004-top-chapter-progress-rail",
             },
         )
         self.assertTrue(all(recipe["status"] == "verified" for recipe in self.recipes.values()))
@@ -58,6 +59,13 @@ class RecipeValidationTest(unittest.TestCase):
             self.recipes["prompt-003-brand-mode-comparison"]["execution_gates"],
             ["time", "assets", "copy", "safe_zones", "first_approval"],
         )
+        self.assertEqual(
+            self.recipes["prompt-004-top-chapter-progress-rail"]["execution_gates"],
+            ["time", "copy", "safe_zones", "first_approval"],
+        )
+        progress_prompt = self.recipes["prompt-004-top-chapter-progress-rail"]["public_prompt"]
+        self.assertIn("真实时长比例", progress_prompt)
+        self.assertIn("跨章节时绝不清零、回跳", progress_prompt)
 
     def test_missing_recipe_field_fails(self):
         path = ROOT / "recipes" / "prompt-001-gesture-logo-pop.json"
