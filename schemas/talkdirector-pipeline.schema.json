@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Fangx-AI/chatcut-talkdirector/schemas/talkdirector-pipeline.schema.json",
+  "title": "CutDirector pipeline manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "source",
+    "transcript",
+    "visual_beats",
+    "edit_plan",
+    "assets",
+    "verification"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "0.2"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "transcript": {
+      "$ref": "#/$defs/transcript"
+    },
+    "visual_beats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/visualBeat"
+      }
+    },
+    "edit_plan": {
+      "$ref": "#/$defs/editPlan"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "verification": {
+      "$ref": "#/$defs/verification"
+    }
+  },
+  "$defs": {
+    "rect": {
+      "type": "array",
+      "prefixItems": [
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "timeRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_seconds", "end_seconds", "confirmed_by_user"],
+      "properties": {
+        "start_seconds": { "type": "number", "minimum": 0 },
+        "end_seconds": { "type": "number", "exclusiveMinimum": 0 },
+        "confirmed_by_user": { "type": "boolean" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "kind",
+        "aspect_ratio",
+        "duration_seconds",
+        "protected_regions"
+      ],
+      "properties": {
+        "source_id": { "type": "string", "minLength": 1 },
+        "kind": {
+          "enum": ["chatcut-project", "media-file", "external-context"]
+        },
+        "aspect_ratio": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[1-9][0-9]*:[1-9][0-9]*$" },
+            { "type": "null" }
+          ]
+        },
+        "duration_seconds": {
+          "oneOf": [
+            { "type": "number", "exclusiveMinimum": 0 },
+            { "type": "null" }
+          ]
+        },
+        "protected_regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "rect"],
+            "properties": {
+              "kind": { "type": "string", "minLength": 1 },
+              "rect": { "$ref": "#/$defs/rect" }
+            }
+          }
+        }
+      }
+    },
+    "transcript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "segments"],
+      "properties": {
+        "status": { "enum": ["available", "missing"] },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["segment_id", "start_seconds", "end_seconds", "text"],
+            "properties": {
+              "segment_id": { "type": "string", "minLength": 1 },
+              "start_seconds": { "type": "number", "minimum": 0 },
+              "end_seconds": { "type": "number", "exclusiveMinimum": 0 },
+              "text": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "visualBeat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "beat_id",
+        "recipe_id",
+        "transcript_segment_ids",
+        "anchor_text",
+        "purpose",
+        "medium",
+        "director_decision",
+        "time_range",
+        "parameters",
+        "asset_ids"
+      ],
+      "properties": {
+        "beat_id": { "type": "string", "minLength": 1 },
+        "recipe_id": { "type": ["string", "null"] },
+        "transcript_segment_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "anchor_text": { "type": ["string", "null"] },
+        "purpose": {
+          "enum": ["explain", "remember", "rhythm", "emotion", "transition", null]
+        },
+        "medium": {
+          "enum": ["mg", "generated-video", "generated-image", "b-roll", "full-screen", "pip", "split-screen", "keep-clean", null]
+        },
+        "director_decision": { "type": ["string", "null"] },
+        "time_range": {
+          "oneOf": [
+            { "$ref": "#/$defs/timeRange" },
+            { "type": "null" }
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "asset_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "editPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "recipe_id",
+        "representative_beat_id",
+        "approved_beat_ids",
+        "gates",
+        "blockers",
+        "approval_evidence",
+        "write_intent"
+      ],
+      "properties": {
+        "state": {
+          "enum": ["planned", "blocked", "ready", "executing", "verified"]
+        },
+        "recipe_id": { "type": "string", "minLength": 1 },
+        "representative_beat_id": { "type": ["string", "null"] },
+        "approved_beat_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "gates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/gate"
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/blocker"
+          }
+        },
+        "approval_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["first", "second"],
+          "properties": {
+            "first": { "type": ["string", "null"] },
+            "second": { "type": ["string", "null"] }
+          }
+        },
+        "write_intent": {
+          "oneOf": [
+            { "$ref": "#/$defs/writeIntent" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["pending", "blocked", "pass"] },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "message", "resolution"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 },
+        "resolution": { "type": "string", "minLength": 1 }
+      }
+    },
+    "writeIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation_id", "scope"],
+      "properties": {
+        "operation_id": { "type": "string", "minLength": 1 },
+        "scope": { "enum": ["representative", "expanded"] }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset_id",
+        "kind",
+        "source_type",
+        "verification_status",
+        "responsibility"
+      ],
+      "properties": {
+        "asset_id": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "source_type": { "type": "string", "minLength": 1 },
+        "verification_status": { "enum": ["pending", "verified", "rejected"] },
+        "responsibility": { "type": "string", "minLength": 1 }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checks"],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["check_id", "beat_id", "stage", "status", "evidence"],
+            "properties": {
+              "check_id": { "type": "string", "minLength": 1 },
+              "beat_id": { "type": "string", "minLength": 1 },
+              "stage": { "enum": ["asset", "beginning", "middle", "ending"] },
+              "status": { "enum": ["pending", "pass", "fail"] },
+              "evidence": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "source": {
+    "aspect_ratio": "16:9",
+    "duration_seconds": 68.0,
+    "protected_regions": [
+      {"kind": "speaker", "rect": [0.05, 0.15, 0.26, 0.58]},
+      {"kind": "captions", "rect": [0.08, 0.84, 0.84, 0.1]}
+    ]
+  },
+  "transcript": {
+    "status": "available",
+    "segments": [
+      {"segment_id": "s1", "start_seconds": 20.0, "end_seconds": 50.0, "text": "A useful prompt has a goal, context, constraints, and a clear output."}
+    ]
+  },
+  "visual_beats": [
+    {
+      "beat_id": "beat-split",
+      "recipe_id": "prompt-002-split-screen-explainer",
+      "transcript_segment_ids": ["s1"],
+      "anchor_text": "goal, context, constraints, and a clear output",
+      "purpose": "explain",
+      "medium": "split-screen",
+      "director_decision": "Reveal four left-side points in speech order while the right-side source scrolls slowly.",
+      "time_range": {"start_seconds": 20.0, "end_seconds": 50.0, "confirmed_by_user": true},
+      "parameters": {
+        "title": "Four parts of a useful prompt",
+        "points": ["Goal", "Context", "Constraints", "Clear output"],
+        "long_text": "Write the complete long prompt here and preserve its paragraphs, examples, and code blocks. It is evidence of the source material and does not need to finish scrolling before the Beat ends.",
+        "right_column_ratio": 0.42,
+        "scroll_to_end_required": false,
+        "scroll_speed_policy": "constant-comfortable"
+      },
+      "asset_ids": []
+    }
+  ],
+  "edit_plan": {
+    "representative_beat_id": "beat-split",
+    "approved_beat_ids": ["beat-split"],
+    "gates": {
+      "time": {"status": "pass", "evidence": ["User confirmed 20-50 seconds."]},
+      "copy": {"status": "pass", "evidence": ["Title, four points, and long text preserved verbatim."]},
+      "safe_zones": {"status": "pass", "evidence": ["Speaker and caption regions measured on representative frames."]},
+      "first_approval": {"status": "pass", "evidence": ["User approved opening, middle, and ending keyframe plan."]}
+    },
+    "approval_evidence": {"first": "User approved Prompt 002 representative Beat.", "second": null}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "visual_beats": [
+    {
+      "beat_id": "beat-logo",
+      "time_range": {"start_seconds": 11.2, "end_seconds": 16.4, "confirmed_by_user": true}
+    }
+  ],
+  "edit_plan": {
+    "approved_beat_ids": ["beat-logo"],
+    "gates": {
+      "time": {"status": "pass", "evidence": ["User confirmed 11.2-16.4 seconds."]},
+      "gesture": {"status": "pass", "evidence": ["Frames at 11.8 and 14.1 seconds show intentional pointing and clean withdrawal."]},
+      "assets": {"status": "pass", "evidence": ["Both official source URLs and normalized previews inspected."]},
+      "first_approval": {"status": "pass", "evidence": ["User approved the representative keyframes."]}
+    },
+    "approval_evidence": {"first": "User approved Prompt 001 representative Beat.", "second": null}
+  },
+  "assets": [
+    {"asset_id": "logo-chatcut", "verification_status": "verified"},
+    {"asset_id": "logo-codex", "verification_status": "verified"}
+  ]
+}

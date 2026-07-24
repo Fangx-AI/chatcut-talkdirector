@@ -1,0 +1,167 @@
+{
+  "recipe_schema_version": "0.2",
+  "recipe_id": "prompt-002-split-screen-explainer",
+  "name": "双栏讲解",
+  "status": "verified",
+  "public_prompt": "在 [时间段] 制作一段横屏双栏信息动效。\n\n左侧作为主视觉，显示标题「[标题]」，并将以下要点按照叙述顺序逐条浮现：\n1. [要点一]\n2. [要点二]\n3. [要点三]\n4. [要点四]\n\n每次只突出当前要点。当前项使用强调色和状态标记，已经出现的内容降低亮度但继续保留，尚未出现的内容隐藏。最后进入全部完成状态。\n\n右侧作为辅助信息区，完整放入以下长文本，并让文字持续、匀速、缓慢地由下向上滚动：\n[粘贴长文本]\n\n右侧文字用于体现内容的完整性和信息量，不要求在视频结束前展示全文，不要为了滚完全文而加快速度。左侧必须是主视觉，右侧宽度不得超过画面的 45%。保持原视频时长和画幅，不添加无关装饰，并先展示开始、中段和结束关键帧让我确认。",
+  "triggers": {
+    "intent": "用左侧逐项结论和右侧持续长文本证据流解释同一份材料",
+    "signals_any": [
+      "左边要点右边长文",
+      "双栏讲解",
+      "要点逐条出现并让原文滚动",
+      "Prompt 或代码讲解"
+    ],
+    "reject_when": [
+      "只有一句短文案",
+      "用户必须逐字读完右侧全文",
+      "片段需要同时展示可操作的真实产品界面",
+      "目标画幅不是横屏且用户不接受重新设计"
+    ]
+  },
+  "required_inputs": [
+    {
+      "id": "confirmed_time_range",
+      "required_for": "first_approval",
+      "description": "需要制作双栏动效的准确时间段",
+      "on_missing": "询问准确时间段，不虚构时长。"
+    },
+    {
+      "id": "verbatim_title_and_points",
+      "required_for": "planning",
+      "description": "标题与按口播顺序排列的 3-5 个逐字要点",
+      "on_missing": "只请求逐字标题/要点来源；不由模型替用户编写。"
+    },
+    {
+      "id": "verbatim_long_text",
+      "required_for": "planning",
+      "description": "右侧完整长文本，保留 Markdown、代码和段落层级",
+      "on_missing": "只请求要展示的完整原文；不使用占位材料执行。"
+    },
+    {
+      "id": "protected_regions",
+      "required_for": "first_approval",
+      "description": "字幕、Logo、已有文字和必要人物窗口",
+      "on_missing": "读取代表帧后决定全屏解释或人物分屏。"
+    }
+  ],
+  "asset_strategy": {
+    "required": false,
+    "sources_in_order": [
+      "user_verbatim_text",
+      "project_transcript_or_script",
+      "user_supplied_document_excerpt"
+    ],
+    "per_asset_inspection": [
+      "preserve_heading_list_code_and_paragraph_hierarchy",
+      "verify_all_displayed_copy_against_user_source"
+    ],
+    "forbidden": [
+      "fabricated_or_summarized_copy_without_approval",
+      "generated_product_ui",
+      "unrelated_b_roll_or_decorative_images"
+    ],
+    "on_unverified": "停止规划并请求一个逐字来源输入。"
+  },
+  "layout_safe_zones": {
+    "protect": [
+      "captions",
+      "logo",
+      "existing_text",
+      "required_speaker_window"
+    ],
+    "placement_rule": "左侧占约 55%-62% 并始终承担主视觉；右侧占 38%-45%，不得在面积、亮度或运动上抢夺焦点。",
+    "conflict_fallbacks": [
+      "减少右栏宽度但不低于可读下限",
+      "把超过 6 个要点拆成两个 Beat",
+      "人物窗口无安全区时改为全屏解释并保留原声",
+      "仍不可读时降级为左侧单栏要点加右侧静态短摘录",
+      "无法保护字幕或正文时保持原画面并请求调整时间段"
+    ]
+  },
+  "timing_animation": {
+    "requires_confirmed_time_range": true,
+    "trigger_alignment": "要点跟随真实口播词点出现；没有词级时间时标记执行时校准。",
+    "entry": "开场约占总时长 8%，建立标题和双栏关系；要点使用短距离滑入与透明度变化。",
+    "hold": "当前项高亮，历史项降亮保留，未出现项隐藏；右侧始终匀速慢滚。",
+    "exit": "结尾约占总时长 8%，进入全部完成态后干净退场。",
+    "forbidden": [
+      "speed_up_to_finish_long_text",
+      "shrink_text_below_readable_size",
+      "expand_right_column_beyond_45_percent",
+      "jump_or_restart_right_column_scroll"
+    ]
+  },
+  "blocking_policies": {
+    "missing_time_range": "ask_exact_range",
+    "missing_verbatim_copy": "ask_for_one_verbatim_source_input",
+    "too_many_points": "split_into_multiple_beats_without_compressing_type",
+    "safe_zone_conflict": "prefer_full_screen_explainer_or_single_column_fallback; never cover captions",
+    "long_text_overflow": "allow_partial_display_at_constant_comfortable_speed"
+  },
+  "execution_gates": [
+    "time",
+    "copy",
+    "safe_zones",
+    "first_approval"
+  ],
+  "fallback_chain": [
+    {
+      "id": "full_split_screen_explainer",
+      "when": "3-5 points, readable long text, and a safe 16:9 layout are available",
+      "action": "execute the verified two-column structure",
+      "terminal": false
+    },
+    {
+      "id": "split_points_across_beats",
+      "when": "more than 6 points would make the left column unreadable",
+      "action": "divide the points into two sequential Beats while preserving the right-side evidence role",
+      "terminal": false
+    },
+    {
+      "id": "single_column_points_with_excerpt",
+      "when": "the right column or speaker window cannot coexist safely",
+      "action": "downgrade to a readable single-column point sequence plus a static verbatim excerpt",
+      "terminal": false
+    },
+    {
+      "id": "keep_clean_and_request_copy_or_range",
+      "when": "verbatim copy, confirmed time, or a readable protected layout remains unavailable",
+      "action": "keep the footage clean and request the one blocking input",
+      "terminal": true
+    }
+  ],
+  "verification": {
+    "required_stages": [
+      "beginning",
+      "middle",
+      "ending"
+    ],
+    "checks": [
+      {
+        "id": "opening_composition",
+        "stage": "beginning",
+        "rule": "用接管前、淡入中和稳定态三帧确认画面平滑接管；标题、两栏比例和第一项状态清楚，右栏不超过 45%。",
+        "evidence_required": "boundary_frames"
+      },
+      {
+        "id": "point_state_progression",
+        "stage": "middle",
+        "rule": "逐项检查当前、历史和未出现状态；右栏连续慢滚且无裁切或跳页。",
+        "evidence_required": "frames_for_each_point"
+      },
+      {
+        "id": "completion_and_exit",
+        "stage": "ending",
+        "rule": "用稳定完成态、淡出中和恢复后三帧确认平滑交还；右栏没有突然加速，退场后回到正确画面。",
+        "evidence_required": "boundary_frames"
+      }
+    ]
+  },
+  "compatibility": {
+    "public_prompt_source": "references/prompt-002-split-screen-explainer.md",
+    "readme_must_contain_public_prompt": false,
+    "readme_prompt_excerpt": "在 [时间段] 制作一段横屏双栏信息动效。左侧作为主视觉，显示标题「[标题]」",
+    "legacy_reference": "references/prompt-002-split-screen-explainer.md"
+  }
+}

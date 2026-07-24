@@ -1,0 +1,9 @@
+{
+  "verification": {
+    "checks": [
+      {"check_id": "p2-begin", "beat_id": "beat-split", "stage": "beginning", "status": "pass", "evidence": ["opening-frame.png"]},
+      {"check_id": "p2-middle", "beat_id": "beat-split", "stage": "middle", "status": "pass", "evidence": ["four-point-progression-contact-sheet.png"]},
+      {"check_id": "p2-end", "beat_id": "beat-split", "stage": "ending", "status": "pass", "evidence": ["completed-left-column-frame.png"]}
+    ]
+  }
+}

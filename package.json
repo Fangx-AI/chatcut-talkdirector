@@ -1,5 +1,5 @@
 {
-  "name": "chatcut-talkdirector-maintenance",
+  "name": "cut-director-maintenance",
   "private": true,
   "scripts": {
     "gallery:capture": "playwright test scripts/capture_prompt_library_thumbnails.spec.mjs --workers=1"

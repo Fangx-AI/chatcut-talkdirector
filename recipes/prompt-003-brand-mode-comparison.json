@@ -1,0 +1,187 @@
+{
+  "recipe_schema_version": "0.2",
+  "recipe_id": "prompt-003-brand-mode-comparison",
+  "name": "品牌双模式能力对比",
+  "status": "verified",
+  "public_prompt": "在 [时间段] 制作一段横屏全屏品牌双模式对比动效。\n\n使用纯黑背景，顶部居中放置 [品牌] 的可验证官方图标。图标作为整段的品牌锚点，贯穿两个信息阶段，不要在中间转场时单独淡出或重新出现。\n\n第一阶段并排展示两种模式：\n- 左侧标题「[模式 A]」，只保留一项核心能力「[能力 A]」。\n- 右侧标题「[模式 B]」，按照口播顺序依次出现 2-4 项能力：[能力 B1]、[能力 B2]、[能力 B3]、[能力 B4]。\n\n左侧使用中性灰弱化，右侧使用一个高亮强调色。标题使用大号高对比中文，能力项使用可快速扫读的短词组。右侧能力逐项落下，每次只新增一个视觉重点；最后一项最强，但不要使用持续辉光、粒子、玻璃卡片或小号英文装饰。\n\n第二阶段让第一阶段的标题和能力块一起退场，品牌图标保持稳定，然后把画面收束为「[能力 A] → [最终结果 B]」，下方补充一句「[总结句]」。不要让图标单独淡出；如果整段结尾需要退场，图标必须与最终文字同步。\n\n音效使用轻、短、清脆的卡点：标题入场一次空气感短扫，右侧能力项使用逐级增强的短促弹点，最终结论使用一次干净短扫。避免低沉 boom、机械拖尾和连续 whoosh，口播始终优先。\n\n保持原视频画幅和时长，不生成或仿造真实产品界面。先展示第一阶段稳定帧、能力递进帧、中间转场帧、最终结论帧和导出成片的实际第一帧让我确认；独立导出时，第一帧不得露出上一镜。",
+  "triggers": {
+    "intent": "用一个真实品牌图标串联两种产品模式，先逐项解释能力差异，再收束为一句结果对比",
+    "signals_any": [
+      "普通模式和办公模式的区别",
+      "聊天模式对比工作模式",
+      "免费版和专业版能力对比",
+      "两个模式逐项出现最后一句话总结",
+      "品牌双模式对比"
+    ],
+    "reject_when": [
+      "需要同时比较三种或更多模式",
+      "模式 A 也需要展示多个并列能力",
+      "用户必须操作或展示真实产品界面",
+      "只有长段说明而没有可压缩为短词组的逐字内容",
+      "真实品牌身份或官方图标无法验证"
+    ]
+  },
+  "required_inputs": [
+    {
+      "id": "confirmed_time_range",
+      "required_for": "first_approval",
+      "description": "需要制作双模式对比的准确时间段",
+      "on_missing": "询问准确时间段，不虚构片段长度。"
+    },
+    {
+      "id": "verbatim_mode_copy",
+      "required_for": "planning",
+      "description": "两种模式名称、模式 A 的唯一能力、模式 B 的 2-4 项能力、最终结果和总结句",
+      "on_missing": "只请求一个能够补齐逐字对比文案的来源，不替用户编造产品能力。"
+    },
+    {
+      "id": "brand_identity_and_asset",
+      "required_for": "first_approval",
+      "description": "准确品牌身份及可验证官方图标",
+      "on_missing": "先检查项目和官方来源；仍无法验证时请求用户提供官方素材。"
+    },
+    {
+      "id": "protected_regions",
+      "required_for": "first_approval",
+      "description": "字幕、已有 Logo、现有文字、必要人物窗口和前后镜头边界",
+      "on_missing": "读取代表帧和片段边界后再决定全屏接管范围。"
+    }
+  ],
+  "asset_strategy": {
+    "required": true,
+    "sources_in_order": [
+      "existing_project_asset",
+      "official_brand_press_media_kit",
+      "official_website_svg_or_png",
+      "official_app_store_icon",
+      "official_favicon"
+    ],
+    "per_asset_inspection": [
+      "verify_product_identity",
+      "inspect_actual_canvas_transparency_and_padding",
+      "choose_contrast_safe_variant_and_background",
+      "preview_normalized_icon_before_timeline_placement"
+    ],
+    "forbidden": [
+      "image_generation_for_real_brand_icon",
+      "video_generation_for_real_brand_icon",
+      "redrawing_or_stylizing_official_mark",
+      "fabricated_product_ui",
+      "assuming_filename_proves_official_identity"
+    ],
+    "on_unverified": "停止执行并请求可验证的官方品牌素材；不得用相似图标替代。"
+  },
+  "layout_safe_zones": {
+    "protect": [
+      "captions",
+      "existing_logo",
+      "existing_text",
+      "required_speaker_window",
+      "previous_and_next_shot_boundaries"
+    ],
+    "placement_rule": "默认使用 16:9 纯黑全屏 MG；品牌图标位于顶部中轴并贯穿两个阶段，模式 A 与模式 B 约按 45:55 分配视觉重量，最终结论居中收束。",
+    "conflict_fallbacks": [
+      "在不降低移动端可读性的前提下缩小标题或能力块",
+      "减少模式 B 能力项到 2-4 个最必要短语",
+      "字幕或人物窗口无安全区时改为全屏接管并保留原声",
+      "无法保护边界时缩短接管范围并重新验证首尾帧",
+      "仍不可读或品牌素材不可验证时保持原画面并请求输入"
+    ]
+  },
+  "timing_animation": {
+    "requires_confirmed_time_range": true,
+    "trigger_alignment": "模式标题和能力项跟随真实口播词点；模式 B 的能力按叙述顺序逐项落下，最终结论只在第一阶段语义完成后进入。",
+    "entry": "先建立品牌图标和双标题，再进入能力项；标题使用高对比落位，能力项使用约 8-14 帧的短距离落下和轻微回弹。",
+    "hold": "模式 A 始终只保留一个核心能力；模式 B 的历史能力保留并形成递进，最后一项使用同一强调色加强。",
+    "exit": "第一阶段标题与能力块共用一个淡出窗口；品牌图标保持稳定并贯穿最终结论。只有整段结尾需要退场时，图标才与最终文字同步。",
+    "forbidden": [
+      "icon_fades_out_independently_between_stages",
+      "icon_disappears_then_reappears",
+      "multiple_peer_items_on_mode_a",
+      "small_decorative_english_labels",
+      "gradient_grid_particles_glass_or_persistent_glow",
+      "low_frequency_boom_riser_or_long_mechanical_tail"
+    ]
+  },
+  "blocking_policies": {
+    "missing_time_range": "ask_exact_range",
+    "missing_verbatim_copy": "ask_for_one_verbatim_source_input",
+    "brand_unverifiable": "stop_and_request_verified_official_asset",
+    "too_many_modes_or_points": "route_to_comparison_table_or_split_into_multiple_beats",
+    "safe_zone_conflict": "prefer_full_screen_takeover_and_boundary_trim; never cover captions or leak adjacent shots",
+    "export_boundary_leak": "move_partial_export_start_to_the_first_covered_frame_and_inspect_the_actual_rendered_first_frame"
+  },
+  "execution_gates": [
+    "time",
+    "assets",
+    "copy",
+    "safe_zones",
+    "first_approval"
+  ],
+  "fallback_chain": [
+    {
+      "id": "full_brand_mode_comparison",
+      "when": "两种模式、逐字短文案、官方图标和安全的全屏时间段均可用",
+      "action": "执行双阶段品牌模式对比，并保留图标贯穿、轻快卡点和最终结论收束",
+      "terminal": false
+    },
+    {
+      "id": "static_two_mode_comparison",
+      "when": "片段太短，无法容纳逐项能力递进和第二阶段收束",
+      "action": "降级为单阶段静态双模式对比，品牌图标保持稳定，不强行加入最终二次转场",
+      "terminal": false
+    },
+    {
+      "id": "generic_unbranded_comparison",
+      "when": "用户明确允许移除品牌身份，但仍需要解释两个抽象模式",
+      "action": "移除品牌图标并改为通用双模式对比，不仿制任何真实品牌",
+      "terminal": false
+    },
+    {
+      "id": "keep_clean_and_request_input",
+      "when": "时间、逐字文案、两模式结构、安全边界或官方素材仍未解决",
+      "action": "保持原画面并请求一个阻断输入",
+      "terminal": true
+    }
+  ],
+  "verification": {
+    "required_stages": [
+      "asset",
+      "beginning",
+      "middle",
+      "ending"
+    ],
+    "checks": [
+      {
+        "id": "official_brand_icon_preview",
+        "stage": "asset",
+        "rule": "品牌图标来源可追溯，画布、留白、比例和纯黑背景对比正确。",
+        "evidence_required": "source_url_and_preview"
+      },
+      {
+        "id": "covered_first_frame",
+        "stage": "beginning",
+        "rule": "检查片段开始、第一阶段稳定态和独立导出的实际第 1 帧；不得露出上一镜或未覆盖的产品界面。",
+        "evidence_required": "boundary_frames_and_exported_first_frame"
+      },
+      {
+        "id": "ability_progression_and_icon_continuity",
+        "stage": "middle",
+        "rule": "逐项检查模式 B 能力新增状态，并比较第一阶段退场前、退场中和最终结论帧；图标位置、尺寸和不透明度连续。",
+        "evidence_required": "frames_for_each_item_and_transition"
+      },
+      {
+        "id": "final_conclusion_and_sound",
+        "stage": "ending",
+        "rule": "最终结论完整可读，图标仍存在；音效轻、短、清脆，口播优先，没有低沉或长拖尾。",
+        "evidence_required": "ending_frames_and_audio_review"
+      }
+    ]
+  },
+  "compatibility": {
+    "public_prompt_source": "references/prompt-003-brand-mode-comparison.md",
+    "readme_must_contain_public_prompt": false,
+    "readme_prompt_excerpt": "在 [时间段] 制作一段横屏全屏品牌双模式对比动效。",
+    "legacy_reference": "references/prompt-003-brand-mode-comparison.md"
+  }
+}

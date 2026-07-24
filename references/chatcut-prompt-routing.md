@@ -2,7 +2,7 @@
 
 ## 核心原则
 
-用户描述视觉任务后，先检索 `chatcut-official-catalog.md`，再决定复用级别。官方方案优先，但不绕过 TalkDirector 的时间确认、人物处理、品牌素材、保护区、Quality Gate 和两次确认。
+用户描述视觉任务后，先检索 `chatcut-official-catalog.md`，再决定复用级别。官方方案优先，但不绕过 CutDirector 的时间确认、人物处理、品牌素材、保护区、Quality Gate 和两次确认。
 
 ## 三档匹配
 
