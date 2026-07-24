@@ -1,0 +1,113 @@
+CutDirector Multi-License Notice
+================================
+
+Copyright (c) 2026 Fangx-AI and CutDirector contributors.
+
+Canonical source:
+https://github.com/Fangx-AI/cut-director
+
+CutDirector contains software, original written content, demonstration media,
+brand material, and third-party reference material. They are not all licensed
+under the same terms.
+
+1. Software
+-----------
+
+Unless a file says otherwise, the following are licensed under the GNU Affero
+General Public License, version 3 or any later version
+(`AGPL-3.0-or-later`):
+
+- `scripts/**`
+- `schemas/**`
+- `tests/**`
+- `agents/**`
+- `package.json`
+- `package-lock.json`
+- other source-code and machine-configuration files
+
+The complete license text is in:
+`LICENSES/AGPL-3.0-or-later.txt`
+
+Official license page:
+https://www.gnu.org/licenses/agpl-3.0.html
+
+2. Original prompts, recipes, and documentation
+------------------------------------------------
+
+Unless excluded below or marked otherwise, original CutDirector content is
+licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+license (`CC BY-SA 4.0`). This includes:
+
+- `SKILL.md`
+- `recipes/**`
+- original material in `README.md`
+- original CutDirector material in `references/**`
+- original diagrams and their source files in `assets/**`
+- `assets/IMAGE-PROMPTS.md`
+
+The complete license text is in:
+`LICENSES/CC-BY-SA-4.0.txt`
+
+Official license page:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Required attribution for redistributed or adapted original content:
+
+> CutDirector by Fangx-AI
+> https://github.com/Fangx-AI/cut-director
+> Licensed under CC BY-SA 4.0. Changes, if any, must be identified.
+
+3. Reserved brand and demonstration media
+-----------------------------------------
+
+The open-source and content licenses do not grant rights to use the CutDirector
+name, logo, or visual identity in a way that suggests an official, endorsed, or
+affiliated product. See `TRADEMARKS.md`.
+
+The following project media are not licensed for independent redistribution,
+editing, dataset creation, model training, resale, or commercial reuse:
+
+- `assets/hero.png`
+- `assets/talkdirector-presenter.png`
+- `assets/verified-prompts/**`
+
+These files may be viewed through the canonical repository and may be linked to
+when accurately describing CutDirector. No right to a person's name, image,
+voice, or likeness is granted.
+
+4. Third-party material
+-----------------------
+
+The project licenses do not cover third-party trademarks, logos, interfaces,
+footage, templates, thumbnails, or other third-party material, including:
+
+- `assets/official-gallery/**`
+- `VISUAL-GALLERY.md`
+- `references/chatcut-official-catalog.md`
+- third-party material visible inside demonstration images or videos
+
+Those materials remain subject to the rights and terms of their respective
+owners. See `THIRD_PARTY_NOTICES.md`.
+
+5. User-created output
+----------------------
+
+For clarity, Fangx-AI does not claim copyright in a user's video or other output
+merely because CutDirector was used to help create it. Users may monetize their
+own outputs. This statement does not grant rights to project demonstration
+media, third-party material, or any other content the user does not own or have
+permission to use.
+
+6. File-specific notices and contributions
+------------------------------------------
+
+A file-specific SPDX identifier, license notice, or written agreement overrides
+this mapping for that file.
+
+By intentionally contributing to a path covered by this notice, a contributor
+agrees to license the contribution under the license assigned to that path and
+represents that they have the right to do so. Third-party contributions must
+identify their source and license.
+
+This notice is a practical licensing map, not legal advice. Standard license
+texts control where applicable.
