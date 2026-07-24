@@ -1,5 +1,7 @@
 <div align="center">
 
+![CutDirector 顶部横幅](assets/hero.png)
+
 # CutDirector
 
 **专为已拍口播视频设计的 ChatCut 口播导演 Skill**
