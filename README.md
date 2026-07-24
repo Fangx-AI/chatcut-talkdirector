@@ -13,8 +13,10 @@
 [![Verified Prompts](https://img.shields.io/badge/已验证_Prompt-003-E6503C?style=flat-square&labelColor=0B0C0D)](#已验证效果)
 [![Official Effects](https://img.shields.io/badge/官方效果参考-123-B7F34A?style=flat-square&labelColor=0B0C0D)](VISUAL-GALLERY.md)
 [![Made for ChatCut](https://img.shields.io/badge/为_ChatCut_打造-F2EBDD?style=flat-square&labelColor=0B0C0D)](https://chatcut.io/)
+[![Code License](https://img.shields.io/badge/代码-AGPL--3.0--or--later-8A63D2?style=flat-square&labelColor=0B0C0D)](LICENSE)
+[![Prompt License](https://img.shields.io/badge/原创_Prompt-CC_BY--SA_4.0-36C7B4?style=flat-square&labelColor=0B0C0D)](LICENSE)
 
-[查看真实效果与 Prompt](#已验证效果) · [30 秒开始](#30-秒开始) · [浏览效果参考库](VISUAL-GALLERY.md)
+[查看真实效果与 Prompt](#已验证效果) · [30 秒开始](#30-秒开始) · [浏览效果参考库](VISUAL-GALLERY.md) · [开源与原创保护](#开源原创与商用)
 
 </div>
 
@@ -286,6 +288,28 @@ New-Item -ItemType Junction `
 Skill 调用名已从 `$chatcut-talking-head-visual-director` 简化为 `$cut-director`。如果你使用旧的 Windows Junction 安装，请移除旧 Junction 后，按照上面的新路径重新创建。
 
 </details>
+
+## 开源、原创与商用
+
+CutDirector 鼓励真实使用、改进和传播，但不允许抹去作者、闭源搬运原创成果或冒充官方项目。
+
+| 内容 | 授权与边界 |
+| --- | --- |
+| 程序、Schema 与测试 | [AGPL-3.0-or-later](LICENSES/AGPL-3.0-or-later.txt)：修改、分发或通过网络提供时须遵守相应开源义务 |
+| `SKILL.md`、原创 Prompt、配方与方法论文档 | [CC BY-SA 4.0](LICENSES/CC-BY-SA-4.0.txt)：允许转载、改编和商用，但必须署名、标明修改，并以相同协议分享改编内容 |
+| 用户用 CutDirector 制作的成片 | 成片不会仅因使用 CutDirector 而自动适用上述许可证；用户可以将自己拥有权利的成片用于商业用途 |
+| CutDirector 名称与品牌 | 不得用于冒充官方、制造合作或授权假象，详见[品牌政策](TRADEMARKS.md) |
+| 演示视频、人物素材、ChatCut 官方图库与第三方 Logo | 不在项目开源授权范围内，详见[第三方声明](THIRD_PARTY_NOTICES.md) |
+
+转载或改编原创 Prompt 时，请保留：
+
+```text
+CutDirector by Fangx-AI
+https://github.com/Fangx-AI/cut-director
+Licensed under CC BY-SA 4.0. Changes, if any, must be identified.
+```
+
+完整边界请以 [`LICENSE`](LICENSE)、[`NOTICE`](NOTICE)、[`TRADEMARKS.md`](TRADEMARKS.md) 和 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) 为准。
 
 ## 技术与验证
 

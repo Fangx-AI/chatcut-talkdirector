@@ -1,6 +1,7 @@
 {
   "name": "cut-director-maintenance",
   "private": true,
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "gallery:capture": "playwright test scripts/capture_prompt_library_thumbnails.spec.mjs --workers=1"
   },
