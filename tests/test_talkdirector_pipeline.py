@@ -64,8 +64,29 @@ class RecipeValidationTest(unittest.TestCase):
             ["time", "copy", "safe_zones", "first_approval"],
         )
         progress_prompt = self.recipes["prompt-004-top-chapter-progress-rail"]["public_prompt"]
+        self.assertIn("不要套用固定题材、固定章节数量、固定画幅、固定位置或固定视觉风格", progress_prompt)
         self.assertIn("真实时长比例", progress_prompt)
-        self.assertIn("跨章节时绝不清零、回跳", progress_prompt)
+        self.assertIn("跨章节或跨镜头时绝不清零、回跳", progress_prompt)
+        self.assertTrue(
+            all(
+                mode in progress_prompt
+                for mode in ("完整章节导航", "当前章节模式", "纯进度模式", "保持干净")
+            )
+        )
+        self.assertIn("标签沿用原视频主要语言", progress_prompt)
+        self.assertIn("横屏、竖屏、方形、屏幕录制、游戏、访谈和人物口播", progress_prompt)
+        progress_recipe = self.recipes["prompt-004-top-chapter-progress-rail"]
+        self.assertFalse(progress_recipe["asset_strategy"]["required"])
+        self.assertEqual(
+            [step["id"] for step in progress_recipe["fallback_chain"]],
+            [
+                "adaptive_full_section_progress_rail",
+                "adaptive_current_section_progress",
+                "adaptive_progress_only",
+                "keep_clean_and_request_input",
+            ],
+        )
+        self.assertIn("顶部优先但不固定", progress_recipe["layout_safe_zones"]["placement_rule"])
 
     def test_missing_recipe_field_fails(self):
         path = ROOT / "recipes" / "prompt-001-gesture-logo-pop.json"

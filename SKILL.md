@@ -52,7 +52,7 @@ Load only the matching recipe and its public reference:
 | Official Logo follows a confirmed pointing gesture | `recipes/prompt-001-gesture-logo-pop.json` | `references/prompt-001-gesture-logo-pop.md` |
 | Left-side points plus a continuously scrolling long-text evidence column | `recipes/prompt-002-split-screen-explainer.json` | `references/prompt-002-split-screen-explainer.md` |
 | One official brand icon connects two product modes, with progressive capabilities and a final result comparison | `recipes/prompt-003-brand-mode-comparison.json` | `references/prompt-003-brand-mode-comparison.md` |
-| A persistent top rail shows the active chapter while one global progress line fills continuously across the full program | `recipes/prompt-004-top-chapter-progress-rail.json` | `references/prompt-004-top-chapter-progress-rail.md` |
+| An adaptive progress overlay selects full section tabs, current-section mode, progress-only, or keep-clean from the actual structure, aspect ratio, and safe zones | `recipes/prompt-004-top-chapter-progress-rail.json` | `references/prompt-004-top-chapter-progress-rail.md` |
 
 Treat recipe triggers as routing evidence, not keyword-only commands. A visual resemblance is insufficient when the viewing task differs.
 

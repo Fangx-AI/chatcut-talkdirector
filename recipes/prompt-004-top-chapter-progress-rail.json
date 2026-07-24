@@ -1,118 +1,130 @@
 {
   "recipe_schema_version": "0.2",
   "recipe_id": "prompt-004-top-chapter-progress-rail",
-  "name": "顶部章节导航进度条",
+  "name": "自适应章节导航与全片进度条",
   "status": "verified",
-  "public_prompt": "给 [整条视频或确认时间段] 的顶部添加一条常驻“章节导航 + 全片进度”信息条。\n\n先根据逐字稿、时间线和已经确认的内容结构，建立按播放顺序排列的章节列表：[章节 1]、[章节 2]、[章节 3]……；片头和片尾存在时可单独保留。章节名称以中文短标签为主，不添加无意义的小号英文。每个章节格的宽度按照该章节在成片中的真实时长比例分配，短章节窄、长章节宽。\n\n当前章节使用 [强调色] 和轻微深色底高亮，已经完成的章节保持可辨识但降低亮度，尚未开始的章节使用中性深色。章节切换必须对齐真实内容边界，不提前、不滞后、不闪烁。\n\n在章节条底边增加一条 3-5 像素的全片进度线。进度线从整条视频第一帧的 0% 开始，按照全片播放时间匀速、连续地从左向右填满，到最后一帧达到 100%；跨章节时绝不清零、回跳或重新播放入场动画。进度线与当前章节高亮共享同一个时间基准。\n\n默认用于横屏 16:9：章节条紧贴顶部安全区，高度约占画面高度的 4%-6%，文字在手机横屏预览中仍可快速读清。不得遮挡已有 Logo、标题、人物头部、产品界面或系统安全区；发生冲突时优先缩短章节名称、降低高度或改为“当前章节名称 + 连续进度线”，不要覆盖主体内容。\n\n整体使用克制的深色底、细分隔线和单一强调色，不添加粒子、持续辉光、玻璃拟态、无关图标或多余英文。片头快速淡入或下落 6-10 帧后保持稳定，片尾在进度达到 100% 后与整条视频一起结束。\n\n先展示第一帧、至少一个章节切换前后、中段进度和最后一帧，并提供一段实时播放预览让我确认；确认章节边界、标签、顶部安全区和进度连续性后，再扩展到整条视频。",
+  "public_prompt": "分析 [整条视频或确认时间段] 的实际内容、画幅、节奏和安全区，为它添加一条自适应的“章节或段落导航 + 全片进度”信息条。不要套用固定题材、固定章节数量、固定画幅、固定位置或固定视觉风格。\n\n先读取逐字稿、时间线、镜头边界、已有标题或章节标记，并检查所有代表画面中的人物、字幕、Logo、产品界面和平台安全区。只使用有事实依据并经过确认的章节或段落名称与真实起止时间，不根据素材文件名、自动摘要或镜头数量自行编造结构。\n\n根据视频实际情况选择一种形态：\n1. 完整章节导航：适合有清晰章节，且章节数量、标签长度和当前画幅允许舒展排布的视频。按照每章真实时长比例分配宽度，当前章高亮，已完成和未开始章节保持可区分；不把“最多几章”写成跨视频的固定限制。\n2. 当前章节模式：适合章节较多、标签较长、竖屏或方形视频。只显示当前章节名称与全片进度，不把所有标签挤在一行。\n3. 纯进度模式：适合没有明确章节、内容很短或画面信息密度很高的视频。只保留一条克制的全片进度线，不虚构章节。\n4. 保持干净：没有稳定安全区、会遮挡关键信息，或进度提示不能增加理解时，不强行添加。\n\n位置默认优先考虑顶部，但顶部不是硬性要求。根据实际画幅和全片安全区选择顶部、底部或其他安全边缘；横屏、竖屏、方形、屏幕录制、游戏、访谈和人物口播分别重新检查，不能沿用固定坐标。任何位置都不得遮挡脸、字幕、手势、Logo、标题、产品控件、代码、图表或平台 UI。\n\n无论使用哪种可见形态，都让全片进度使用同一个真实时间基准：从目标范围第一帧的 0% 开始，按照播放时间连续、单调地填充，到最后一帧达到 100%。跨章节或跨镜头时绝不清零、回跳、停顿、提前跑满或重新播放入场动画。章节高亮与进度线必须共享同一组真实时间边界。\n\n视觉风格继承当前视频，而不是固定使用深色科技风。字体、语言、颜色、圆角、线条、透明度和动效强度应与原片一致；标签沿用原视频主要语言，文字短而可读，不额外添加无意义英文、图标、粒子、持续辉光或装饰性动画。尺寸根据画幅与观看设备自适应，优先保证手机预览可读和正文画面完整。\n\n整条导航只入场一次并保持稳定。章节切换使用克制的颜色、字重或底色交接，不用大幅横向滑动抢夺注意力；最后一帧进度达到 100% 后再与视频同步结束。\n\n先提交结构识别结果、所选形态、章节或段落表、位置与安全区依据，然后展示第一帧、至少一个切换边界前后、中段和最后一帧，并提供实时播放预览让我确认。确认后再扩展到整条视频。",
   "triggers": {
-    "intent": "为有明确章节边界的视频添加常驻顶部导航，并用不重置的连续细线显示全片播放进度",
+    "intent": "为任意具有时间范围的视频自适应选择章节导航、当前章节提示、纯进度或保持干净，并让全片进度连续可靠",
     "signals_any": [
-      "顶部章节进度条",
-      "像视频播放器一样显示当前主题和剩余进度",
-      "章节标签随内容切换且进度线持续跑满",
-      "在片头到片尾保持一条全片导航",
-      "日报、周报、课程或访谈的章节导航条"
+      "给视频加章节进度条",
+      "显示当前主题和整条视频剩余进度",
+      "顶部或安全边缘的进度导航",
+      "章节切换时进度不要清零",
+      "为横屏、竖屏、方形或屏幕录制添加自适应进度提示",
+      "根据不同视频自动选择章节条或纯进度"
     ],
     "reject_when": [
-      "视频没有可确认的章节名称或真实边界",
-      "用户要求进度在每章重新从零开始",
-      "顶部被系统 UI、品牌 Logo、人物头部或产品控件完全占用且不能调整",
-      "章节名称必须显示为长句且用户不允许缩写",
-      "目标只是某个数据百分比动画而不是全片播放进度"
+      "目标只是一个业务指标或数据百分比而不是播放进度",
+      "用户明确要求每个章节拥有独立且会清零的章节内进度",
+      "没有可确认时间范围且无法读取实际时长",
+      "所有可用边缘都会遮挡关键内容且用户不允许调整",
+      "平台已经提供不可移除的同类导航且重复显示没有观看价值"
     ]
   },
   "required_inputs": [
     {
-      "id": "confirmed_program_range",
+      "id": "confirmed_target_range",
       "required_for": "planning",
-      "description": "整条成片或目标范围的准确起止时间与总时长",
-      "on_missing": "读取时间线后请求用户确认准确范围，不猜测最终片长"
+      "description": "整条视频或目标范围的准确起止时间、总时长与帧率",
+      "on_missing": "读取媒体或时间线后请求用户确认准确范围，不猜测最终片长"
     },
     {
-      "id": "confirmed_chapter_map",
+      "id": "structure_evidence",
       "required_for": "first_approval",
-      "description": "按播放顺序排列的章节短标签，以及每章真实起止时间",
-      "on_missing": "根据逐字稿和时间线提出候选章节表，只请求用户确认边界与标签，不先写入进度条"
+      "description": "逐字稿、时间线标记、镜头边界、已有章节标题，以及视频是否真的需要章节导航",
+      "on_missing": "先提出结构识别结果和形态建议；无章节事实时只使用纯进度或保持干净"
     },
     {
-      "id": "top_safe_zone",
-      "required_for": "first_approval",
-      "description": "顶部已有 Logo、标题、人物头部、产品控件与系统安全区",
-      "on_missing": "检查第一帧、各章节代表帧和最后一帧，再确定可用顶部区域"
+      "id": "confirmed_structure_decision",
+      "required_for": "first_approval_conditionally",
+      "description": "使用章节形态时提供按播放顺序排列的原文短标签与真实边界；使用纯进度或保持干净时记录无可靠章节或无观看价值的依据",
+      "on_missing": "不得自行编造章节；改用纯进度，或只请求用户确认候选章节表"
     },
     {
-      "id": "visual_style_anchor",
+      "id": "frame_platform_and_safe_zones",
       "required_for": "first_approval",
-      "description": "项目既有字体、深色底、分隔线和唯一强调色",
-      "on_missing": "从已确认项目视觉语言提取一套克制样式并先展示代表帧"
+      "description": "画幅、分辨率、发布平台，以及不同代表帧中的人物、字幕、Logo、产品 UI、代码、图表和系统控件",
+      "on_missing": "检查第一帧、不同镜头、字幕状态和最后一帧后再选择位置与密度"
+    },
+    {
+      "id": "source_visual_language",
+      "required_for": "first_approval",
+      "description": "原片主要语言、字体、颜色、线条、圆角、透明度和动效强度",
+      "on_missing": "从已确认项目视觉语言提取克制样式并先展示代表帧，不默认科技风"
     }
   ],
   "asset_strategy": {
     "required": false,
     "sources_in_order": [
-      "existing_timeline_markers",
+      "existing_timeline_markers_and_titles",
       "confirmed_transcript_or_script",
-      "user_confirmed_chapter_map",
-      "existing_project_visual_style"
+      "user_confirmed_section_map",
+      "existing_project_visual_style",
+      "platform_safe_area_guidance"
     ],
     "per_asset_inspection": [
-      "verify_chapter_copy_and_order",
-      "verify_exact_start_and_end_times",
-      "inspect_top_safe_zone_across_representative_frames",
-      "confirm_style_tokens_against_existing_project"
+      "verify_section_copy_order_and_language",
+      "verify_exact_start_end_times_and_frame_rate",
+      "inspect_safe_zones_across_diverse_representative_frames",
+      "confirm_style_tokens_against_source_video",
+      "confirm_the_overlay_adds_value_instead_of_duplicating_platform_ui"
     ],
     "forbidden": [
-      "inventing_chapters_from_filenames_only",
+      "inventing_sections_from_filenames_shot_count_or_automatic_summary",
       "estimating_boundaries_without_confirmation",
-      "using_generated_logos_or_icons_as_decoration",
-      "adding_unverified_brand_assets",
-      "treating_equal_tab_widths_as_duration_proportional"
+      "forcing_section_labels_when_no_real_sections_exist",
+      "using_equal_tab_widths_when_real_durations_differ",
+      "copying_dark_tech_styling_to_unrelated_video",
+      "reusing_landscape_coordinates_on_portrait_or_square_video"
     ],
-    "on_unverified": "保持原画面并请求一个可确认的章节表或顶部安全区，不使用猜测标签和边界"
+    "on_unverified": "降级为纯进度或保持原画面，并请求一个真正阻断的输入；不使用猜测结构、坐标或风格"
   },
   "layout_safe_zones": {
     "protect": [
-      "system_safe_area",
-      "existing_logo",
-      "existing_title",
-      "speaker_head_and_face",
-      "captions",
-      "product_ui",
-      "important_source_text"
+      "platform_safe_area_and_controls",
+      "existing_logo_and_title",
+      "speaker_head_face_and_gestures",
+      "captions_and_name_straps",
+      "product_ui_code_and_charts",
+      "game_hud_score_map_and_menus",
+      "important_source_text_and_motion_paths"
     ],
-    "placement_rule": "默认横屏 16:9，章节导航紧贴顶部安全区，总高度约占画面高度的 4%-6%；章节格宽度按真实章节时长比例分配，底边连续进度线覆盖全部可用宽度。",
+    "placement_rule": "顶部优先但不固定；根据画幅、平台和全片代表帧选择安全边缘。完整章节模式只在章节数量、标签长度和当前画幅能够保证可读时使用；否则切换到当前章节、纯进度或保持干净。",
     "conflict_fallbacks": [
-      "先把章节名称压缩为 2-6 个汉字",
-      "在保持移动端可读的前提下降低条高与左右边距",
-      "隐藏已完成和未开始章节文字，只显示当前章节名称与连续全片进度线",
-      "顶部无安全区时改用用户确认的位置",
-      "仍会遮挡主体时保持原画面并请求确认，不强行覆盖"
+      "缩短标签但保留原意和主要语言",
+      "从完整章节导航切换为当前章节模式",
+      "从当前章节模式切换为纯进度",
+      "改用经过代表帧验证的其他安全边缘",
+      "仍会遮挡或没有观看价值时保持原画面"
     ]
   },
   "timing_animation": {
     "requires_confirmed_time_range": true,
-    "trigger_alignment": "章节高亮严格对齐真实章节起止边界；底边进度线使用整条目标范围的同一个线性时间基准，跨章节连续且单调递增。",
-    "entry": "只在目标范围第一帧执行一次 6-10 帧淡入或轻微下落；首帧进度为 0%，片头或首章状态正确。",
-    "hold": "导航条全程稳定；当前章节以 4-8 帧完成颜色交接，已完成和未开始章节保持可辨识；全片进度线持续向右填充。",
-    "exit": "最后一帧进度达到 100% 后，与整条视频同步结束；需要淡出时不得在达到 100% 前提前消失。",
+    "trigger_alignment": "所有可见形态都使用目标范围的同一个真实时钟；章节或段落高亮严格对齐已确认边界，进度在镜头与章节之间连续、单调递增。",
+    "entry": "整条导航只入场一次，按帧率换算为约 0.2-0.35 秒的轻淡入或短位移；第一帧进度为 0%。",
+    "hold": "根据所选形态稳定显示；章节切换只使用克制的颜色、字重或底色交接，全片进度持续填充且不受镜头切换影响。",
+    "exit": "最后一帧进度达到 100% 后再与目标范围同步结束；需要退场时不得提前隐藏完成状态。",
     "forbidden": [
-      "progress_resets_at_chapter_boundary",
-      "progress_moves_backward_or_jumps",
+      "progress_resets_at_section_or_shot_boundary",
+      "progress_moves_backward_stalls_or_jumps",
       "progress_fills_before_the_last_frame",
-      "chapter_highlight_switches_early_or_late",
-      "navigation_replays_its_entry_per_chapter",
+      "section_highlight_switches_early_or_late",
+      "navigation_replays_entry_for_each_section",
       "equal_width_tabs_when_durations_differ",
-      "small_decorative_english_labels",
-      "particles_glass_persistent_glow_or_unrelated_icons"
+      "unreadably_small_labels_to_preserve_full_navigation",
+      "fixed_coordinates_across_aspect_ratios",
+      "unrelated_english_icons_particles_glass_or_persistent_glow"
     ]
   },
   "blocking_policies": {
-    "missing_time_range": "ask_exact_program_range",
-    "missing_chapter_map": "propose_candidate_map_then_request_one_confirmation",
-    "copy_too_long": "request_short_labels_or_route_to_current_chapter_only",
-    "safe_zone_conflict": "compress_then_route_to_current_chapter_plus_progress; never cover protected content",
-    "chapter_count_too_high": "merge_semantic_neighbors_or_use_current_chapter_only",
-    "timing_conflict": "prefer_user_confirmed_timeline_boundaries_over_automatic_summary"
+    "missing_time_range": "ask_exact_target_range",
+    "missing_structure_evidence": "route_to_progress_only_or_request_one_source",
+    "missing_section_map": "never_invent_sections; use_progress_only_or_request_confirmation",
+    "copy_too_long_or_dense": "route_from_full_navigation_to_current_section",
+    "safe_zone_conflict": "reduce_density_then_try_verified_safe_edge; never cover_protected_content",
+    "no_viewing_value": "keep_clean",
+    "style_conflict": "inherit_source_visual_language_instead_of_imposing_template_style"
   },
   "execution_gates": [
     "time",
@@ -122,27 +134,27 @@
   ],
   "fallback_chain": [
     {
-      "id": "full_proportional_chapter_progress_rail",
-      "when": "目标范围、章节边界、短标签、顶部安全区和视觉样式均已确认",
-      "action": "制作按时长比例分配的完整章节导航，并让底边全片进度线从 0% 连续填充到 100%",
+      "id": "adaptive_full_section_progress_rail",
+      "when": "存在已确认章节，时长边界准确，章节数量、标签长度、画幅和安全区能容纳可读的完整导航",
+      "action": "按真实时长比例制作完整章节导航，并让全片进度从 0% 连续填充到 100%",
       "terminal": false
     },
     {
-      "id": "compact_proportional_chapter_progress_rail",
-      "when": "顶部空间有限，但缩短标签和降低条高后仍能保持移动端可读",
-      "action": "保留按时长比例的章节格和连续进度线，压缩文案、条高、内边距与分隔线",
+      "id": "adaptive_current_section_progress",
+      "when": "章节较多、标签较长、画幅较窄，或完整导航会造成拥挤",
+      "action": "只显示当前章节名称与连续全片进度；章节名称按真实边界替换",
       "terminal": false
     },
     {
-      "id": "current_chapter_plus_global_progress",
-      "when": "章节过多、标签过长或顶部安全区无法容纳全部章节格",
-      "action": "只显示当前章节名称，并保留不重置的连续全片进度线；章节边界仍按真实时间切换",
+      "id": "adaptive_progress_only",
+      "when": "没有真实章节、内容很短、画面信息密度高，或章节文字没有额外观看价值",
+      "action": "移除章节标签，只在验证过的安全边缘保留克制的连续全片进度线",
       "terminal": false
     },
     {
       "id": "keep_clean_and_request_input",
-      "when": "目标范围、章节边界、标签、顶部安全区或视觉样式仍未解决",
-      "action": "保持原画面并请求一个阻断输入，不写入猜测的章节导航或进度动画",
+      "when": "目标时间、结构、标签、视觉语言或所有安全边缘仍未解决，或任何进度提示都会持续干扰主体",
+      "action": "保持原画面并请求一个阻断输入；如果没有观看价值则明确保持干净",
       "terminal": true
     }
   ],
@@ -155,27 +167,27 @@
     ],
     "checks": [
       {
-        "id": "chapter_map_and_style_source",
+        "id": "adaptive_mode_and_source_evidence",
         "stage": "asset",
-        "rule": "章节名称、顺序、起止时间和样式来源可追溯；每格宽度由真实时长计算，不由视觉猜测。",
-        "evidence_required": "confirmed_chapter_map_and_style_tokens"
+        "rule": "所选形态有内容结构、标签密度、画幅、安全区和观看价值依据；语言与风格来自原片，不来自固定模板。",
+        "evidence_required": "structure_mode_decision_section_map_safe_zones_and_style_source"
       },
       {
-        "id": "zero_progress_and_top_safety",
+        "id": "zero_progress_and_safe_first_frame",
         "stage": "beginning",
-        "rule": "第一帧进度为 0%，片头或首章高亮正确，导航条没有遮挡顶部保护区域。",
-        "evidence_required": "first_frame_and_top_safe_zone_overlay"
+        "rule": "第一帧进度为 0%，所选形态与位置正确，没有遮挡关键内容或平台安全区。",
+        "evidence_required": "first_frame_and_safe_zone_overlay"
       },
       {
-        "id": "chapter_switch_and_progress_continuity",
+        "id": "continuity_readability_and_diverse_frames",
         "stage": "middle",
-        "rule": "至少检查一个章节边界前后和全片中段；高亮切换对齐内容，进度值连续、单调递增且章节宽度符合时长比例。",
-        "evidence_required": "boundary_before_after_frames_midpoint_and_realtime_preview"
+        "rule": "检查全片中段、至少一个章节或镜头边界，以及不同人物、字幕、产品 UI 或画面密度状态；进度连续单调、切换准确、文字在目标设备可读。",
+        "evidence_required": "boundary_before_after_midpoint_diverse_frames_and_realtime_preview"
       },
       {
         "id": "one_hundred_percent_completion",
         "stage": "ending",
-        "rule": "最后一帧末章或片尾高亮正确，进度达到 100% 且不溢出、不提前淡出。",
+        "rule": "最后一帧进度达到 100%，不溢出、不提前结束；末段状态和退场符合所选形态。",
         "evidence_required": "last_frame_and_ending_playback_review"
       }
     ]
@@ -183,7 +195,7 @@
   "compatibility": {
     "public_prompt_source": "references/prompt-004-top-chapter-progress-rail.md",
     "readme_must_contain_public_prompt": false,
-    "readme_prompt_excerpt": "给 [整条视频或确认时间段] 的顶部添加一条常驻“章节导航 + 全片进度”信息条。",
+    "readme_prompt_excerpt": "分析 [整条视频或确认时间段] 的实际内容、画幅、节奏和安全区，为它添加一条自适应的“章节或段落导航 + 全片进度”信息条。",
     "legacy_reference": "references/prompt-004-top-chapter-progress-rail.md"
   }
 }
